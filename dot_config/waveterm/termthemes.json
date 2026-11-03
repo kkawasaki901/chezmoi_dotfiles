@@ -1,0 +1,28 @@
+{
+    "wave-night": {
+        "display:name": "Wave Night",
+        "display:order": 10,
+        "background": "#0d1117",
+        "foreground": "#c9d1d9",
+        "cursor": "#7ee787",
+        "selectionBackground": "#264f78",
+        "black": "#161b22",
+        "red": "#ff7b72",
+        "green": "#7ee787",
+        "yellow": "#e3b341",
+        "blue": "#79c0ff",
+        "magenta": "#d2a8ff",
+        "cyan": "#a5d6ff",
+        "white": "#c9d1d9",
+        "brightBlack": "#6e7681",
+        "brightRed": "#ffa198",
+        "brightGreen": "#56d364",
+        "brightYellow": "#f2cc60",
+        "brightBlue": "#a5d6ff",
+        "brightMagenta": "#e2c5ff",
+        "brightCyan": "#b3f0ff",
+        "brightWhite": "#f0f6fc",
+        "gray": "#8b949e",
+        "cmdtext": "#f0f6fc"
+    }
+}

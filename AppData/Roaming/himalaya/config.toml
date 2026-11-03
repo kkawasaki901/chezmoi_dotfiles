@@ -1,0 +1,28 @@
+downloads-dir = "C:/Users/kawasaki/Downloads"
+
+[accounts.gmail]
+default = true
+
+mailbox.alias.inbox = "INBOX"
+mailbox.alias.sent = "[Gmail]/送信済みメール"
+mailbox.alias.drafts = "[Gmail]/下書き"
+mailbox.alias.trash = "[Gmail]/ゴミ箱"
+mailbox.alias.main= "[Gmail]/重要"
+
+imap.server = "imaps://imap.gmail.com:993"
+imap.sasl.plain.username = "kkawasaki901@gmail.com"
+imap.sasl.plain.password.command = [
+  "pwsh.exe",
+  "-NoProfile",
+  "-File",
+  "C:/Users/kawasaki/powershell_scripts/Get-HimalayaGmailPassword.ps1",
+]
+
+smtp.server = "smtps://smtp.gmail.com:465"
+smtp.sasl.plain.username = "kkawasaki901@gmail.com"
+smtp.sasl.plain.password.command = [
+  "pwsh.exe",
+  "-NoProfile",
+  "-File",
+  "C:/Users/kawasaki/powershell_scripts/Get-HimalayaGmailPassword.ps1",
+]

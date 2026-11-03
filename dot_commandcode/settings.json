@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAYwBvAG0AbQBhAG4AZAAtAGMAbwBkAGUALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAYwBvAG0AbQBhAG4AZAAtAGMAbwBkAGUALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAYwBvAG0AbQBhAG4AZAAtAGMAbwBkAGUALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

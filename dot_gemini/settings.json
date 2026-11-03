@@ -1,0 +1,92 @@
+{
+  "selectedAuthType": "oauth-personal",
+  "approval_mode": "yolo",
+  "aga.autoAccept": true,
+  "aga.autoAcceptCommands": [
+    "antigravity.agent.acceptAgentStep",
+    "antigravity.terminalCommand.accept",
+    "antigravity.command.accept",
+    "antigravity.acceptCompletion",
+    "antigravity.prioritized.agentAcceptAllInFile",
+    "antigravity.prioritized.agentAcceptFocusedHunk",
+    "antigravity.prioritized.supercompleteAccept",
+    "antigravity.prioritized.terminalSuggestion.accept"
+  ],
+  "aga.autoAcceptKeywords": [
+    "accept",
+    "run",
+    "retry",
+    "apply",
+    "execute",
+    "confirm",
+    "allow once",
+    "allow",
+    "node"
+  ],
+  "aga.autoAcceptRejectKeywords": [
+    "skip",
+    "reject",
+    "cancel",
+    "close",
+    "refine",
+    "always",
+    "aga:"
+  ],
+  "aga.autoAcceptSettings": [
+    "antigravity.agent.terminal.autoExecutionPolicy",
+    "antigravity.agent.terminal.confirmCommands",
+    "antigravity.agent.terminal.allowedCommands",
+    "antigravity.terminal.autoRun",
+    "cortex.agent.autoRun",
+    "geminicodeassist.agentYoloMode",
+    "gemini.cli.yoloMode"
+  ],
+  "aga.autoAcceptInterval": 800,
+  "antigravity-quota.monitoredModel": "Claude Sonnet 4.6 (Thinking)",
+  "hooks": {
+    "BeforeAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAZwBlAG0AaQBuAGkALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAZwBlAG0AaQBuAGkALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAZwBlAG0AaQBuAGkALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "BeforeTool": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACcAQwA6AFwAVQBzAGUAcgBzAFwAawBhAHcAYQBzAGEAawBpAFwALgBvAHIAYwBhAFwAYQBnAGUAbgB0AC0AaABvAG8AawBzAFwAZwBlAG0AaQBuAGkALQBoAG8AbwBrAC4AYwBtAGQAJwA7ACAAZQB4AGkAdAAgACQATABBAFMAVABFAFgASQBUAEMATwBEAEUA",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
+  }
+}

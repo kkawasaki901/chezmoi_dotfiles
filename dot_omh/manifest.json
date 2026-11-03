@@ -1,0 +1,1319 @@
+{
+  "catalog_revision": "1eb00146a1a5a25de59e800596af2a11debd681031f368888a99f832ae27342c",
+  "context_cost_warning": {
+    "core_profile_skill_count": 10,
+    "extra_skill_count": 143,
+    "installed_skill_count": 153,
+    "message": "full profile installs all 153 packaged skills, 143 more than the 10-skill core default; every installed skill adds an index line to every Hermes request and about 8k chars each time its body loads (a loaded body stays in history until compaction), so this context weight grows with the catalog; prefer core unless this workspace genuinely needs the complete catalog.",
+    "profile": "full",
+    "schema_version": "omh_skill_profile_context_cost_warning/v1"
+  },
+  "flat_layout_skills_removed": [],
+  "flat_layout_skills_retained": [],
+  "installed_at": "2026-11-03T07:00:15Z",
+  "package": "oh-my-hermes",
+  "pruned_skills": [],
+  "render_marks": true,
+  "schema_version": 1,
+  "skill_profile": "full",
+  "skill_profile_state": {
+    "context_cost_note": "Every installed skill adds an index line to every Hermes request and about 8k chars each time its body loads, and a loaded body stays in history until compaction, so an install that still carries full-only skills costs full-profile context weight even when the recorded profile is core.",
+    "core_profile_skill_count": 10,
+    "effective_profile": "full",
+    "full_only_installed_skills": [
+      "accessibility-audit",
+      "achievements",
+      "adversarial-consensus",
+      "agent-board",
+      "agent-debug",
+      "agent-evaluation",
+      "agent-instructions",
+      "ai-job-search",
+      "ai-slop-cleaner",
+      "app-debugging",
+      "apple-design",
+      "application-threat-model",
+      "ask",
+      "automation-blueprint",
+      "award-bar-score",
+      "backend",
+      "biomedical-evidence",
+      "browser-operator",
+      "build-failure-triage",
+      "capability-toggle",
+      "code-review",
+      "codebase-onboarding",
+      "codebase-uml",
+      "codegraph-refresh",
+      "command-operator",
+      "commit-pr-authoring",
+      "connector-operator",
+      "content-operator",
+      "context",
+      "context-budget-review",
+      "cto-loop",
+      "curriculum-design",
+      "dag-ulw",
+      "data-analysis",
+      "data-pipelines",
+      "data-share-review",
+      "decision-prototype",
+      "decision-recall",
+      "deep-interview",
+      "deliverable-package",
+      "deploy-and-monitor",
+      "design-orchestration",
+      "design-quality-gate",
+      "external-connector-readiness",
+      "failure-signal-audit",
+      "feedback-triage",
+      "finance-analysis",
+      "frontend",
+      "frontend-refactor",
+      "geospatial-analysis",
+      "git-workflow",
+      "github-event-ops",
+      "github-issue-intake",
+      "harness-session-inventory",
+      "iac-change",
+      "idea-to-deploy",
+      "img-summary",
+      "inference-serving",
+      "instinct-ledger",
+      "internal-audit",
+      "jev-action-check",
+      "jev-ask",
+      "jev-done-check",
+      "jev-failure-triage",
+      "jev-review-gate",
+      "jev-route",
+      "jit-learn",
+      "legal-compliance-review",
+      "lifecycle-growth",
+      "live-incident-response",
+      "live-info-operator",
+      "llm-app-dev",
+      "localization-review",
+      "long-document-reading",
+      "loop",
+      "maestro",
+      "market-research",
+      "materials-package",
+      "media-input-operator",
+      "meeting-brief",
+      "memory-new",
+      "memory-sync",
+      "meta-router",
+      "mobile-release",
+      "model-finetuning",
+      "model-optimization",
+      "model-setup",
+      "molecular-docking",
+      "morning-brief",
+      "native-debugging",
+      "operating-rhythm",
+      "ops-review",
+      "paper-learning",
+      "parallel-tools",
+      "people-ops",
+      "physical-device-readiness",
+      "product-brief",
+      "product-discovery-validation",
+      "product-docs",
+      "production-audit",
+      "prompt-import-readiness",
+      "provider-profile-posture",
+      "ralplan",
+      "refactor-plan",
+      "relational-db",
+      "release-cut",
+      "reliability-review",
+      "report-package",
+      "repro-audit",
+      "research",
+      "research-brief",
+      "research-department",
+      "rules-distill",
+      "run-efficiency",
+      "running-work-board",
+      "rust",
+      "sales-development",
+      "sales-pipeline-review",
+      "security-event-response",
+      "security-safety-review",
+      "show-reel",
+      "skill-health",
+      "skill-scout",
+      "source-finder",
+      "spend-gate",
+      "sprite-forge",
+      "strategy-brief",
+      "support-operations",
+      "tech-debt-audit",
+      "todo-checklist",
+      "toolbelt-readiness",
+      "ultraperf",
+      "ultraqa",
+      "ultrawork",
+      "verification-gate",
+      "visual-qa",
+      "voice-operator",
+      "web-research",
+      "websearch-setup",
+      "wiki",
+      "workflow-learning",
+      "workspace-audit",
+      "workspace-file-operator"
+    ],
+    "full_profile_skill_count": 153,
+    "installed_catalog_skill_count": 153,
+    "installed_skill_count": 153,
+    "matches_requested_profile": true,
+    "next_action": "",
+    "non_destructive_default": "omh setup, install, and update never delete installed skills, so a full install keeps its skills after the recorded profile changes; run `omh skill-profile reconcile --to core` explicitly to shrink an existing full install.",
+    "prompt_cost": {
+      "claim_boundary": "These are OMH-local filesystem estimates, not observed serialized request bytes, selected skill bodies, provider input tokens, or cache counters. Use `hermes prompt-size --json` for host-observed prompt accounting.",
+      "core_fixed_index_bytes": 3061,
+      "estimated_index_line_bytes": 57253,
+      "evidence_status": "prepared_estimate_not_host_observed",
+      "full_only_fixed_index_bytes": 54192,
+      "installed_skill_body_bytes": 1460681,
+      "observation_command": "hermes prompt-size --json",
+      "schema_version": "omh_skill_prompt_cost_estimate/v1"
+    },
+    "requested_profile": "full",
+    "retained_exception": false,
+    "schema_version": "omh_skill_profile_state/v1",
+    "unmanaged_skill_count": 0
+  },
+  "skills": [
+    {
+      "name": "accessibility-audit",
+      "path": "reviewer/omh-accessibility-audit/SKILL.md",
+      "rendered_sha256": "2c1cdab8b44be35599182ca0d73623f3105ad973bbde397cc92b8018ead64f3c",
+      "sha256": "2c1cdab8b44be35599182ca0d73623f3105ad973bbde397cc92b8018ead64f3c",
+      "source": "builtin"
+    },
+    {
+      "name": "achievements",
+      "path": "tracker/omh-achievements/SKILL.md",
+      "rendered_sha256": "fccb5bfa1be3568f7f6406a28c5ff591084469d5e81f38fa73a80f5369c6e7b6",
+      "sha256": "fccb5bfa1be3568f7f6406a28c5ff591084469d5e81f38fa73a80f5369c6e7b6",
+      "source": "builtin"
+    },
+    {
+      "name": "adversarial-consensus",
+      "path": "planner/omh-adversarial-consensus/SKILL.md",
+      "rendered_sha256": "45b8667f80950e924cc2f0e81a44234c6217fafed4f8ed7d34a8e1405b798e03",
+      "sha256": "45b8667f80950e924cc2f0e81a44234c6217fafed4f8ed7d34a8e1405b798e03",
+      "source": "builtin"
+    },
+    {
+      "name": "agent-board",
+      "path": "tracker/omh-agent-board/SKILL.md",
+      "rendered_sha256": "6058590dc16221d0111c9c135c75f1813472ba53b9826357718994d82f75fb01",
+      "sha256": "6058590dc16221d0111c9c135c75f1813472ba53b9826357718994d82f75fb01",
+      "source": "builtin"
+    },
+    {
+      "name": "agent-debug",
+      "path": "operator/omh-agent-debug/SKILL.md",
+      "rendered_sha256": "702e127f39f9c1c4c95a05551bb3d0d8d30b7e5038d939b5463854be8c88f535",
+      "sha256": "702e127f39f9c1c4c95a05551bb3d0d8d30b7e5038d939b5463854be8c88f535",
+      "source": "builtin"
+    },
+    {
+      "name": "agent-evaluation",
+      "path": "operator/omh-agent-evaluation/SKILL.md",
+      "rendered_sha256": "e957a6c08fc69bd0f198a2aa62f57aee840c097ad596da49500238960f716029",
+      "sha256": "e957a6c08fc69bd0f198a2aa62f57aee840c097ad596da49500238960f716029",
+      "source": "builtin"
+    },
+    {
+      "name": "agent-instructions",
+      "path": "planner/omh-agent-instructions/SKILL.md",
+      "rendered_sha256": "a73d98c7c4f065290bcdc22ac98975bec8b5a7b6045aee97bd4f84af4cb6e42f",
+      "sha256": "a73d98c7c4f065290bcdc22ac98975bec8b5a7b6045aee97bd4f84af4cb6e42f",
+      "source": "builtin"
+    },
+    {
+      "name": "agent-ops-review",
+      "path": "tracker/omh-agent-ops-review/SKILL.md",
+      "rendered_sha256": "9e782314803c1745b0aa49e7a5a6f4d5c617b0e74467ad2fee3b13ded64a7327",
+      "sha256": "9e782314803c1745b0aa49e7a5a6f4d5c617b0e74467ad2fee3b13ded64a7327",
+      "source": "builtin"
+    },
+    {
+      "name": "ai-job-search",
+      "path": "operator/omh-ai-job-search/SKILL.md",
+      "rendered_sha256": "efeaf2b3452963371439b10ee1710bb2500e3ed47a32c8a3b9e9790c24bd5c2c",
+      "sha256": "efeaf2b3452963371439b10ee1710bb2500e3ed47a32c8a3b9e9790c24bd5c2c",
+      "source": "builtin"
+    },
+    {
+      "name": "ai-slop-cleaner",
+      "path": "handoff-guide/omh-ai-slop-cleaner/SKILL.md",
+      "rendered_sha256": "107c02127c42f1278091222ddcc3e134f1e73d6b4c0103de7f90f9211a44bacf",
+      "sha256": "107c02127c42f1278091222ddcc3e134f1e73d6b4c0103de7f90f9211a44bacf",
+      "source": "builtin"
+    },
+    {
+      "name": "app-debugging",
+      "path": "reviewer/omh-app-debugging/SKILL.md",
+      "rendered_sha256": "e2cea56765111d4fdc5ca909e3fad3e97e334c264688632d66be0c2ddceac853",
+      "sha256": "e2cea56765111d4fdc5ca909e3fad3e97e334c264688632d66be0c2ddceac853",
+      "source": "builtin"
+    },
+    {
+      "name": "apple-design",
+      "path": "operator/omh-apple-design/SKILL.md",
+      "rendered_sha256": "12b5afb317dfa855d6d1900e3e6b87a5cf086a0af3a77bd24d4769f8e0a5fac9",
+      "sha256": "12b5afb317dfa855d6d1900e3e6b87a5cf086a0af3a77bd24d4769f8e0a5fac9",
+      "source": "builtin"
+    },
+    {
+      "name": "application-threat-model",
+      "path": "reviewer/omh-application-threat-model/SKILL.md",
+      "rendered_sha256": "a5e7a82b63b74feff753e957d1423a3a9e3be12ae6245fbfe8e7c2ea1ffbd98a",
+      "sha256": "a5e7a82b63b74feff753e957d1423a3a9e3be12ae6245fbfe8e7c2ea1ffbd98a",
+      "source": "builtin"
+    },
+    {
+      "name": "ask",
+      "path": "reviewer/omh-ask/SKILL.md",
+      "rendered_sha256": "3ce39dcabe7ced2a2cd1c9599a1d711c05ff17d3ad4955c3598788e30388dd1a",
+      "sha256": "3ce39dcabe7ced2a2cd1c9599a1d711c05ff17d3ad4955c3598788e30388dd1a",
+      "source": "builtin"
+    },
+    {
+      "name": "automation-blueprint",
+      "path": "operator/omh-automation-blueprint/SKILL.md",
+      "rendered_sha256": "f29645e8e65ebeeebd56d9aabb6529ed4ecca5e0272351e3323644be75c3206a",
+      "sha256": "f29645e8e65ebeeebd56d9aabb6529ed4ecca5e0272351e3323644be75c3206a",
+      "source": "builtin"
+    },
+    {
+      "name": "award-bar-score",
+      "path": "operator/omh-award-bar-score/SKILL.md",
+      "rendered_sha256": "d4c76f93b35e3ca2ed74991488a5fbf21ccee001bdd3c3e2ca6c817cafdc3e14",
+      "sha256": "d4c76f93b35e3ca2ed74991488a5fbf21ccee001bdd3c3e2ca6c817cafdc3e14",
+      "source": "builtin"
+    },
+    {
+      "name": "backend",
+      "path": "planner/omh-backend/SKILL.md",
+      "rendered_sha256": "a4b04bf825314c7afff366fe4ddb2c4fdea1461098f5fc8909f45f592b6bafc9",
+      "sha256": "a4b04bf825314c7afff366fe4ddb2c4fdea1461098f5fc8909f45f592b6bafc9",
+      "source": "builtin"
+    },
+    {
+      "name": "biomedical-evidence",
+      "path": "operator/omh-biomedical-evidence/SKILL.md",
+      "rendered_sha256": "42373072bf429f61af355cc850c136d89fa65cf681fde6537d98da5de6394d7d",
+      "sha256": "42373072bf429f61af355cc850c136d89fa65cf681fde6537d98da5de6394d7d",
+      "source": "builtin"
+    },
+    {
+      "name": "browser-operator",
+      "path": "guide/omh-browser/SKILL.md",
+      "rendered_sha256": "1ab76be2258e4c6bb4bc2232bf781bd09b89445911c0003c5209db7fa3a22523",
+      "sha256": "1ab76be2258e4c6bb4bc2232bf781bd09b89445911c0003c5209db7fa3a22523",
+      "source": "builtin"
+    },
+    {
+      "name": "build-failure-triage",
+      "path": "reviewer/omh-build-failure-triage/SKILL.md",
+      "rendered_sha256": "2a8f06f86d43cd9142db7251e73d19f3669b78eae05aee0f06b7775df359496e",
+      "sha256": "2a8f06f86d43cd9142db7251e73d19f3669b78eae05aee0f06b7775df359496e",
+      "source": "builtin"
+    },
+    {
+      "name": "buzz",
+      "path": "tracker/omh-buzz/SKILL.md",
+      "rendered_sha256": "b75dc6e4d25ecc00279d1ed77fd6106d83d08da6ee920c9e36c17812cebdae70",
+      "sha256": "b75dc6e4d25ecc00279d1ed77fd6106d83d08da6ee920c9e36c17812cebdae70",
+      "source": "builtin"
+    },
+    {
+      "name": "cancel",
+      "path": "tracker/omh-cancel/SKILL.md",
+      "rendered_sha256": "438423acba1605db225c7393c39f0d536b47ac1772befc4c71bfb178f45c84b0",
+      "sha256": "438423acba1605db225c7393c39f0d536b47ac1772befc4c71bfb178f45c84b0",
+      "source": "builtin"
+    },
+    {
+      "name": "capability-toggle",
+      "path": "tracker/omh-capability-toggle/SKILL.md",
+      "rendered_sha256": "f214e05ae97a435d55cb2ddbc6d944065302f266c1f62406ae30ce279eee49be",
+      "sha256": "f214e05ae97a435d55cb2ddbc6d944065302f266c1f62406ae30ce279eee49be",
+      "source": "builtin"
+    },
+    {
+      "name": "code-review",
+      "path": "reviewer/omh-code-review/SKILL.md",
+      "rendered_sha256": "d1f591d3df66e46e4b553744e7674818e454e097a03d70465510f88b259c3891",
+      "sha256": "d1f591d3df66e46e4b553744e7674818e454e097a03d70465510f88b259c3891",
+      "source": "builtin"
+    },
+    {
+      "name": "codebase-onboarding",
+      "path": "planner/omh-codebase-onboarding/SKILL.md",
+      "rendered_sha256": "146956255c5973b9453fde6a3b35e63a1fbc2bd940e8f6ebd1770d5e7e30811d",
+      "sha256": "146956255c5973b9453fde6a3b35e63a1fbc2bd940e8f6ebd1770d5e7e30811d",
+      "source": "builtin"
+    },
+    {
+      "name": "codebase-uml",
+      "path": "planner/omh-codebase-uml/SKILL.md",
+      "rendered_sha256": "e83c6ae56637790a439f4aab49669cd7695a244385eb36ce00def8669edb3281",
+      "sha256": "e83c6ae56637790a439f4aab49669cd7695a244385eb36ce00def8669edb3281",
+      "source": "builtin"
+    },
+    {
+      "name": "codegraph-refresh",
+      "path": "planner/omh-codegraph-refresh/SKILL.md",
+      "rendered_sha256": "c75f474e6de03a8e34b7160e8d389b6b966bcbda1844666db163b76055b3c859",
+      "sha256": "c75f474e6de03a8e34b7160e8d389b6b966bcbda1844666db163b76055b3c859",
+      "source": "builtin"
+    },
+    {
+      "name": "command-operator",
+      "path": "guide/omh-terminal/SKILL.md",
+      "rendered_sha256": "460d6510eef64c2683a8ea083dc624ad2f3ecbb9a2f6f1316e1def5ec2d95559",
+      "sha256": "460d6510eef64c2683a8ea083dc624ad2f3ecbb9a2f6f1316e1def5ec2d95559",
+      "source": "builtin"
+    },
+    {
+      "name": "commit-pr-authoring",
+      "path": "reviewer/omh-commit-pr-authoring/SKILL.md",
+      "rendered_sha256": "ad3be0f6ea32c6c26bcd10e4678af0cf29dfa3da543d03f442bf9fe2476bf2cb",
+      "sha256": "ad3be0f6ea32c6c26bcd10e4678af0cf29dfa3da543d03f442bf9fe2476bf2cb",
+      "source": "builtin"
+    },
+    {
+      "name": "connector-operator",
+      "path": "guide/omh-apps/SKILL.md",
+      "rendered_sha256": "2c8ec4dac2f8cc0accf3f8b348468d2eb7bce8ca1d075c3099bdbfd809976e69",
+      "sha256": "2c8ec4dac2f8cc0accf3f8b348468d2eb7bce8ca1d075c3099bdbfd809976e69",
+      "source": "builtin"
+    },
+    {
+      "name": "content-operator",
+      "path": "guide/omh-content-operator/SKILL.md",
+      "rendered_sha256": "e743373bc4efc42ba7b39312e0db61bff3c78efe7892ac917d9766ba71a9a39b",
+      "sha256": "e743373bc4efc42ba7b39312e0db61bff3c78efe7892ac917d9766ba71a9a39b",
+      "source": "builtin"
+    },
+    {
+      "name": "context",
+      "path": "ultrawork/ulw-context/SKILL.md",
+      "rendered_sha256": "7b591650c426ab874f6b7094861243f96fc36668a22c4f5edea0d8c238af684b",
+      "sha256": "7b591650c426ab874f6b7094861243f96fc36668a22c4f5edea0d8c238af684b",
+      "source": "builtin"
+    },
+    {
+      "name": "context-budget-review",
+      "path": "tracker/omh-context-budget-review/SKILL.md",
+      "rendered_sha256": "a74ee62c211864e8e62346cf2fc0527624aec4d2827210bf9867d3551ba7f7a3",
+      "sha256": "a74ee62c211864e8e62346cf2fc0527624aec4d2827210bf9867d3551ba7f7a3",
+      "source": "builtin"
+    },
+    {
+      "name": "cto-loop",
+      "path": "operator/omh-cto-loop/SKILL.md",
+      "rendered_sha256": "2f4393f015d6e952b26d089b106fcb3fca03f72b163a58e5ad1b2ed56fcbf608",
+      "sha256": "2f4393f015d6e952b26d089b106fcb3fca03f72b163a58e5ad1b2ed56fcbf608",
+      "source": "builtin"
+    },
+    {
+      "name": "curriculum-design",
+      "path": "planner/omh-curriculum-design/SKILL.md",
+      "rendered_sha256": "a4d443dabb15576aeaa24dee99aa25852b9b8c9abb17a11a3647a36271c0aefb",
+      "sha256": "a4d443dabb15576aeaa24dee99aa25852b9b8c9abb17a11a3647a36271c0aefb",
+      "source": "builtin"
+    },
+    {
+      "name": "dag-ulw",
+      "path": "ultrawork/dag-ulw/SKILL.md",
+      "rendered_sha256": "39dd80a2a4d34cfe8a2756963d782a01e2e18158ce7665fba18868f445ff4f89",
+      "sha256": "39dd80a2a4d34cfe8a2756963d782a01e2e18158ce7665fba18868f445ff4f89",
+      "source": "builtin"
+    },
+    {
+      "name": "data-analysis",
+      "path": "guide/omh-data-analysis/SKILL.md",
+      "rendered_sha256": "b372f9f17d87051886f0e325b064b5dcc4cde46be7cfdd8a7b6e55ab3ce2e43b",
+      "sha256": "b372f9f17d87051886f0e325b064b5dcc4cde46be7cfdd8a7b6e55ab3ce2e43b",
+      "source": "builtin"
+    },
+    {
+      "name": "data-pipelines",
+      "path": "planner/omh-data-pipelines/SKILL.md",
+      "rendered_sha256": "062483bf6646943225fec970e48693148eae12765823e5562bc60e8fdc3eb1b4",
+      "sha256": "062483bf6646943225fec970e48693148eae12765823e5562bc60e8fdc3eb1b4",
+      "source": "builtin"
+    },
+    {
+      "name": "data-share-review",
+      "path": "reviewer/omh-data-share-review/SKILL.md",
+      "rendered_sha256": "dce85a8677b4bf56beed554b321810fab4542f24d739885ec4828d64f9723e2f",
+      "sha256": "dce85a8677b4bf56beed554b321810fab4542f24d739885ec4828d64f9723e2f",
+      "source": "builtin"
+    },
+    {
+      "name": "decision-prototype",
+      "path": "planner/omh-decision-prototype/SKILL.md",
+      "rendered_sha256": "7d0a19d708311836cbd2f18125a34052f47c7e81130659363059e0fcdcd80ba1",
+      "sha256": "7d0a19d708311836cbd2f18125a34052f47c7e81130659363059e0fcdcd80ba1",
+      "source": "builtin"
+    },
+    {
+      "name": "decision-recall",
+      "path": "memory-keeper/omh-decision-recall/SKILL.md",
+      "rendered_sha256": "abebc4d97276781e92efcc143ca0f1f91bd28a4427751e78645ea371ec7c4786",
+      "sha256": "abebc4d97276781e92efcc143ca0f1f91bd28a4427751e78645ea371ec7c4786",
+      "source": "builtin"
+    },
+    {
+      "name": "deep-interview",
+      "path": "ultrawork/ulw-interview/SKILL.md",
+      "rendered_sha256": "00aff6d5e8535134deef96ad0be06bb8cadfe0dffcbfb4ae867bbb02e9a39ce8",
+      "sha256": "00aff6d5e8535134deef96ad0be06bb8cadfe0dffcbfb4ae867bbb02e9a39ce8",
+      "source": "builtin"
+    },
+    {
+      "name": "deliverable-package",
+      "path": "operator/omh-deliverable-package/SKILL.md",
+      "rendered_sha256": "81c60588c605b409a03eecc1925032d6b37afa13eaac02eca407f7d44aa4c33c",
+      "sha256": "81c60588c605b409a03eecc1925032d6b37afa13eaac02eca407f7d44aa4c33c",
+      "source": "builtin"
+    },
+    {
+      "name": "deploy-and-monitor",
+      "path": "operator/omh-deploy-and-monitor/SKILL.md",
+      "rendered_sha256": "306e7bf5abb39d283aad8b07720df898c4ff1297b37aa5e3d74f728f2c56db5a",
+      "sha256": "306e7bf5abb39d283aad8b07720df898c4ff1297b37aa5e3d74f728f2c56db5a",
+      "source": "builtin"
+    },
+    {
+      "name": "design-orchestration",
+      "path": "operator/omh-design-orchestration/SKILL.md",
+      "rendered_sha256": "8a1ed28940516b7b28a16de79638364ef4863b1fc024298b4e8a59694b8dc10d",
+      "sha256": "8a1ed28940516b7b28a16de79638364ef4863b1fc024298b4e8a59694b8dc10d",
+      "source": "builtin"
+    },
+    {
+      "name": "design-quality-gate",
+      "path": "operator/omh-design-quality-gate/SKILL.md",
+      "rendered_sha256": "21101cf4310d31adee48680a187dd0dc2d8d8645a0031577bfe99cd9bf2d54d0",
+      "sha256": "21101cf4310d31adee48680a187dd0dc2d8d8645a0031577bfe99cd9bf2d54d0",
+      "source": "builtin"
+    },
+    {
+      "name": "doctor",
+      "path": "tracker/omh-doctor/SKILL.md",
+      "rendered_sha256": "cb61aa48f56b7fd6982d1ca33c60a3f6862d77dcda260adde6973f42c374e611",
+      "sha256": "cb61aa48f56b7fd6982d1ca33c60a3f6862d77dcda260adde6973f42c374e611",
+      "source": "builtin"
+    },
+    {
+      "name": "executor-runtime-readiness",
+      "path": "handoff-guide/omh-executor-runtime-readiness/SKILL.md",
+      "rendered_sha256": "7949706a067ca4c8fd14eb5852f1949cb93f9474a426fc08b5f01632662b0346",
+      "sha256": "7949706a067ca4c8fd14eb5852f1949cb93f9474a426fc08b5f01632662b0346",
+      "source": "builtin"
+    },
+    {
+      "name": "external-connector-readiness",
+      "path": "guide/omh-external-connector-readiness/SKILL.md",
+      "rendered_sha256": "6e91adf45eceef833c7ad13c885f378b215eeba5458444437fabbef9b0244ddf",
+      "sha256": "6e91adf45eceef833c7ad13c885f378b215eeba5458444437fabbef9b0244ddf",
+      "source": "builtin"
+    },
+    {
+      "name": "failure-signal-audit",
+      "path": "reviewer/omh-failure-signal-audit/SKILL.md",
+      "rendered_sha256": "fd15397273683b97ba517b53d66678d09b27d5468bf816e15f47b707b7cd6539",
+      "sha256": "fd15397273683b97ba517b53d66678d09b27d5468bf816e15f47b707b7cd6539",
+      "source": "builtin"
+    },
+    {
+      "name": "feedback-triage",
+      "path": "operator/omh-feedback-triage/SKILL.md",
+      "rendered_sha256": "e87e9d2dce4e2ad0c0a44a10675643aa55b2fe057967586f0f402a471bf2daea",
+      "sha256": "e87e9d2dce4e2ad0c0a44a10675643aa55b2fe057967586f0f402a471bf2daea",
+      "source": "builtin"
+    },
+    {
+      "name": "finance-analysis",
+      "path": "operator/omh-finance-analysis/SKILL.md",
+      "rendered_sha256": "65048e37d21bd92e6f77ca5fd085d5d0ad0f512cba862100332ab5196fdec5e7",
+      "sha256": "65048e37d21bd92e6f77ca5fd085d5d0ad0f512cba862100332ab5196fdec5e7",
+      "source": "builtin"
+    },
+    {
+      "name": "frontend",
+      "path": "operator/omh-frontend/SKILL.md",
+      "rendered_sha256": "5d68c4481b5325d5b8b12fe1af0d242b5ba69c8c57032a978a41b683c42d4826",
+      "sha256": "5d68c4481b5325d5b8b12fe1af0d242b5ba69c8c57032a978a41b683c42d4826",
+      "source": "builtin"
+    },
+    {
+      "name": "frontend-refactor",
+      "path": "handoff-guide/omh-frontend-refactor/SKILL.md",
+      "rendered_sha256": "fb346ce50ba43b3c009d9c519355de4a56c30d3e663a19e29b8b04db870113a3",
+      "sha256": "fb346ce50ba43b3c009d9c519355de4a56c30d3e663a19e29b8b04db870113a3",
+      "source": "builtin"
+    },
+    {
+      "name": "gateway-intent-card",
+      "path": "guide/omh-gateway-intent-card/SKILL.md",
+      "rendered_sha256": "950f74b90542231af28a0e09f65854823e82e7cf157b40ec8d9ba7b01a4e31fe",
+      "sha256": "950f74b90542231af28a0e09f65854823e82e7cf157b40ec8d9ba7b01a4e31fe",
+      "source": "builtin"
+    },
+    {
+      "name": "geospatial-analysis",
+      "path": "operator/omh-geospatial-analysis/SKILL.md",
+      "rendered_sha256": "00df951f1c508b7fc34827d6fae2bbb47594354c0e18af227bd2652e039dd5fa",
+      "sha256": "00df951f1c508b7fc34827d6fae2bbb47594354c0e18af227bd2652e039dd5fa",
+      "source": "builtin"
+    },
+    {
+      "name": "git-workflow",
+      "path": "reviewer/omh-git-workflow/SKILL.md",
+      "rendered_sha256": "1a90b8857303af3f14d27968a18b33c752d9af1bae035a9d05d5968155639a9a",
+      "sha256": "1a90b8857303af3f14d27968a18b33c752d9af1bae035a9d05d5968155639a9a",
+      "source": "builtin"
+    },
+    {
+      "name": "github-event-ops",
+      "path": "operator/omh-github-event-ops/SKILL.md",
+      "rendered_sha256": "1d7883a6d597832486c989290b7705020e8e163920bd5f2d97efc1a714ed0870",
+      "sha256": "1d7883a6d597832486c989290b7705020e8e163920bd5f2d97efc1a714ed0870",
+      "source": "builtin"
+    },
+    {
+      "name": "github-issue-intake",
+      "path": "operator/omh-github-issue-intake/SKILL.md",
+      "rendered_sha256": "315ac951b3945ecbb300097e1cbf88ea6402ba68095b3944f23d567b3df15f51",
+      "sha256": "315ac951b3945ecbb300097e1cbf88ea6402ba68095b3944f23d567b3df15f51",
+      "source": "builtin"
+    },
+    {
+      "name": "harness-session-inventory",
+      "path": "tracker/omh-harness-session-inventory/SKILL.md",
+      "rendered_sha256": "fc461f16e1d7d4268d416ec72b2344c9fb55507a056597b6b9dbcdca9222eb9b",
+      "sha256": "fc461f16e1d7d4268d416ec72b2344c9fb55507a056597b6b9dbcdca9222eb9b",
+      "source": "builtin"
+    },
+    {
+      "name": "iac-change",
+      "path": "planner/omh-iac-change/SKILL.md",
+      "rendered_sha256": "21e7cf5957c54820d7366e9ad66f77fcbc0e19388ed6cdb6253988c778ea7ac9",
+      "sha256": "21e7cf5957c54820d7366e9ad66f77fcbc0e19388ed6cdb6253988c778ea7ac9",
+      "source": "builtin"
+    },
+    {
+      "name": "idea-to-deploy",
+      "path": "operator/omh-idea-to-deploy/SKILL.md",
+      "rendered_sha256": "94e62a694368613a47b1f2fb4d8e839bcc360840218bb71155b413a77b42de08",
+      "sha256": "94e62a694368613a47b1f2fb4d8e839bcc360840218bb71155b413a77b42de08",
+      "source": "builtin"
+    },
+    {
+      "name": "img-summary",
+      "path": "operator/omh-image-cards/SKILL.md",
+      "rendered_sha256": "edcb2a968b58a5cc927d9e9ca88aae991878adc2557fa8536ef6da2e940ffba9",
+      "sha256": "edcb2a968b58a5cc927d9e9ca88aae991878adc2557fa8536ef6da2e940ffba9",
+      "source": "builtin"
+    },
+    {
+      "name": "inference-serving",
+      "path": "operator/omh-inference-serving/SKILL.md",
+      "rendered_sha256": "8e0e7e37b423a4d9cd011500af8a27c5e8164a25bea3263b15806f88ee610056",
+      "sha256": "8e0e7e37b423a4d9cd011500af8a27c5e8164a25bea3263b15806f88ee610056",
+      "source": "builtin"
+    },
+    {
+      "name": "instinct-ledger",
+      "path": "tracker/omh-instinct-ledger/SKILL.md",
+      "rendered_sha256": "704b99981ad3502e72e2287bafd0c408a7eb68a1679f08e03f6d898ec15b40ad",
+      "sha256": "704b99981ad3502e72e2287bafd0c408a7eb68a1679f08e03f6d898ec15b40ad",
+      "source": "builtin"
+    },
+    {
+      "name": "internal-audit",
+      "path": "reviewer/omh-internal-audit/SKILL.md",
+      "rendered_sha256": "cb1cec878a92fc6c6bce95c7ef438d72fb6c4f3b088ac76e4c8ac430af66e21c",
+      "sha256": "cb1cec878a92fc6c6bce95c7ef438d72fb6c4f3b088ac76e4c8ac430af66e21c",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-action-check",
+      "path": "reviewer/omh-jev-action-check/SKILL.md",
+      "rendered_sha256": "c1ea317ab55f497ddf4738218a33710cf1cadeeb07d3e5665617a4466e780c94",
+      "sha256": "c1ea317ab55f497ddf4738218a33710cf1cadeeb07d3e5665617a4466e780c94",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-ask",
+      "path": "guide/omh-jev-ask/SKILL.md",
+      "rendered_sha256": "fe6f80c39576c02b295fbbe65342a2e158926d0da38c84430d356e7ebf1b8ca6",
+      "sha256": "fe6f80c39576c02b295fbbe65342a2e158926d0da38c84430d356e7ebf1b8ca6",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-done-check",
+      "path": "reviewer/omh-jev-done-check/SKILL.md",
+      "rendered_sha256": "49f9c66459d2c9c744438c3dfb55ceeac9fb66c2f87b7cb1ac71e22b3e9b762c",
+      "sha256": "49f9c66459d2c9c744438c3dfb55ceeac9fb66c2f87b7cb1ac71e22b3e9b762c",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-failure-triage",
+      "path": "reviewer/omh-jev-failure-triage/SKILL.md",
+      "rendered_sha256": "bd574e82dc97fa51a4b59d65b6650c78f855fe53713c1338843579aa234b9b5c",
+      "sha256": "bd574e82dc97fa51a4b59d65b6650c78f855fe53713c1338843579aa234b9b5c",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-review-gate",
+      "path": "reviewer/omh-jev-review-gate/SKILL.md",
+      "rendered_sha256": "3a4dd05f09c1870d99a860a85155d9a273ebf388c2f060c9cf97de5cb66386bd",
+      "sha256": "3a4dd05f09c1870d99a860a85155d9a273ebf388c2f060c9cf97de5cb66386bd",
+      "source": "builtin"
+    },
+    {
+      "name": "jev-route",
+      "path": "guide/omh-jev-route/SKILL.md",
+      "rendered_sha256": "aa5767b537d897029a7e501a30e84039f92a70ffdc96148191a1521e279ec6d4",
+      "sha256": "aa5767b537d897029a7e501a30e84039f92a70ffdc96148191a1521e279ec6d4",
+      "source": "builtin"
+    },
+    {
+      "name": "jit-learn",
+      "path": "researcher/omh-jit-learn/SKILL.md",
+      "rendered_sha256": "d9c7f6eb94ff5e64599cf3db725a2831e0d14a0349cbb4c790d9d9f919d69e4f",
+      "sha256": "d9c7f6eb94ff5e64599cf3db725a2831e0d14a0349cbb4c790d9d9f919d69e4f",
+      "source": "builtin"
+    },
+    {
+      "name": "legal-compliance-review",
+      "path": "reviewer/omh-legal-compliance-review/SKILL.md",
+      "rendered_sha256": "795032029bde98fd4a3cc910a5487f7d5d52f39b2ad1aab94ad17ce59c4f0075",
+      "sha256": "795032029bde98fd4a3cc910a5487f7d5d52f39b2ad1aab94ad17ce59c4f0075",
+      "source": "builtin"
+    },
+    {
+      "name": "lifecycle-growth",
+      "path": "operator/omh-lifecycle-growth/SKILL.md",
+      "rendered_sha256": "fb4d65b8a29917f7c323d15c0a506a45cf21129e786e81b999d52a8259c5743c",
+      "sha256": "fb4d65b8a29917f7c323d15c0a506a45cf21129e786e81b999d52a8259c5743c",
+      "source": "builtin"
+    },
+    {
+      "name": "live-incident-response",
+      "path": "operator/omh-live-incident-response/SKILL.md",
+      "rendered_sha256": "ae5d625adbb0e82fa6429074b1afef22ebfc52b1efe9ba512a0800a396649452",
+      "sha256": "ae5d625adbb0e82fa6429074b1afef22ebfc52b1efe9ba512a0800a396649452",
+      "source": "builtin"
+    },
+    {
+      "name": "live-info-operator",
+      "path": "guide/omh-live-info/SKILL.md",
+      "rendered_sha256": "249ef8bd5e6ad43c173fb1a72797477c8027007204bc17be538360db24fefd66",
+      "sha256": "249ef8bd5e6ad43c173fb1a72797477c8027007204bc17be538360db24fefd66",
+      "source": "builtin"
+    },
+    {
+      "name": "llm-app-dev",
+      "path": "operator/omh-llm-app-dev/SKILL.md",
+      "rendered_sha256": "ea764a9e6bb01ba97c0704d2cc4ecb9dea49a5608b20ebb7faf14d0292e214b8",
+      "sha256": "ea764a9e6bb01ba97c0704d2cc4ecb9dea49a5608b20ebb7faf14d0292e214b8",
+      "source": "builtin"
+    },
+    {
+      "name": "localization-review",
+      "path": "reviewer/omh-localization-review/SKILL.md",
+      "rendered_sha256": "f5ada4c5aa3382bd75d0b558e75f338121bbe1e560f83d275edfc136308f634b",
+      "sha256": "f5ada4c5aa3382bd75d0b558e75f338121bbe1e560f83d275edfc136308f634b",
+      "source": "builtin"
+    },
+    {
+      "name": "long-document-reading",
+      "path": "researcher/omh-long-document-reading/SKILL.md",
+      "rendered_sha256": "e1edb045c312141320c28d1bd6c575c46e976b1a129c376bc561f9f44419cb56",
+      "sha256": "e1edb045c312141320c28d1bd6c575c46e976b1a129c376bc561f9f44419cb56",
+      "source": "builtin"
+    },
+    {
+      "name": "loop",
+      "path": "ultrawork/ulw-loop/SKILL.md",
+      "rendered_sha256": "dbfddeb5be4d323528fad5b26706ab22a3e9441cb1665c0ee99d3c9f776d16bd",
+      "sha256": "dbfddeb5be4d323528fad5b26706ab22a3e9441cb1665c0ee99d3c9f776d16bd",
+      "source": "builtin"
+    },
+    {
+      "name": "maestro",
+      "path": "ultrawork/ulw-maestro/SKILL.md",
+      "rendered_sha256": "7eccc4d6698ab09a93e0b65527f92879df646e3306d9765fbb572b7afe95b406",
+      "sha256": "7eccc4d6698ab09a93e0b65527f92879df646e3306d9765fbb572b7afe95b406",
+      "source": "builtin"
+    },
+    {
+      "name": "market-research",
+      "path": "researcher/omh-market-research/SKILL.md",
+      "rendered_sha256": "29a454ddcdad1098b1f581820f90b21fad4984403e8a584e3fb93618c52b9586",
+      "sha256": "29a454ddcdad1098b1f581820f90b21fad4984403e8a584e3fb93618c52b9586",
+      "source": "builtin"
+    },
+    {
+      "name": "materials-package",
+      "path": "operator/omh-materials-package/SKILL.md",
+      "rendered_sha256": "769cadd7e2501fa80bb5dc2cb8b839837e50e2039a89767b10271f20a64bb49c",
+      "sha256": "769cadd7e2501fa80bb5dc2cb8b839837e50e2039a89767b10271f20a64bb49c",
+      "source": "builtin"
+    },
+    {
+      "name": "media-input-operator",
+      "path": "guide/omh-media-input/SKILL.md",
+      "rendered_sha256": "3ed46d5954fd53b63e09037530e9baa2f0610cb7fdffbb74c06e0960ea2df141",
+      "sha256": "3ed46d5954fd53b63e09037530e9baa2f0610cb7fdffbb74c06e0960ea2df141",
+      "source": "builtin"
+    },
+    {
+      "name": "meeting-brief",
+      "path": "operator/omh-meeting-brief/SKILL.md",
+      "rendered_sha256": "ea4f7ac222b56da3069a6cff5c85233055b33445d382d9d25b296978bc4c388f",
+      "sha256": "ea4f7ac222b56da3069a6cff5c85233055b33445d382d9d25b296978bc4c388f",
+      "source": "builtin"
+    },
+    {
+      "name": "memory-new",
+      "path": "memory-keeper/omh-memory-new/SKILL.md",
+      "rendered_sha256": "bea5325483d2a45b95a527a4261808d909021cd45ed8e9592a473b4793ab61a2",
+      "sha256": "bea5325483d2a45b95a527a4261808d909021cd45ed8e9592a473b4793ab61a2",
+      "source": "builtin"
+    },
+    {
+      "name": "memory-sync",
+      "path": "memory-keeper/omh-memory-sync/SKILL.md",
+      "rendered_sha256": "f0c50c6b6ce05590ebf700b1ba2f448addf0f64688c0625d39a10b65690b4b5a",
+      "sha256": "f0c50c6b6ce05590ebf700b1ba2f448addf0f64688c0625d39a10b65690b4b5a",
+      "source": "builtin"
+    },
+    {
+      "name": "meta-router",
+      "path": "guide/omh-meta-router/SKILL.md",
+      "rendered_sha256": "62b7fb202710575e7fd6a80d891569c6f536dffc6889f9e519d8c7c3355423e9",
+      "sha256": "62b7fb202710575e7fd6a80d891569c6f536dffc6889f9e519d8c7c3355423e9",
+      "source": "builtin"
+    },
+    {
+      "name": "mobile-release",
+      "path": "planner/omh-mobile-release/SKILL.md",
+      "rendered_sha256": "220bd834526ecbaa610bb020a536fb90bafdf26a287595eee129175f3a1d1d6e",
+      "sha256": "220bd834526ecbaa610bb020a536fb90bafdf26a287595eee129175f3a1d1d6e",
+      "source": "builtin"
+    },
+    {
+      "name": "model-finetuning",
+      "path": "planner/omh-model-finetuning/SKILL.md",
+      "rendered_sha256": "88fc17e90d0891a0f345526d1ac5201f35507bb6f7fa13cb950f656b4d4e454b",
+      "sha256": "88fc17e90d0891a0f345526d1ac5201f35507bb6f7fa13cb950f656b4d4e454b",
+      "source": "builtin"
+    },
+    {
+      "name": "model-optimization",
+      "path": "tracker/omh-model-optimization/SKILL.md",
+      "rendered_sha256": "15a2a74d4f2217563265b38bc4b495453994f6b488f69b8e75f810300cdc4411",
+      "sha256": "15a2a74d4f2217563265b38bc4b495453994f6b488f69b8e75f810300cdc4411",
+      "source": "builtin"
+    },
+    {
+      "name": "model-setup",
+      "path": "guide/omh-model-setup/SKILL.md",
+      "rendered_sha256": "a98481e32e5e4983f3128e31f899030d0b6096559c420615e109cc65a9e95ca3",
+      "sha256": "a98481e32e5e4983f3128e31f899030d0b6096559c420615e109cc65a9e95ca3",
+      "source": "builtin"
+    },
+    {
+      "name": "molecular-docking",
+      "path": "operator/omh-molecular-docking/SKILL.md",
+      "rendered_sha256": "ec1d9ef7de25a5167dd92f29289fbdecc519413e600cb1e38716b39e6ea1b241",
+      "sha256": "ec1d9ef7de25a5167dd92f29289fbdecc519413e600cb1e38716b39e6ea1b241",
+      "source": "builtin"
+    },
+    {
+      "name": "morning-brief",
+      "path": "guide/omh-morning-brief/SKILL.md",
+      "rendered_sha256": "72e2eff2a53119ca674e31fba8d31c8f0fb62f8ab3e88f46dcfe41303c3e567e",
+      "sha256": "72e2eff2a53119ca674e31fba8d31c8f0fb62f8ab3e88f46dcfe41303c3e567e",
+      "source": "builtin"
+    },
+    {
+      "name": "native-debugging",
+      "path": "reviewer/omh-native-debugging/SKILL.md",
+      "rendered_sha256": "b1a50ae404994cf077e31831e909bbbc382ba78280a5894aa7ac306c71f55a7f",
+      "sha256": "b1a50ae404994cf077e31831e909bbbc382ba78280a5894aa7ac306c71f55a7f",
+      "source": "builtin"
+    },
+    {
+      "name": "oh-my-hermes",
+      "path": "guide/omh-routing/SKILL.md",
+      "rendered_sha256": "afbc6aca7ebd4d73dfcc2296d2f20342d47f037777d875d4928892dd195d735c",
+      "sha256": "afbc6aca7ebd4d73dfcc2296d2f20342d47f037777d875d4928892dd195d735c",
+      "source": "builtin"
+    },
+    {
+      "name": "operating-rhythm",
+      "path": "operator/omh-operating-rhythm/SKILL.md",
+      "rendered_sha256": "2997e3962a880e9d1fe42bea4ee5836f975bf0a568ac9cbb173f4d7cdedd44de",
+      "sha256": "2997e3962a880e9d1fe42bea4ee5836f975bf0a568ac9cbb173f4d7cdedd44de",
+      "source": "builtin"
+    },
+    {
+      "name": "ops-observability-card",
+      "path": "tracker/omh-ops-observability-card/SKILL.md",
+      "rendered_sha256": "17c70826f02087484c63d969951c3fd542b0f96c66e12f7bd5f9b12481a1dbbc",
+      "sha256": "17c70826f02087484c63d969951c3fd542b0f96c66e12f7bd5f9b12481a1dbbc",
+      "source": "builtin"
+    },
+    {
+      "name": "ops-review",
+      "path": "operator/omh-ops-review/SKILL.md",
+      "rendered_sha256": "1479eb1ca060f5f9d73da578834138338a13f5195d67c2e50406fa759b8907cc",
+      "sha256": "1479eb1ca060f5f9d73da578834138338a13f5195d67c2e50406fa759b8907cc",
+      "source": "builtin"
+    },
+    {
+      "name": "paper-learning",
+      "path": "researcher/omh-paper-learning/SKILL.md",
+      "rendered_sha256": "8d952fbf1187ca065538e6220b649eaa702994856c4ce7ff7b9eb2422c5b5a98",
+      "sha256": "8d952fbf1187ca065538e6220b649eaa702994856c4ce7ff7b9eb2422c5b5a98",
+      "source": "builtin"
+    },
+    {
+      "name": "parallel-tools",
+      "path": "guide/omh-parallel-tools/SKILL.md",
+      "rendered_sha256": "a82b3b4ef42a5eb386b330801302b908d33d559e93d3ee61875aff9ddca497b2",
+      "sha256": "a82b3b4ef42a5eb386b330801302b908d33d559e93d3ee61875aff9ddca497b2",
+      "source": "builtin"
+    },
+    {
+      "name": "people-ops",
+      "path": "operator/omh-people-ops/SKILL.md",
+      "rendered_sha256": "792939655c015a9aea86144911c77c79d1a7cd0137822bfa418a37d9f7cade4e",
+      "sha256": "792939655c015a9aea86144911c77c79d1a7cd0137822bfa418a37d9f7cade4e",
+      "source": "builtin"
+    },
+    {
+      "name": "physical-device-readiness",
+      "path": "operator/omh-physical-device-readiness/SKILL.md",
+      "rendered_sha256": "d0b5a5c77339c9c8fc9dcdd3c80d296003153b520e15ee1d2b166980d62c67fd",
+      "sha256": "d0b5a5c77339c9c8fc9dcdd3c80d296003153b520e15ee1d2b166980d62c67fd",
+      "source": "builtin"
+    },
+    {
+      "name": "plan",
+      "path": "planner/omh-plan/SKILL.md",
+      "rendered_sha256": "4f47bd2c65389d4961e7b14ca3307506e13a2c6f3ac45d04b8441173c7669944",
+      "sha256": "4f47bd2c65389d4961e7b14ca3307506e13a2c6f3ac45d04b8441173c7669944",
+      "source": "builtin"
+    },
+    {
+      "name": "product-brief",
+      "path": "planner/omh-product-brief/SKILL.md",
+      "rendered_sha256": "fea2c26323091249ab1d9769b56701db1308a7b94a5ce19819f95044ab6cf2ae",
+      "sha256": "fea2c26323091249ab1d9769b56701db1308a7b94a5ce19819f95044ab6cf2ae",
+      "source": "builtin"
+    },
+    {
+      "name": "product-discovery-validation",
+      "path": "planner/omh-product-discovery-validation/SKILL.md",
+      "rendered_sha256": "e0e5fdf791e4b7df2a28055f192586ebe30a3db7fa5e7286af0cebfe48d50b1e",
+      "sha256": "e0e5fdf791e4b7df2a28055f192586ebe30a3db7fa5e7286af0cebfe48d50b1e",
+      "source": "builtin"
+    },
+    {
+      "name": "product-docs",
+      "path": "researcher/omh-docs/SKILL.md",
+      "rendered_sha256": "cb45a422bfa6b1d4d43e7ecf217593dbe12716e9c07eb246cf80f40f596cde51",
+      "sha256": "cb45a422bfa6b1d4d43e7ecf217593dbe12716e9c07eb246cf80f40f596cde51",
+      "source": "builtin"
+    },
+    {
+      "name": "production-audit",
+      "path": "reviewer/omh-production-audit/SKILL.md",
+      "rendered_sha256": "d303fbf035984e87c9b861267f71b4f36a361db9540a1977060f6c1514f93591",
+      "sha256": "d303fbf035984e87c9b861267f71b4f36a361db9540a1977060f6c1514f93591",
+      "source": "builtin"
+    },
+    {
+      "name": "prompt-import-readiness",
+      "path": "guide/omh-prompt-import-readiness/SKILL.md",
+      "rendered_sha256": "3374cf5600afb30e3262bf64e6cc080e4061450987e87c4f19a2195ee31eccf5",
+      "sha256": "3374cf5600afb30e3262bf64e6cc080e4061450987e87c4f19a2195ee31eccf5",
+      "source": "builtin"
+    },
+    {
+      "name": "provider-profile-posture",
+      "path": "operator/omh-provider-profile-posture/SKILL.md",
+      "rendered_sha256": "f883952369e0c17d3d7e7ffbc0da6aa95f358d93b317d869e4308e18ced2edf3",
+      "sha256": "f883952369e0c17d3d7e7ffbc0da6aa95f358d93b317d869e4308e18ced2edf3",
+      "source": "builtin"
+    },
+    {
+      "name": "ralplan",
+      "path": "ultrawork/ulw-plan/SKILL.md",
+      "rendered_sha256": "a7369628f5807f8d4ea83ddcfeb57ba38c545430eb36d4855a1205fcb2b9e43f",
+      "sha256": "a7369628f5807f8d4ea83ddcfeb57ba38c545430eb36d4855a1205fcb2b9e43f",
+      "source": "builtin"
+    },
+    {
+      "name": "refactor-plan",
+      "path": "planner/omh-refactor-plan/SKILL.md",
+      "rendered_sha256": "391e8e258b272632c0b1593cfd016d7b047e2414a31eb1106f71dea0fbc06e64",
+      "sha256": "391e8e258b272632c0b1593cfd016d7b047e2414a31eb1106f71dea0fbc06e64",
+      "source": "builtin"
+    },
+    {
+      "name": "relational-db",
+      "path": "planner/omh-relational-db/SKILL.md",
+      "rendered_sha256": "5c90adf30f38154d8013b4a1f66d0870706d6d54307fcda280fd77f89e87d00f",
+      "sha256": "5c90adf30f38154d8013b4a1f66d0870706d6d54307fcda280fd77f89e87d00f",
+      "source": "builtin"
+    },
+    {
+      "name": "release-cut",
+      "path": "planner/omh-release-cut/SKILL.md",
+      "rendered_sha256": "181dd8557bb49f80a818437b0cd5c9135d020ed163353c753ffecd3f5e67f863",
+      "sha256": "181dd8557bb49f80a818437b0cd5c9135d020ed163353c753ffecd3f5e67f863",
+      "source": "builtin"
+    },
+    {
+      "name": "reliability-review",
+      "path": "operator/omh-reliability-review/SKILL.md",
+      "rendered_sha256": "67b1df163d1ef2453bfeb75e4b181cf447539b3c3d61fb2dc73d5c527d1dd86c",
+      "sha256": "67b1df163d1ef2453bfeb75e4b181cf447539b3c3d61fb2dc73d5c527d1dd86c",
+      "source": "builtin"
+    },
+    {
+      "name": "report-package",
+      "path": "operator/omh-report-package/SKILL.md",
+      "rendered_sha256": "d53e756d43dd3b3844eee9ed1e219d7d995cc37f96b2b87998847051610b35ba",
+      "sha256": "d53e756d43dd3b3844eee9ed1e219d7d995cc37f96b2b87998847051610b35ba",
+      "source": "builtin"
+    },
+    {
+      "name": "repro-audit",
+      "path": "researcher/omh-repro-audit/SKILL.md",
+      "rendered_sha256": "20d686f661e15a560130b6fc5cb762046e6399e25c888fa53214cce196f696ce",
+      "sha256": "20d686f661e15a560130b6fc5cb762046e6399e25c888fa53214cce196f696ce",
+      "source": "builtin"
+    },
+    {
+      "name": "research",
+      "path": "ultrawork/ulw-research/SKILL.md",
+      "rendered_sha256": "0c92eec27cffa1cb734e24ffef793a7f52428a06f7ade55a04464cb5bf94dc28",
+      "sha256": "0c92eec27cffa1cb734e24ffef793a7f52428a06f7ade55a04464cb5bf94dc28",
+      "source": "builtin"
+    },
+    {
+      "name": "research-brief",
+      "path": "researcher/omh-research-brief/SKILL.md",
+      "rendered_sha256": "f97b194391e4e5dce319b064738fbff42b0f1cceb2bfa7700fee582cbe66fde8",
+      "sha256": "f97b194391e4e5dce319b064738fbff42b0f1cceb2bfa7700fee582cbe66fde8",
+      "source": "builtin"
+    },
+    {
+      "name": "research-department",
+      "path": "researcher/omh-research-department/SKILL.md",
+      "rendered_sha256": "4dc772c755e169de4fe45510cd379594431a19ec2f173ebfc9c62d9dbb39eb7f",
+      "sha256": "4dc772c755e169de4fe45510cd379594431a19ec2f173ebfc9c62d9dbb39eb7f",
+      "source": "builtin"
+    },
+    {
+      "name": "rules-distill",
+      "path": "memory-keeper/omh-rules-distill/SKILL.md",
+      "rendered_sha256": "3a48cb32fc8788175b8ac2a90d669676dcc7b65bcee546587629cc95dd5b150a",
+      "sha256": "3a48cb32fc8788175b8ac2a90d669676dcc7b65bcee546587629cc95dd5b150a",
+      "source": "builtin"
+    },
+    {
+      "name": "run-efficiency",
+      "path": "tracker/omh-run-efficiency/SKILL.md",
+      "rendered_sha256": "4d974d5c9034266f0286202c48049e0da0d4225e0003ebffeca28fb863b164a6",
+      "sha256": "4d974d5c9034266f0286202c48049e0da0d4225e0003ebffeca28fb863b164a6",
+      "source": "builtin"
+    },
+    {
+      "name": "running-work-board",
+      "path": "tracker/omh-running-work-board/SKILL.md",
+      "rendered_sha256": "af92b5e81987730abc7847ac0ee20a3f6863f76c6095f1875859bca3f6898fc3",
+      "sha256": "af92b5e81987730abc7847ac0ee20a3f6863f76c6095f1875859bca3f6898fc3",
+      "source": "builtin"
+    },
+    {
+      "name": "rust",
+      "path": "planner/omh-rust/SKILL.md",
+      "rendered_sha256": "a5f1bc79a63ec5ea01599c50c98ab3a1ba0a07f47f58953936889ed685a4e9e6",
+      "sha256": "a5f1bc79a63ec5ea01599c50c98ab3a1ba0a07f47f58953936889ed685a4e9e6",
+      "source": "builtin"
+    },
+    {
+      "name": "sales-development",
+      "path": "operator/omh-sales-development/SKILL.md",
+      "rendered_sha256": "86acad9fd4506a02bb5f950b5d2f14b8c92e77ca110c838998c36bfeb232c417",
+      "sha256": "86acad9fd4506a02bb5f950b5d2f14b8c92e77ca110c838998c36bfeb232c417",
+      "source": "builtin"
+    },
+    {
+      "name": "sales-pipeline-review",
+      "path": "operator/omh-sales-pipeline-review/SKILL.md",
+      "rendered_sha256": "34b141589f7d41b94a42af417cc21cd221d91fd3b6964cd0aea2fd9eae64c50b",
+      "sha256": "34b141589f7d41b94a42af417cc21cd221d91fd3b6964cd0aea2fd9eae64c50b",
+      "source": "builtin"
+    },
+    {
+      "name": "security-event-response",
+      "path": "reviewer/omh-security-event-response/SKILL.md",
+      "rendered_sha256": "84ab96e27a842600cf0bf2eba0d5fa5bf1382abcc6d4ef0460252c3cb12de401",
+      "sha256": "84ab96e27a842600cf0bf2eba0d5fa5bf1382abcc6d4ef0460252c3cb12de401",
+      "source": "builtin"
+    },
+    {
+      "name": "security-safety-review",
+      "path": "reviewer/omh-security-safety-review/SKILL.md",
+      "rendered_sha256": "6443d16cb489eba54f73b9d32eac143fa1dc0120cbe2d07ceec448afcd1da873",
+      "sha256": "6443d16cb489eba54f73b9d32eac143fa1dc0120cbe2d07ceec448afcd1da873",
+      "source": "builtin"
+    },
+    {
+      "name": "show-reel",
+      "path": "operator/omh-show-reel/SKILL.md",
+      "rendered_sha256": "4fd7eaa20dc64eb9758272b3adf4faaa65a3dd73ac6397985a4fecc6fa4c2b77",
+      "sha256": "4fd7eaa20dc64eb9758272b3adf4faaa65a3dd73ac6397985a4fecc6fa4c2b77",
+      "source": "builtin"
+    },
+    {
+      "name": "skill",
+      "path": "tracker/omh-skill/SKILL.md",
+      "rendered_sha256": "0377320aecffeea5bc0be7aa74a4e8612ce532c0ac35b98b749273c4b7a5678d",
+      "sha256": "0377320aecffeea5bc0be7aa74a4e8612ce532c0ac35b98b749273c4b7a5678d",
+      "source": "builtin"
+    },
+    {
+      "name": "skill-health",
+      "path": "operator/omh-skill-health/SKILL.md",
+      "rendered_sha256": "ace6b127ac2c8c353cadc53e21e774cb3efded1e5d7a41a71ac300b773757251",
+      "sha256": "ace6b127ac2c8c353cadc53e21e774cb3efded1e5d7a41a71ac300b773757251",
+      "source": "builtin"
+    },
+    {
+      "name": "skill-scout",
+      "path": "operator/omh-skill-scout/SKILL.md",
+      "rendered_sha256": "6fcc1c30117ff034bb086915008c525b0cc28fae62a5ae2f992949257aaf8ee1",
+      "sha256": "6fcc1c30117ff034bb086915008c525b0cc28fae62a5ae2f992949257aaf8ee1",
+      "source": "builtin"
+    },
+    {
+      "name": "source-finder",
+      "path": "researcher/omh-source-finder/SKILL.md",
+      "rendered_sha256": "1aa7bd2465b2bd651ceb3f70c76c994dd93d88f9149d8a856041115d5e74f847",
+      "sha256": "1aa7bd2465b2bd651ceb3f70c76c994dd93d88f9149d8a856041115d5e74f847",
+      "source": "builtin"
+    },
+    {
+      "name": "spend-gate",
+      "path": "guide/omh-spend-gate/SKILL.md",
+      "rendered_sha256": "9cb2a74b68b913e9da6605869697b2cc740f203e8faf5a532ea41137e1430956",
+      "sha256": "9cb2a74b68b913e9da6605869697b2cc740f203e8faf5a532ea41137e1430956",
+      "source": "builtin"
+    },
+    {
+      "name": "sprite-forge",
+      "path": "operator/omh-sprite-forge/SKILL.md",
+      "rendered_sha256": "a9a4e184cacb9ed4682c52b326ef1f097183304484961e1689e601f434faccbd",
+      "sha256": "a9a4e184cacb9ed4682c52b326ef1f097183304484961e1689e601f434faccbd",
+      "source": "builtin"
+    },
+    {
+      "name": "strategy-brief",
+      "path": "operator/omh-decide/SKILL.md",
+      "rendered_sha256": "411d6bcdd9d144c8c701949f3223f069da37060116de62b3bb454a3e7b3763de",
+      "sha256": "411d6bcdd9d144c8c701949f3223f069da37060116de62b3bb454a3e7b3763de",
+      "source": "builtin"
+    },
+    {
+      "name": "support-operations",
+      "path": "operator/omh-support-operations/SKILL.md",
+      "rendered_sha256": "af3234061cf7790b16b4861270293381113ce2d89eb500d7b31326be20089f7e",
+      "sha256": "af3234061cf7790b16b4861270293381113ce2d89eb500d7b31326be20089f7e",
+      "source": "builtin"
+    },
+    {
+      "name": "tech-debt-audit",
+      "path": "reviewer/omh-tech-debt-audit/SKILL.md",
+      "rendered_sha256": "f4025d36ead276d6c50764e3a0f2a9632350f2af2118617202d828726a8d5e47",
+      "sha256": "f4025d36ead276d6c50764e3a0f2a9632350f2af2118617202d828726a8d5e47",
+      "source": "builtin"
+    },
+    {
+      "name": "todo-checklist",
+      "path": "tracker/omh-todo-checklist/SKILL.md",
+      "rendered_sha256": "c2f843f026441e588a949c95433ea1bd8e0d467e921a2afc4ab016d02b98865d",
+      "sha256": "c2f843f026441e588a949c95433ea1bd8e0d467e921a2afc4ab016d02b98865d",
+      "source": "builtin"
+    },
+    {
+      "name": "toolbelt-readiness",
+      "path": "tracker/omh-toolbelt-readiness/SKILL.md",
+      "rendered_sha256": "01ed5fdbd68ac4891cd4e6864a85d022bbe330fbad421322676b223d848330b8",
+      "sha256": "01ed5fdbd68ac4891cd4e6864a85d022bbe330fbad421322676b223d848330b8",
+      "source": "builtin"
+    },
+    {
+      "name": "ultraperf",
+      "path": "ultrawork/ulw-perf/SKILL.md",
+      "rendered_sha256": "97ae6903261750650126ae1b05fef90809a078ee783e44804e3b85b8c7cc45a0",
+      "sha256": "97ae6903261750650126ae1b05fef90809a078ee783e44804e3b85b8c7cc45a0",
+      "source": "builtin"
+    },
+    {
+      "name": "ultraqa",
+      "path": "ultrawork/ulw-qa/SKILL.md",
+      "rendered_sha256": "1844ae8dd849e26894abffa324251743b84cbe5e9737bfdd253e8a9040f64355",
+      "sha256": "1844ae8dd849e26894abffa324251743b84cbe5e9737bfdd253e8a9040f64355",
+      "source": "builtin"
+    },
+    {
+      "name": "ultrawork",
+      "path": "ultrawork/ulw-work/SKILL.md",
+      "rendered_sha256": "c45f00713af1a7f6f6c74744c0f65ce295fa32d5cdc145b65b31fe2c78d91a4a",
+      "sha256": "c45f00713af1a7f6f6c74744c0f65ce295fa32d5cdc145b65b31fe2c78d91a4a",
+      "source": "builtin"
+    },
+    {
+      "name": "verification-gate",
+      "path": "reviewer/omh-verification-gate/SKILL.md",
+      "rendered_sha256": "94562812983e5ea1a7cc9ddfd7252af655097a49de6d51a8b834167cddc19227",
+      "sha256": "94562812983e5ea1a7cc9ddfd7252af655097a49de6d51a8b834167cddc19227",
+      "source": "builtin"
+    },
+    {
+      "name": "visual-qa",
+      "path": "operator/omh-visual-qa/SKILL.md",
+      "rendered_sha256": "c95c5467a23800d892b4dd00629364bb1747e89ad511a3f7e2e5829149a28c88",
+      "sha256": "c95c5467a23800d892b4dd00629364bb1747e89ad511a3f7e2e5829149a28c88",
+      "source": "builtin"
+    },
+    {
+      "name": "voice-operator",
+      "path": "guide/omh-voice-input/SKILL.md",
+      "rendered_sha256": "09c35eb8beb4fc476abd201e2677df14a158d7b5fee313400dc98bdfc88d47bc",
+      "sha256": "09c35eb8beb4fc476abd201e2677df14a158d7b5fee313400dc98bdfc88d47bc",
+      "source": "builtin"
+    },
+    {
+      "name": "web-research",
+      "path": "researcher/omh-web-research/SKILL.md",
+      "rendered_sha256": "38553898d4a51e178629e274065cd707b49d85c87ce50e0080f4c7960161cd02",
+      "sha256": "38553898d4a51e178629e274065cd707b49d85c87ce50e0080f4c7960161cd02",
+      "source": "builtin"
+    },
+    {
+      "name": "websearch-setup",
+      "path": "guide/omh-websearch-setup/SKILL.md",
+      "rendered_sha256": "5c80d807b06144ec1e02456238a23c76421de913ba9fd5305a8f5cd81dba74c6",
+      "sha256": "5c80d807b06144ec1e02456238a23c76421de913ba9fd5305a8f5cd81dba74c6",
+      "source": "builtin"
+    },
+    {
+      "name": "wiki",
+      "path": "memory-keeper/omh-wiki/SKILL.md",
+      "rendered_sha256": "a3bf944e74f2753a8a67b4f5fd9855711174de4a2ca2892394a6fed172d5aa96",
+      "sha256": "a3bf944e74f2753a8a67b4f5fd9855711174de4a2ca2892394a6fed172d5aa96",
+      "source": "builtin"
+    },
+    {
+      "name": "workflow-learning",
+      "path": "tracker/omh-workflow-learning/SKILL.md",
+      "rendered_sha256": "ac21ca622b7eb022c272fc714b64694ffba91d79ae196a1e3cf0743b3293f889",
+      "sha256": "ac21ca622b7eb022c272fc714b64694ffba91d79ae196a1e3cf0743b3293f889",
+      "source": "builtin"
+    },
+    {
+      "name": "workspace-audit",
+      "path": "operator/omh-workspace-audit/SKILL.md",
+      "rendered_sha256": "d2d15e6ddb83c7610f937c8f435eb69d592073b5a74fa519e51d6c2837f2ca93",
+      "sha256": "d2d15e6ddb83c7610f937c8f435eb69d592073b5a74fa519e51d6c2837f2ca93",
+      "source": "builtin"
+    },
+    {
+      "name": "workspace-file-operator",
+      "path": "guide/omh-files/SKILL.md",
+      "rendered_sha256": "eab1e5976e8dfef7beb60fd20cb2f117740bd3e9a0f9fdc06fb07a03e12a7cc6",
+      "sha256": "eab1e5976e8dfef7beb60fd20cb2f117740bd3e9a0f9fdc06fb07a03e12a7cc6",
+      "source": "builtin"
+    }
+  ],
+  "skills_dir": "C:\\Users\\kawasaki\\AppData\\Local\\omh\\generations\\20261103065832911618-edfca25300\\skills",
+  "source": "builtin",
+  "support_files": {
+    "operator/omh-ai-job-search/toolkit/LICENSE.upstream": "accbf0accb87b7b905dd7ee0c7013075f0453637acf354ddae6fc0e4d8282e8e",
+    "operator/omh-ai-job-search/toolkit/README.md": "72bf64a190cefe089455d2fd44e0586c56b642b7f8b6765e69ff51fbb2a2e22c",
+    "operator/omh-ai-job-search/toolkit/examples/synthetic-captures.json": "34a730f3487d32d5acba6148ac13604751835466bd36660f713407f7d3c18aa3",
+    "operator/omh-ai-job-search/toolkit/scripts/job_state.py": "dc4344420ec9f4b4c1c3582b5ec0dcf58dc241ce7d3648f1926cec7d94dc0e4b",
+    "operator/omh-ai-job-search/toolkit/upstream-manifest.json": "c68a628b0fdf353605d47217618660972da8b9034a8c203ec7464609aea72fba",
+    "operator/omh-biomedical-evidence/toolkit/README.md": "52e74efc55e258cf4f559e3791a2676a93ba42930bdf98e0bf90d340dac1522a",
+    "operator/omh-biomedical-evidence/toolkit/scripts/reconcile.py": "59bcd5b2d81b86f2016f3c1394119d6cc45761f4cd7d674c639733a53c4e086e",
+    "operator/omh-biomedical-evidence/toolkit/upstream-manifest.json": "39f37334dfeee05ca4665ca59a63057e2edf91e23745457d908176297f6fd70d",
+    "operator/omh-geospatial-analysis/toolkit/LICENSE.upstream": "06c0ad9b886804a5efc1ee32e73570066103f540e242f7b6f97e4ac5f98912d9",
+    "operator/omh-geospatial-analysis/toolkit/README.md": "fe1530ee6bf2c7534deec126bc83b91cac3c31d340dae7820382938c2120fae3",
+    "operator/omh-geospatial-analysis/toolkit/examples/input.json": "2fcda5f6bc3d34ac0c4df7ae75d7c62d1ebb0597833cf326ff89141a7234b492",
+    "operator/omh-geospatial-analysis/toolkit/examples/overlay.json": "fb712b2ca917bb0ec9431c6dd76b9660113fb48f65b6ca78c17af3a9cb841bd8",
+    "operator/omh-geospatial-analysis/toolkit/scripts/analyze.py": "0212918ae577876d61577f206ccdddc6b19e13a35f2c6deadb0f9776e1839ef4",
+    "operator/omh-geospatial-analysis/toolkit/upstream-manifest.json": "51a8384c2153760b1cc8b255e40f0f42725eefc11b1196911eb96492391b0d79",
+    "operator/omh-molecular-docking/toolkit/NOTICE.md": "d11a59bb58a384ce4f2f70d0295107b98e8773e124b4b0e83b69fa8d609cbb26",
+    "operator/omh-molecular-docking/toolkit/README.md": "8741e1fc2c16c0d3dbb690b9669af84c4e04f177ad9248ae3cfe867b160ab71e",
+    "operator/omh-molecular-docking/toolkit/examples/settings.json": "bc82519f57c91e9fb97f69029b2be1f54be5003700348aa074e9aacfe9c46cc5",
+    "operator/omh-molecular-docking/toolkit/scripts/dock.py": "e27d15c921543849de47023bf21417efa73d94620d54cb158378fab998c65f41",
+    "operator/omh-molecular-docking/toolkit/upstream-manifest.json": "3fc34932681e4f696c33072b3fb2b826cdc8b5d996131eb492a68e9250b4adff",
+    "operator/omh-show-reel/toolkit/LICENSE.upstream": "d20cf1fae030dacd0a5775ca23e0d3e4a4abf677e1a6f0f8ef34603cc20d7f53",
+    "operator/omh-show-reel/toolkit/README.md": "639495d48ce2c1da710f4a0673fd3365cff00f61ce084434eabbc41fa4fc9c43",
+    "operator/omh-show-reel/toolkit/assets/engine/engine.js": "cf01ec5ca06450d8444c05c576a1fb63b9a2c78b725e1f02d4ca3dbe605cd88d",
+    "operator/omh-show-reel/toolkit/assets/engine/fx.js": "822075b41fb8d22dc89393e5a2010f1476b95b45b35d2f30dec92c41f057ca08",
+    "operator/omh-show-reel/toolkit/assets/engine/index.html": "d13322aa5c0931d4f61d7cfb6ea5b697900c01122a2c6ea3902404d505546a36",
+    "operator/omh-show-reel/toolkit/assets/engine/scenes.js": "e09a9691fb968f49218f82ff9eb52d515b115f2f639ad35eb18cf11c38cb78c7",
+    "operator/omh-show-reel/toolkit/assets/sfx_presets.json": "4d6459d9728bfb52a1499bcd3b0f51d3989d98e723f8fbe263557ad9d23355d2",
+    "operator/omh-show-reel/toolkit/examples/README.md": "a8fb7bd0a8795df85f1dbcd34c69e0711c07d383480e042266c9e1c2e4be21a4",
+    "operator/omh-show-reel/toolkit/examples/music-spec.json": "13084461d074139a8e28989308a7759af74ce2631cdd66ae1b5741c18e898f11",
+    "operator/omh-show-reel/toolkit/examples/timing.json": "54075d121ebda403c9be6a9a67f346dcfe693596573ca9bfe30a79818da0d5b9",
+    "operator/omh-show-reel/toolkit/scripts/codex_ref_image.sh": "5256d3f1a5d345c9df3f72aa453f8e66a6bb9874f9f62475f284bde6f04becec",
+    "operator/omh-show-reel/toolkit/scripts/contact_sheet.py": "9464cbfe7de1296c053f7893ef90305bc1fdf32498123f18322e9851977c4533",
+    "operator/omh-show-reel/toolkit/scripts/eleven.py": "85c27191aef2d08135a665d14e0330f30842bbd90d6e1bd89110cd68b8313de7",
+    "operator/omh-show-reel/toolkit/scripts/finish.py": "2b59d88edd2d79649048e1d1c788a6eddf1eb4ee0de1285aacd3cf6a8bf30e24",
+    "operator/omh-show-reel/toolkit/scripts/font-coverage.mjs": "e804c3f6144259720356fde91e7b6c40f2168a839ea0aa95f46f955f85586b7e",
+    "operator/omh-show-reel/toolkit/scripts/mix.py": "481664087918ed94757bb917bfcc794c159531ea292bb136fb0333085145635a",
+    "operator/omh-show-reel/toolkit/scripts/motion_check.py": "7996fd01f8576cea033bc25028c1f53d443749f5f529349f65f719d3a3dcde98",
+    "operator/omh-show-reel/toolkit/scripts/music_tools.py": "3b73212027c6cb51e12f6f59f137174cd3acc8052ebaa85b03b7af905ad8c915",
+    "operator/omh-show-reel/toolkit/scripts/narrate.py": "22124b3f1124c6cbfaede7d8884f4d2e46d60bb19de7eef8242246bb88111916",
+    "operator/omh-show-reel/toolkit/scripts/new_project.py": "63f326fdb4502bc555ab4878f6d3bea898b374b06d6637b3bdb271cba3ff4eee",
+    "operator/omh-show-reel/toolkit/scripts/preflight.py": "195670f4fc7d9652b04213422c79b6c52ebc282f20bae419f9d0e2b9056d9aa8",
+    "operator/omh-show-reel/toolkit/scripts/prep_images.py": "8a5f4edadb37f5b5bf6bc79c87634b535b98d06eb4549c5171b9d1518720ff03",
+    "operator/omh-show-reel/toolkit/scripts/qa_check.py": "218868658a6bc45132b2ed9e8880547742d56b8c80629208fd56cf9a4c761834",
+    "operator/omh-show-reel/toolkit/scripts/render.mjs": "8630c8e6eea113d888dbb9df820cc1fa48e2a25303efbbb8d323a4cb3acc3bec",
+    "operator/omh-show-reel/toolkit/scripts/synth_music.py": "4b277e282d2324ad256a75c79db823781b2611e5d02731eac34921260a0f2929",
+    "operator/omh-show-reel/toolkit/scripts/timeline.py": "595ba11069d52668c04ca17e85c7a5aa1e80b9d0c338aa7c58896ac1ab667313",
+    "operator/omh-show-reel/toolkit/scripts/tools/cutout.swift": "7050d5764aa724691c9982c51dc73fc10cc0b70483c9df77092614b195bda837",
+    "operator/omh-show-reel/toolkit/upstream-manifest.json": "1c065b16d8080872e418fec80e32dd4e81b8c5cf56bf4773e4ed16b57d9b2dff",
+    "operator/omh-sprite-forge/toolkit/LICENSE.upstream": "dc27c232d15db5de494571648f0ddb211165ee70ddb1dd42956a7a42a954700c",
+    "operator/omh-sprite-forge/toolkit/README.md": "b457a995e61f33bd3bc27121139b276c71eb04d237e6eae6fb01c9f2fee3c4a6",
+    "operator/omh-sprite-forge/toolkit/examples/layout.json": "c40e43fbd0ff2d3d36d85265ba8a6b44a3b494d141ba534a2f2e1d9542f0492b",
+    "operator/omh-sprite-forge/toolkit/scripts/forge.py": "615b9bdcc0d42a450d492bb48f1b44748d552ae844f560ef9e3fb535e2902e47",
+    "operator/omh-sprite-forge/toolkit/upstream-manifest.json": "969d918a8e044f9b6fb95335d98fb9ba46342f269973ce5e2f89948c97617fb1"
+  },
+  "version": "4.0.4"
+}

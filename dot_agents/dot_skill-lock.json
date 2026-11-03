@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "skills": {
+    "imozuru": {
+      "source": "MaryCache/imozuru",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/MaryCache/imozuru.git",
+      "skillPath": "skills/imozuru/SKILL.md",
+      "skillFolderHash": "0ad1561162ab3c0e65f6669e8d6b183fdc35bc10",
+      "installedAt": "2026-10-19T08:52:33.648Z",
+      "updatedAt": "2026-10-19T08:52:33.648Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-10-19T08:52:39.255Z",
+      "updatedAt": "2026-10-19T08:52:39.255Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code",
+    "openclaw",
+    "codebuddy",
+    "devin",
+    "hermes-agent",
+    "pi"
+  ]
+}

@@ -1,0 +1,12 @@
+memodir = "~/memolist/memo"
+# memotemplate = ""
+editor = "edit"
+column = 20
+selectcmd = "fzf"
+grepcmd = "grep -nH ${PATTERN} ${FILES}"
+assetsdir = ""
+pluginsdir = "C:/Users/kawasaki/AppData/Roaming/memo/plugins"
+templatedirfile = ""
+templatebodyfile = ""
+
+

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="GLOBAL" XmlFormat="28">
+    <Language Code="ja"/>
+    <ColorTheme Appearance="Default"/>
+    <FailSafeFileCopy Enabled="true"/>
+    <CopyLockedFiles Enabled="false"/>
+    <CopyFilePermissions Enabled="false"/>
+    <FileTimeTolerance Seconds="2"/>
+    <RunWithBackgroundPriority Enabled="false"/>
+    <LockDirectoriesDuringSync Enabled="true"/>
+    <VerifyCopiedFiles Enabled="false"/>
+    <LogFiles MaxAge="30" Format="HTML"/>
+    <ProgressDialog AutoClose="false"/>
+    <OptionalDialogs>
+        <ConfirmStartSync Show="true"/>
+        <ConfirmSaveConfig Show="true"/>
+        <ConfirmSwapSides Show="true"/>
+        <ConfirmCommandMassInvoke Show="true"/>
+        <WarnFolderNotExisting Show="true"/>
+        <WarnFoldersDifferInCase Show="true"/>
+        <WarnUnresolvedConflicts Show="true"/>
+        <WarnNotEnoughDiskSpace Show="true"/>
+        <WarnSignificantDifference Show="true"/>
+        <WarnRecycleBinNotAvailable Show="true"/>
+        <WarnDependentFolderPair Show="true"/>
+        <WarnDependentBaseFolders Show="true"/>
+        <WarnDirectoryLockFailed Show="true"/>
+        <WarnVersioningFolderPartOfSync Show="true"/>
+    </OptionalDialogs>
+    <Sounds>
+        <CompareFinished Path=""/>
+        <SyncFinished Path="%ffs_path%\Resources\bell.wav"/>
+        <AlertPending Path="%ffs_path%\Resources\remind.wav"/>
+    </Sounds>
+    <MainDialog>
+        <SearchPanel CaseSensitive="false"/>
+        <ConfigPanel ScrollPos="0" SyncOverdue="7" SortByColumn="Name" SortAscending="true">
+            <Configurations MaxSize="100" LastSelected="C:\Users\kawasaki\agents\global\photo_backup\nas_mirror_to_history.ffs_batch.ffs_gui">
+                <Item LastSync="0" Result="Stopped" Config="C:\Users\kawasaki\AppData\Roaming\FreeFileSync\LastRun.ffs_gui" Log="" Items="-1" Bytes="-1" TotalTime="0" Errors="-1" Warnings="-1" Color="DDDDDD"/>
+                <Item LastSync="1793316759" Result="Stopped" Config="C:\Users\kawasaki\agents\global\photo_backup\nas_mirror_to_history.ffs_batch.ffs_gui" Log="" Items="-1" Bytes="-1" TotalTime="0" Errors="-1" Warnings="-1"/>
+                <Item LastSync="0" Result="Stopped" Config="C:\Users\kawasaki\agents\global\photo_backup\ssd_ingest_from_pcloud.ffs_batch.ffs_gui" Log="" Items="-1" Bytes="-1" TotalTime="0" Errors="-1" Warnings="-1"/>
+            </Configurations>
+            <LastUsed>
+                <Item>C:\Users\kawasaki\agents\global\photo_backup\nas_mirror_to_history.ffs_batch.ffs_gui</Item>
+            </LastUsed>
+        </ConfigPanel>
+        <OverviewPanel ShowPercentage="true" SortByColumn="Bytes" SortAscending="false"/>
+        <FilePanel ShowIcons="true" IconSize="Small" SashOffset="0" FolderPairsMax="6" PathFormatLeft="Relative" PathFormatRight="Relative">
+            <FolderHistoryLeft LastSelected="E:\SmartPhone\Photos">
+                <Item>E:\SmartPhone\Photos</Item>
+                <Item>P:\SmartPhone</Item>
+            </FolderHistoryLeft>
+            <FolderHistoryRight LastSelected="E:\SmartPhone\Photos">
+                <Item>Z:\SmartPhone\Photos</Item>
+                <Item>E:\SmartPhone\Photos</Item>
+                <Item>E:\SmartPhone</Item>
+            </FolderHistoryRight>
+        </FilePanel>
+        <ManualCopyTo KeepRelativePaths="false" OverwriteIfExists="false">
+            <FolderHistory TargetFolder="" LastSelected=""/>
+        </ManualCopyTo>
+        <DefaultViewFilter Equal="false" Conflict="true" Excluded="false">
+            <Difference LeftOnly="true" RightOnly="true" LeftNewer="true" RightNewer="true" Different="true"/>
+            <Action CreateLeft="true" CreateRight="true" UpdateLeft="true" UpdateRight="true" DeleteLeft="true" DeleteRight="true" DoNothing="true"/>
+        </DefaultViewFilter>
+    </MainDialog>
+    <FolderHistory MaxSize="20"/>
+    <SftpKeyFile LastSelected=""/>
+    <DefaultFilter>
+        <Include>
+            <Item>*</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLE?\</Item>
+            <Item>\Recovery\</Item>
+            <Item>*\thumbs.db</Item>
+        </Exclude>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+        <TimeSpan Type="None">0</TimeSpan>
+    </DefaultFilter>
+    <VersioningFolderHistory LastSelected=""/>
+    <LogFolder>C:\Users\kawasaki\AppData\Roaming\FreeFileSync\Logs</LogFolder>
+    <LogFolderHistory LastSelected=""/>
+    <EmailHistory MaxSize="10"/>
+    <CommandHistory MaxSize="10"/>
+    <ExternalApps>
+        <Item Label="Show in Explorer">explorer.exe /select, %local_path% &amp; exit 0</Item>
+        <Item Label="Open with default application">explorer.exe %local_path% &amp; exit 0</Item>
+        <Item Label="WinMerge">"C:\Program Files\WinMerge\WinMergeU.exe" %local_path% %local_path2%</Item>
+    </ExternalApps>
+    <LastOnlineCheck>1793316572</LastOnlineCheck>
+    <LastOnlineVersion>14.13</LastOnlineVersion>
+    <WelcomeDialogVersion>14.13</WelcomeDialogVersion>
+    <DpiLayouts>
+        <Layout Scale="175%">
+            <MainWindow Width="1575" Height="1050" PosX="3779" PosY="-954" Maximized="false"/>
+            <ProgressDialog Width="0" Height="0" Maximized="false"/>
+            <Panels>layout3|name=CenterPanel;caption=;state=256;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=685;besth=52;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=TopPanel;caption=メインバー;state=2099708;dir=1;layer=2;row=1;pos=0;prop=100000;bestw=922;besth=71;minw=297;minh=71;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=ProgressPanel;caption=;state=2097662;dir=1;layer=2;row=2;pos=0;prop=100000;bestw=999;besth=141;minw=-1;minh=141;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=FoldersPanel;caption=フォルダ ペア;state=2556;dir=1;layer=2;row=3;pos=0;prop=100000;bestw=175;besth=82;minw=175;minh=82;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=SearchPanel;caption=検索;state=2099710;dir=3;layer=2;row=3;pos=0;prop=100000;bestw=667;besth=46;minw=175;minh=46;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=LogPanel;caption=ログ;state=6293502;dir=3;layer=2;row=2;pos=0;prop=100000;bestw=1050;besth=525;minw=175;minh=175;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=ViewFilterPanel;caption=表示設定;state=2099708;dir=3;layer=2;row=1;pos=0;prop=100000;bestw=849;besth=80;minw=140;minh=80;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=ConfigPanel;caption=構成設定;state=2099196;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=304;besth=127;minw=304;minh=100;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|name=OverviewPanel;caption=概要;state=2099196;dir=4;layer=3;row=0;pos=1;prop=100000;bestw=525;besth=-1;minw=175;minh=175;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1;floatw_cli=-1;floath_cli=-1|dock_size(5,0,0)=685|dock_size(1,2,1)=71|dock_size(1,2,3)=82|dock_size(3,2,1)=80|dock_size(4,3,0)=525|</Panels>
+            <ConfigPanel>
+                <Item Type="Name" Visible="true" Width="-187" Stretch="1"/>
+                <Item Type="Last" Visible="true" Width="114" Stretch="0"/>
+                <Item Type="Log" Visible="true" Width="73" Stretch="0"/>
+            </ConfigPanel>
+            <OverviewPanel>
+                <Item Type="Tree" Visible="true" Width="-210" Stretch="1"/>
+                <Item Type="Count" Visible="true" Width="105" Stretch="0"/>
+                <Item Type="Bytes" Visible="true" Width="105" Stretch="0"/>
+            </OverviewPanel>
+            <FilePanelLeft>
+                <Item Type="Path" Visible="true" Width="-140" Stretch="1"/>
+                <Item Type="Ext" Visible="false" Width="105" Stretch="0"/>
+                <Item Type="Date" Visible="false" Width="201" Stretch="0"/>
+                <Item Type="Size" Visible="true" Width="140" Stretch="0"/>
+            </FilePanelLeft>
+            <FilePanelRight>
+                <Item Type="Path" Visible="true" Width="-140" Stretch="1"/>
+                <Item Type="Ext" Visible="false" Width="105" Stretch="0"/>
+                <Item Type="Date" Visible="false" Width="201" Stretch="0"/>
+                <Item Type="Size" Visible="true" Width="140" Stretch="0"/>
+            </FilePanelRight>
+        </Layout>
+    </DpiLayouts>
+</FreeFileSync>

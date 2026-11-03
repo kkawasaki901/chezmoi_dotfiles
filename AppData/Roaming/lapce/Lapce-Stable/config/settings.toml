@@ -1,0 +1,10 @@
+[core]
+modal = true
+
+[editor]
+font-size = 15
+code-glance-font-size = 3
+font-family = """
+
+
+"""

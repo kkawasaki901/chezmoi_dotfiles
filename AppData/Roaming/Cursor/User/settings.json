@@ -1,0 +1,378 @@
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "security.workspace.trust.untrustedFiles": "open",
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "latex-workshop.latex.tools": [
+        {
+            "name": "platex",
+            "command": "platex",
+            "args": [
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "-V 4",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2texmintex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "platex × 2 → dvipdfmx",
+            "tools": [
+                "platex",
+                "platex",
+                "dvipdfmx"
+            ]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": [
+                "jnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ],
+    "markdown.marp.enableHtml": true,
+    "markdown-preview-enhanced.previewTheme": "vue.css",
+    "VSCodeNotion.allowEmbeds": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "C:\\.vimrc",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "kotlin.languageServer.enabled": false,
+    "kotlin.debugAdapter.enabled": false,
+    "vscode-office.openOutline": true,
+    "vsnotes.defaultNotePath": "C:\\Users\\kawasaki\\.vscode\\Zettelkasten",
+    "gitlens.graph.experimental.minimap.enabled": true,
+    "git.openRepositoryInParentFolders": "never",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "sqlite3-editor.telemetry": "allow",
+    "go.toolsManagement.autoUpdate": true,
+    "code-runner.runInTerminal": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "files.encoding": "utf8",
+    "vim.neovimPath": "C:\\Users\\kawasaki\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
+    "vim.neovimConfigPath": "C:\\Users\\kawasaki\\AppData\\Local\\nvim\\init_vim_for_vscode_plugin\\init.vim",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "markdownAutoTOC.maximumHeadingLevel": 6,
+    "markdownAutoTOC.header": false,
+    "markdownAutoTOC.enableAzureDevOpsWikiCompatibility": false,
+    "python.terminal.activateEnvironment": false,
+    "mypy.runUsingActiveInterpreter": true,
+    "workbench.statusBar.visible": false,
+    "vsnotes.tokens": [
+        {
+            "type": "datetime",
+            "token": "{dt}",
+            "format": "YYYY-MM-DD_HH-mm",
+            "description": "Insert formatted datetime."
+        },
+        {
+            "type": "title",
+            "token": "{title}",
+            "description": "Insert note title from input box.",
+            "format": "Untitled"
+        },
+        {
+            "type": "extension",
+            "token": "{ext}",
+            "description": "Insert file vsnotes.",
+            "format": "md"
+        }
+    ],
+    "cmake.configureOnOpen": true,
+    "myExtension.path": "C:\\Users\\kawasaki\\Documents\\ドキュメント\\obsidian\\vault\\01_inbox",
+    "goOutliner.extendExplorerTab": true,
+    "editor.tokenColorCustomizations": {
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        },
+        "textMateRules": [
+            {
+                "scope": "text.html.markdown.journal.task.open.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.marker",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.text",
+                "settings": {}
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.marker",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.text",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.scope",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            }
+        ]
+    },
+    "VSCodeNotion.api": "https://my-worker.kkawasaki901.workers.dev/",
+    "VSCodeNotion.accessToken": "v02%3Auser_token_or_cookies%3A_Z6oVwVjjsJL-3hbA-nnwPBwtugnSYC8ltQCZCMIDzA5mOMTJSWjOMdKlmyFEr-PU0Vwvvv2gi8AvelRmBuAR9ihqjYLF3sOlhDGTaBAHzgXE54kPDzqBunyHCOGXjv2zIsS",
+    "python.createEnvironment.trigger": "off"
+}

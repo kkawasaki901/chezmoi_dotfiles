@@ -1,0 +1,206 @@
+# home_splash — trimmed down from the stock "ta-da!" preset: no hero figlet,
+# no big digital clock. Just a short greeting/date line, then a single-column
+# stack of AI tool quota battery-gauges (manual trigger only — `splashboard --wait`).
+
+# ── Widgets ────────────────────────────────────────────────────────
+
+# Time-of-day greeting: "morning" / "afternoon" / "evening" / "night". Derived from the
+# wall clock, so the splash reads as context-aware rather than a generic "hello".
+[[widget]]
+id = "greeting_prefix"
+fetcher = "basic_static"
+format = "good "
+render = { type = "text_plain", align = "right" }
+
+[[widget]]
+id = "greeting"
+fetcher = "clock_derived"
+render = { type = "text_plain", align = "left" }
+  [widget.options]
+  kind = "time_of_day"
+
+[[widget]]
+id = "date"
+fetcher = "clock"
+format = "%A · %e %B %Y"
+render = { type = "text_plain", align = "center" }
+
+# ── AI tool quota gauges (manual trigger only) ──────────────────────────
+# sync_tool_quotas.py runs on a 5-minute scheduled task, so the store files
+# below are kept fresh automatically — just run `splashboard --wait` to see
+# current values. Each battery gauge is self-labelled (tool + primary window)
+# and prints "remaining %" inline (filled = more quota left); the line below
+# each gauge is the secondary window as plain text.
+#
+# The two hidden (height=0) codex_subscription widgets exist purely to keep
+# splashboard's own cache warm for sync_tool_quotas.py — Codex has no yasb
+# background refresher like the others do, so something has to re-fetch it.
+
+[[widget]]
+id = "claude_gauge"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "gauge_battery", tone = "fill" }
+
+[[widget]]
+id = "codex_gauge"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "gauge_battery", tone = "fill" }
+
+[[widget]]
+id = "cursor_gauge"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "gauge_battery", tone = "fill" }
+
+[[widget]]
+id = "agy_gauge"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "gauge_battery", tone = "fill" }
+
+[[widget]]
+id = "opencode_gauge"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "gauge_battery", tone = "fill" }
+
+[[widget]]
+id = "claude_secondary"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "text_plain", align = "center" }
+
+[[widget]]
+id = "codex_secondary"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "text_plain", align = "center" }
+
+[[widget]]
+id = "cursor_secondary"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "text_plain", align = "center" }
+
+[[widget]]
+id = "agy_secondary"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "text_plain", align = "center" }
+
+[[widget]]
+id = "opencode_secondary"
+fetcher = "basic_read_store"
+file_format = "json"
+render = { type = "text_plain", align = "center" }
+
+[[widget]]
+id = "codex_keepalive_5h"
+fetcher = "codex_subscription"
+render = { type = "status_badge" }
+  [widget.options]
+  window = "5h"
+
+[[widget]]
+id = "codex_keepalive_7d"
+fetcher = "codex_subscription"
+render = { type = "status_badge" }
+  [widget.options]
+  window = "7d"
+
+# ── Layout ─────────────────────────────────────────────────────────
+
+[[row]]
+height = { length = 2 }
+
+[[row]]
+height = { length = 1 }
+flex = "center"
+  [[row.child]]
+  widget = "greeting_prefix"
+  width = { length = 5 }
+  [[row.child]]
+  widget = "greeting"
+  width = { length = 12 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "date"
+
+[[row]]
+height = { length = 2 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "claude_gauge"
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "claude_secondary"
+
+[[row]]
+height = { length = 1 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "codex_gauge"
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "codex_secondary"
+
+[[row]]
+height = { length = 1 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "cursor_gauge"
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "cursor_secondary"
+
+[[row]]
+height = { length = 1 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "agy_gauge"
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "agy_secondary"
+
+[[row]]
+height = { length = 1 }
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "opencode_gauge"
+
+[[row]]
+height = { length = 1 }
+  [[row.child]]
+  widget = "opencode_secondary"
+
+[[row]]
+height = { length = 0 }
+  [[row.child]]
+  widget = "codex_keepalive_5h"
+  [[row.child]]
+  widget = "codex_keepalive_7d"
+
+[[row]]
+height = { length = 2 }

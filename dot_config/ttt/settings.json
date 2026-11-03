@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "theme": "aurora",
+  "editor": {
+    "tabSize": 4,
+    "insertSpaces": true,
+    "wordWrap": true,
+    "lineNumbers": true,
+    "formatOnSave": true,
+    "insertFinalNewline": true,
+    "trimTrailingWhitespace": true,
+    "focusOnOpen": true,
+    "syntaxHighlight": true,
+    "gitGutter": true,
+    "autoDedent": true,
+    "autoIndent": true,
+    "gutterStyle": "extended",
+    "borderStyle": "rounded",
+    "bracketPairColorization": true,
+    "showTrailingNewline": true
+  },
+  "search": {
+    "debounce": 350
+  },
+  "explorer": {
+    "showHidden": true,
+    "showGitIgnored": true
+  },
+  "terminal": {
+    "scrollback": 1000
+  },
+  "lsp": {
+    "servers": {
+      "markdown": {
+        "command": [
+          "marksman",
+          "server"
+        ]
+      }
+    },
+    "saveOnRename": false,
+    "hoverDelay": 500
+  },
+  "autocomplete": {
+    "enabled": true,
+    "autoSuggest": true,
+    "debounce": 150,
+    "signatureHelp": true
+  },
+  "markdown": {
+    "wrapWidth": 80
+  },
+  "plugins": {
+    "enabled": true
+  }
+}

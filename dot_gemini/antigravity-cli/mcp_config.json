@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "basic-memory": {
+      "command": "C:\\Users\\kawasaki\\.local\\bin\\basic-memory.exe",
+      "args": ["mcp"],
+      "env": {}
+    }
+  }
+}

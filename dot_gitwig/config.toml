@@ -1,0 +1,48 @@
+items = ['C:\Users\kawasaki\obsidian\2026_master']
+poll_interval_ms = 100
+fetch_timeout_secs = 30
+max_commits = 500
+graph_max_commits = 1000
+detail_cache_ttl_secs = 30
+tab_ttl_secs = 60
+page_size = 10
+sort_by = "custom"
+sort_reverse = false
+pinned = []
+starred = []
+watch_dirs = []
+theme = "default"
+git_app = "gitui"
+compatibility_mode = true
+resync_on_tab_change = false
+enable_commit_signatures = false
+ssh_strict_host_checking = false
+editor = "micro"
+compact_view = false
+view_mode = "normal"
+tile_columns = 0
+show_grouping = true
+auto_fetch_interval_mins = 10
+show_system_stats = false
+stale_threshold_months = 1
+show_stale_projects = true
+enable_watch_dirs = true
+
+[visits]
+'C:\Users\kawasaki\obsidian\2026_master' = 1786775384
+
+[labels]
+
+[repo_configs]
+
+[scan]
+max_depth = 6
+excludes = [
+    "node_modules",
+    "target",
+    "venv",
+    ".venv",
+    "checkout",
+]
+start_dir = 'C:\Users\kawasaki\'
+git_only = true

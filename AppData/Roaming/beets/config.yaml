@@ -1,0 +1,14 @@
+library: C:\Users\kawasaki\AppData\Roaming\beets\library.db
+
+import:
+  copy: no
+  move: no
+  write: yes
+
+plugins: chroma fetchart embedart
+
+embedart:
+  auto: yes
+
+fetchart:
+  auto: yes

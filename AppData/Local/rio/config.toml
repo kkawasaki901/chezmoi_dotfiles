@@ -1,0 +1,61 @@
+working-dir = 'C:\Users\kawasaki'
+use-fork = false
+
+# Rio: midnight blue, soft transparency, PowerShell 7
+# https://rioterm.com/docs/config
+padding = [14, 18]
+line-height = 1.3
+
+[shell]
+program = 'C:\Users\kawasaki\AppData\Local\Microsoft\WindowsApps\pwsh.exe'
+args = ["-NoLogo"]
+
+[window]
+opacity = 0.72
+opacity-cells = true
+blur = true
+decorations = "Transparent"
+
+[fonts]
+# 本文は Cascadia Mono、アイコンは下の symbol-map で Nerd Font から補う
+family = "Cascadia Mono"
+size = 15
+
+# Nerd Font の私用領域は Mono 版でセル幅 1 に揃えて描画する
+[[fonts.symbol-map]]
+start = "E000"
+end = "F8FF"
+font-family = "Symbols Nerd Font Mono"
+
+[[fonts.symbol-map]]
+start = "F0000"
+end = "FFFFD"
+font-family = "Symbols Nerd Font Mono"
+
+[colors]
+background = '#1a1b26'
+foreground = '#c0caf5'
+cursor = '#bb9af7'
+vi-cursor = '#7dcfff'
+selection-background = '#364a82'
+selection-foreground = '#e0e7ff'
+black = '#15161e'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
+light-black = '#565f89'
+light-red = '#ff899d'
+light-green = '#b0df83'
+light-yellow = '#f0c987'
+light-blue = '#91b4ff'
+light-magenta = '#c8aaff'
+light-cyan = '#a4e4ff'
+light-white = '#e0e7ff'
+tabs = '#787fa8'
+tabs-active = '#bb9af7'
+bar = '#161722'
+split = '#3b4261'

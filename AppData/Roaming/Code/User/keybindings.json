@@ -1,0 +1,19 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入しますauto[]
+[
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-gitProjectManager.openProjectNewWindow"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "nvim-edit.edit-file"
+    },
+]

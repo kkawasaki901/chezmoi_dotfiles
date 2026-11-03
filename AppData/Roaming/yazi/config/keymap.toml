@@ -1,0 +1,406 @@
+[[mgr.prepend_keymap]]
+on = [ "z" ]
+run = "plugin fzf-preview"
+desc = "Jump via fzf with right preview" 
+
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "j" ]
+run  = 'shell --block -- pwsh -NoProfile -ExecutionPolicy Bypass -File "%APPDATA%\yazi\config\scripts\junction-from-clipboard.ps1"'
+desc = "Create junction from clipboard"
+for  = "windows"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "m" ]
+run  = 'cd ~/obsidian/2026_master'
+desc = "cd memoDir"
+for  = "windows"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "R" ]
+run  = 'cd ~/AppData/Roaming'
+desc = "cd Roaming"
+for  = "windows"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a" ]
+run  = "shell --block -- chezmoi add %h"
+desc = "chezmoi add hovered file"
+
+[[mgr.prepend_keymap]]
+on = "\\"
+run = "plugin split-tabs spl_toggle"
+desc = "Split-tabs: toggle split tabs mode"
+
+[[mgr.prepend_keymap]]
+on = "<Tab>"
+run = "plugin split-tabs spl_switch_tab"
+desc = "Split-tabs: switch to the other pane"
+
+[[mgr.prepend_keymap]]
+on = "P"
+run = "plugin split-tabs spl_preview"
+desc = "Split-tabs: toggle preview pane" 
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "t" ]
+for  = "windows"
+run  = 'shell --block -- pwsh.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "C:\Users\kawasaki\AppData\Roaming\yazi\config\scripts\open-daily-note.ps1"'
+desc = "Open today's daily note"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "k" ]
+for  = "windows"
+run  = 'shell --block -- micro "~/obsidian/2026_master/keep-in-mind.md"'
+desc = "Open keep-in-mind"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "u", "a" ]
+run  = "plugin bookmarks -- save"
+desc = "Bookmarks: save current position"
+
+[[mgr.prepend_keymap]]
+on   = [ "u", "g" ]
+run  = "plugin bookmarks -- jump"
+desc = "Bookmarks: jump to a bookmark"
+
+[[mgr.prepend_keymap]]
+on   = [ "u", "d" ]
+run  = "plugin bookmarks -- delete"
+desc = "Bookmarks: delete a bookmark"
+
+[[mgr.prepend_keymap]]
+on   = [ "u", "D" ]
+run  = "plugin bookmarks -- delete_all"
+desc = "Bookmarks: delete all bookmarks"
+
+
+[[mgr.prepend_keymap]]
+on   = [ "T", "T" ]
+run  = "tab_create --current"
+desc = "tab new here"
+
+[[mgr.prepend_keymap]]
+on   = [ "J", "J" ]
+run  = 'shell --block -- pwsh.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%APPDATA%\yazi\config\scripts\git-checkpoint.ps1"'
+desc = "git add and commit"
+
+[[mgr.prepend_keymap]]
+on   = [ "J", "j" ]
+run  = 'shell --block -- pwsh.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%APPDATA%\yazi\config\scripts\git-push.ps1"'
+desc = "git push"
+
+# Tagging plugin
+
+#─────────────────────────── TOGGLE TAG(S) ────────────────────────────
+# Toggle a tag (press any tag key)
+# A tag hint window will show up.
+# Simply press any tag key to toggle that tag for selected or hovered files/folders.
+[[mgr.prepend_keymap]]
+on = [ "t", "t", "k" ]
+run = "plugin simple-tag -- toggle-tag"
+desc = "Toggle a tag (press any key)"
+
+# Fast Toggle tag(s) with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+# NOTE: For key=" (Quotation mark), then use key=\" (Backslash + Quotation mark) instead.
+[[mgr.prepend_keymap]]
+on = [ "`" ]
+run = "plugin simple-tag -- toggle-tag --keys=!1q"
+desc = "Toggle tag(s) with fixed tag key(s) = (! and 1 and q)"
+[[mgr.prepend_keymap]]
+on = [ "`" ]
+run = "plugin simple-tag -- toggle-tag --keys=*"
+desc = "Toggle tag with fixed tag key = *"
+[[mgr.prepend_keymap]]
+on = [ "`" ]
+run = "plugin simple-tag -- toggle-tag --key=*"
+desc = "Toggle tag with fixed tag key = *"
+
+# Toggle tag(s) with value from input box.
+# A tag hint window and an input box will show up.
+# Simply input tag key(s) to toggle that tags for selected or hovered files/folders.
+# Do not input any delimiter.
+[[mgr.prepend_keymap]]
+on = [ "t", "t", "i" ]
+run = "plugin simple-tag -- toggle-tag --input"
+desc = "Toggle tag(s) with value from (input box)"
+
+
+#─────────────────────────── ADD TAG(S) ───────────────────────────────
+# Add a tag (press any tag key)
+# A tag hint window will show up.
+# Simply press any new tag key to add to selected or hovered files/folders.
+[[mgr.prepend_keymap]]
+on = [ "t", "a", "k" ]
+run = "plugin simple-tag -- add-tag"
+desc = "Add a tag (press any key)"
+
+# Fast Add tag(s) with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+[[mgr.prepend_keymap]]
+on = [ "t", "a", "f" ]
+run = "plugin simple-tag -- add-tag --keys=!1q"
+desc = "Add tag(s) with fixed tag keys = (! and 1 and q)"
+[[mgr.prepend_keymap]]
+on = [ "t", "a", "f" ]
+run = "plugin simple-tag -- add-tag --keys=*"
+desc = "Add tag with fixed tag key = *"
+[[mgr.prepend_keymap]]
+on = [ "t", "a", "f" ]
+run = "plugin simple-tag -- add-tag --key=*"
+desc = "Add tag with fixed tag key = *"
+
+# Add tag(s) with value from input box.
+# A tag hint window and an input box will show up.
+# Simply input new tag key(s) to add to selected or hovered files/folders.
+# Do not input any delimiter.
+[[mgr.prepend_keymap]]
+on = [ "t", "a", "i" ]
+run = "plugin simple-tag -- add-tag --input"
+desc = "Add tag(s) with value from (input box)"
+
+
+#─────────────────────────── REMOVE/DELETE TAG(S) ───────────────────────────
+# Remove a tag (press any tag key)
+# A tag hint window will show up.
+# Simply press any tag key to be removed from selected or hovered files/folders.
+[[mgr.prepend_keymap]]
+on = [ "t", "d", "k" ]
+run = "plugin simple-tag -- remove-tag"
+desc = "Remove a tag (press any key)"
+
+# Fast Remove tag(s) with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+[[mgr.prepend_keymap]]
+on = [ "t", "d", "f" ]
+run = "plugin simple-tag -- remove-tag --keys=!1q"
+desc = "Remove tag(s) with fixed tag keys = (! and 1 and q)"
+[[mgr.prepend_keymap]]
+on = [ "t", "d", "f" ]
+run = "plugin simple-tag -- remove-tag --keys=*"
+desc = "Remove tag with fixed tag key = *"
+[[mgr.prepend_keymap]]
+on = [ "t", "d", "f" ]
+run = "plugin simple-tag -- remove-tag --key=*"
+desc = "Remove tag with fixed tag key = *"
+
+# Remove tag(s) with value from input box.
+# A tag hint window and an input box will show up.
+# Simply input tag key(s) to be removed from selected or hovered files/folders.
+# Do not input any delimiter.
+[[mgr.prepend_keymap]]
+on = [ "t", "d", "i" ]
+run = "plugin simple-tag -- remove-tag --input"
+desc = "Remove tag(s) with value from (input box)"
+
+
+#─────────────────────────── REPLACE ALL OLD TAG(S) WITH NEW TAG(S) ───────────────────────────
+# Replace a tag (press any tag key)
+# A tag hint window will show up.
+# Simply press any new tag key for selected or hovered files/folders.
+[[mgr.prepend_keymap]]
+on = [ "t", "r", "k" ]
+run = "plugin simple-tag -- replace-tag"
+desc = "Replace with a new tag (press any key)"
+
+# Fast Replace tag(s) with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+[[mgr.prepend_keymap]]
+on = [ "t", "r", "f" ]
+run = "plugin simple-tag -- replace-tag --keys=!1q"
+desc = "Replace tag(s) with fixed tag keys = (! and 1 and q)"
+[[mgr.prepend_keymap]]
+on = [ "t", "r", "f" ]
+run = "plugin simple-tag -- replace-tag --keys=*"
+desc = "Replace tag(s) with fixed tag key = *"
+[[mgr.prepend_keymap]]
+on = [ "t", "r", "f" ]
+run = "plugin simple-tag -- replace-tag --key=*"
+desc = "Replace tag(s) with fixed tag key = *"
+
+# Replace tag(s) with value from input box.
+# A tag hint window and an input box will show up.
+# Simply input new tag key(s) for selected or hovered files/folders.
+# Do not input any delimiter.
+[[mgr.prepend_keymap]]
+on = [ "t", "r", "i" ]
+run = "plugin simple-tag -- replace-tag --input"
+desc = "Replace tag(s) with value from (input box)"
+
+
+#─────────────────────────── EDIT TAG(S) ───────────────────────────
+# Edit a tag for hovered or selected files/folders
+# An input box with current tagged keys and a tag hint window will show up for each hovered or selected files/folders.
+# Simply edit tag key(s) for selected or hovered files/folders.
+# If you cancel any input box, all changes will be discarded.
+[[mgr.prepend_keymap]]
+on = [ "t", "e" ]
+run = "plugin simple-tag -- edit-tag "
+desc = "Edit tag(s) (input box)"
+
+
+#  ───────────────────────────── CLEAR TAG(S) ─────────────────────────────
+# Clear all tags from selected or hovered files/folders
+[[mgr.prepend_keymap]]
+on = [ "t", "c" ]
+run = "plugin simple-tag -- clear"
+desc = "Clear all tags from selected or hovered files"
+
+
+#  ───────────────────────────── CHANGE UI ─────────────────────────────
+# Switch tag indicator between icon > tag key > hidden.
+# Useful when u don't remember the tag key
+[[mgr.prepend_keymap]]
+on = [ "t", "u", "s" ]
+run = "plugin simple-tag -- toggle-ui"
+desc = "Toggle tag indicator (icon > tag key > hidden)"
+
+# Fixed tag indicator mode = hidden (Available modes: hidden|icon|text)
+[[mgr.prepend_keymap]]
+on = [ "t", "u", "h" ]
+run = "plugin simple-tag -- toggle-ui --mode=hidden"
+desc = "Hide all tags indicator"
+
+#  ─────────────────────── FILTER FILES/FOLDERS BY TAGS: ───────────────────────
+# Available filter modes:
+# and → Show files that contain all selected tags. (Default if mode isn't specified).
+# or → Show files that contain at least one of the selected tags.
+
+# nand → ("not and") Hide files that contain all selected tags. Inverse of the "and" mode.
+# nor → ("not or") Hide files that contain at least one of the selected tags. Inverse of the "or" mode.
+# not → Show only files that have no tags.
+
+# NOTE: Not available in vfs mode (Remote Virtual Filesystem)
+
+# Filter files/folders by tags
+
+# Filter files/folders by a tag (press any tag key)
+# A tag hint window will show up.
+# Simply press any new tag key to filter files/folders containing that tag in current directory.
+[[mgr.prepend_keymap]]
+on = [ "t", "f" ]
+run = "plugin simple-tag -- filter"
+desc = "Filter files/folders by a tag (press any key)"
+
+# Fast Filter files/folders with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+# [[mgr.prepend_keymap]]
+# on = [ "t", "f" ]
+# run = "plugin simple-tag -- filter --key=!"
+# desc = "Filter files/folders by a fixed tag = !"
+# [[mgr.prepend_keymap]]
+# on = [ "t", "f" ]
+# run = "plugin simple-tag -- filter --keys=!1q"
+# desc = "Filter files/folders by multiple fixed tag(s) (! and 1 and q)"
+
+# Filter files/folders by tag(s) with value from input box.
+# An input box and a tag hint window will show up.
+# Simply input tag key(s) to filter files/folders of current directory.
+# Do not input any delimiter.
+# For example: Input value or --keys=!1q -> filter any files/folders contain all of these tags (! and 1 and q) in current directory.
+[[mgr.prepend_keymap]]
+on = [ "t", "F" ]
+run = "plugin simple-tag -- filter --input"
+desc = "Filter files/folders by tag(s) (input box)"
+
+# Filter files/folders by tag(s) with --mode=or.
+# --mode=or -> Input value or --keys = !1q -> filter any files/folders contain at least one of these tags (! or 1 or q)
+[[mgr.prepend_keymap]]
+on = [ "t", "F" ]
+run = "plugin simple-tag -- filter --input --mode=or"
+desc = "Filter files/folders by contain tags (input box)"
+# [[mgr.prepend_keymap]]
+# on = [ "t", "F" ]
+# run = "plugin simple-tag -- filter --keys=!1q --mode=or"
+# desc = "Filter files/folders by multiple fixed tag(s) (! or 1 or q)"
+
+
+#  ─────────────────────── VISUAL SELECT FILES/FOLDERS BY TAGS: ───────────────────────
+
+# Available selection actions:
+# replace → Replaces the current selection list with files/folders that have the selected tag.
+# unite → Combines the currently selected files/folders with those that have the selected tag.
+# intersect → Keeps only the files/folders that are present in both the current selection and the tagged items.
+# subtract → Deselects files/folders that have the selected tag from the current selection.
+# exclude → Combines the currently selected files/folders with the tagged items, then deselects any overlapping items between the current selection and the tagged items.
+# undo → Undos or redoes the last selection action.
+
+# which_key will popup to choose selection mode
+# And a tag hint window will show up.
+# Simply select a selection mode then press any tag key to select files/folders
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "t" ]
+run = "plugin simple-tag -- toggle-select"
+desc = "Select a selection action then select a tag key (toggle-select)"
+# fixed tag(s). --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q. They are the same.
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "t" ]
+run = "plugin simple-tag -- toggle-select --keys=!1q"
+desc = ""
+
+# Run action on files/folders by a tag.
+# A tag hint window will show up.
+# Simply press any tag key to do the following action:
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "r" ]
+run = "plugin simple-tag -- replace-select"
+desc = "replace-select"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "u" ]
+run = "plugin simple-tag -- unite-select"
+desc = "unite-select"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "i" ]
+run = "plugin simple-tag -- intersect-select"
+desc = "intersect-select"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "s" ]
+run = "plugin simple-tag -- subtract-select"
+desc = "subtract-select"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "e" ]
+run = "plugin simple-tag -- exclude-select"
+desc = "exclude-select"
+# Run action on files/folders by fixed tag(s). --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q. They are the same.
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "e" ]
+run = "plugin simple-tag -- replace-select --keys=!1q"
+desc = "Replaces the current selection list with files/folders that have (! and 1 and q) tag(s)"
+
+# Run action on files/folders by tag(s) with value from input box.
+# A tag hint window will show up.
+# Simply input tag key(s) to do the following action:
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "R" ]
+run = "plugin simple-tag -- replace-select --input"
+desc = "replace-select --input"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "U" ]
+run = "plugin simple-tag -- unite-select --input"
+desc = "unite-select --input"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "I" ]
+run = "plugin simple-tag -- intersect-select --input"
+desc = "intersect-select --input"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "S" ]
+run = "plugin simple-tag -- subtract-select --input"
+desc = "subtract-select --input"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "E" ]
+run = "plugin simple-tag -- exclude-select --input"
+desc = "exclude-select --input"
+# it also support --mode=or when using with --input or --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "R" ]
+run = "plugin simple-tag -- replace-select --input --mode=or"
+desc = "replace-select --input --mode=or"
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "R" ]
+run = "plugin simple-tag -- replace-select --keys=!1q --mode=or"
+desc = "replace-select --keys=!1q --mode=or"
+
+# Undo/Redo selection (only works after using 5 modes above)
+[[mgr.prepend_keymap]]
+on = [ "t", "s", "u" ]
+run = "plugin simple-tag -- undo-select"
+desc = "Undos/Redos the last selection action"

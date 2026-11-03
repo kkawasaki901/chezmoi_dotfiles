@@ -1,0 +1,24 @@
+{
+  "accountScopes": {},
+  "activeAccountScope": "bdff79982694fb32aea3b68cb52a56d13a8dbcc1ef89febbb0852acf04e79a64",
+  "autoUpdateWhenIdle": true,
+  "botColorInChatEnabled": false,
+  "egressTunnelCommittedBoxUrls": [
+    "wss://fa00f0d9004aa041e670-pod-5zdqo54lvvesxal3jix6wxedxy-8790.us12.cursorvm.com/"
+  ],
+  "egressTunnelEnabled": false,
+  "hasSeenOnboarding": true,
+  "hasSeenOnboardingAccountScope": "bdff79982694fb32aea3b68cb52a56d13a8dbcc1ef89febbb0852acf04e79a64",
+  "localEgressAllowed": true,
+  "localToolPermission": "ask",
+  "macMailSendEnabled": false,
+  "mcpBoxServers": [],
+  "mcpCustomInstructions": {},
+  "mcpCustomInstructionsByServerId": {},
+  "mcpDisabledToolsByServerId": {},
+  "messagesEnabled": false,
+  "messagesReadEnabled": true,
+  "messagesSendEnabled": true,
+  "version": 1,
+  "webauthnProxyEnabled": true
+}

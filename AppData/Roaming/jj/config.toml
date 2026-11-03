@@ -1,0 +1,8 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "kohei kawasaki"
+email = "kkawasaki901@gmail.com"
+
+[gg.ui]
+recent-workspaces = ['C:\Users\kawasaki\obsidian\2026_master']

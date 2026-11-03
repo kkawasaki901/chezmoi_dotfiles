@@ -1,0 +1,12 @@
+confirmation=yes
+data.location=C:\Users\kawasaki\obsidian\2026_master\.obsidian\plugins\taskwarrior-go\data
+default.command=next
+regex=on
+report.active.filter=status:pending +ACTIVE
+report.completed.filter=status:completed
+report.list.filter=status:pending
+report.ls.filter=status:pending
+report.next.filter=status:pending
+report.overdue.filter=status:pending +OVERDUE
+report.waiting.filter=status:waiting
+search.case.sensitive=yes

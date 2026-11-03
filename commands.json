@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Git 関連",
+    "description": "Gitリポジトリ操作用の便利なコマンド群",
+    "children": [
+      {
+        "name": "ステータス確認 (status)",
+        "description": "現在のワーキングツリーの変更状況を表示します。",
+        "command": "git status"
+      },
+      {
+        "name": "最近のコミット履歴 (log)",
+        "description": "コミット履歴を1行ずつ綺麗に表示します。(直近10件)",
+        "command": "git log --oneline -n 10"
+      },
+      {
+        "name": "ブランチ一覧 (branch)",
+        "description": "ローカルおよびリモートのすべてのブランチを表示します。",
+        "command": "git branch -a"
+      }
+    ]
+  },
+  {
+    "name": "Docker 関連",
+    "description": "Dockerコンテナ・イメージの管理コマンド群",
+    "children": [
+      {
+        "name": "起動中のコンテナ一覧 (ps)",
+        "description": "現在実行されているDockerコンテナの一覧を表示します。",
+        "command": "docker ps"
+      },
+      {
+        "name": "すべてのコンテナ一覧 (ps -a)",
+        "description": "停止しているものも含め、すべてのコンテナを表示します。",
+        "command": "docker ps -a"
+      },
+      {
+        "name": "未使用リソースの削除 (prune)",
+        "description": "停止したコンテナ、未使用のネットワーク、未参照のイメージをクリーンアップします。",
+        "command": "docker system prune -f"
+      }
+    ]
+  },
+  {
+    "name": "システム情報",
+    "description": "OSやマシンのステータスを確認します。",
+    "children": [
+      {
+        "name": "IPアドレスの確認 (ipconfig)",
+        "description": "ネットワークアダプターのIPアドレス設定などを表示します。",
+        "command": "ipconfig"
+      },
+      {
+        "name": "ルーティングテーブルの表示 (route print)",
+        "description": "IPv4 ルーティングテーブルを表示します。",
+        "command": "route print"
+      }
+    ]
+  },
+  {
+    "name": "挨拶する (Hello World)",
+    "description": "シンプルなエコーコマンドを実行します。",
+    "command": "echo Hello, World!"
+  }
+]

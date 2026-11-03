@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\kawasaki\\.cursor\\herdr-agent-state.ps1\" session"
+      }
+    ]
+  },
+  "version": 1
+}

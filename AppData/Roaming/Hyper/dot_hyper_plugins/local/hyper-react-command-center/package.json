@@ -1,0 +1,7 @@
+{
+  "name": "hyper-react-command-center",
+  "version": "0.1.0",
+  "description": "Feature-rich React HUD and command center for Hyper",
+  "main": "index.js",
+  "license": "MIT"
+}

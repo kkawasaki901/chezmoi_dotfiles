@@ -1,0 +1,27 @@
+# nt configuration example
+#
+# Uncomment only the settings you want to override.
+# When every setting remains commented out, nt uses its built-in defaults.
+
+# Notes root directory
+# root = "~/notes"
+
+# External commands are TOML arrays.
+# Keep the executable and each argument as separate elements.
+editor = ["hx"]
+searcher = ["rg"]
+selector = ["fzf"]
+file_manager = ["yazi"]
+
+# Calendar commands
+# calendar_tui = ["ikhal"]
+# calendar_agenda = ["khal", "list", "today", "7d"]
+
+# Optional template files
+# daily_template = "~/.config/nt/templates/daily.md"
+# project_template = "~/.config/nt/templates/project.md"
+# inbox_template = "~/.config/nt/templates/inbox.md"
+
+# Go time-layout strings used for generated filenames
+# scratch_filename_format = "20060102-150405.md"
+# inbox_filename_format = "20060102-150405.md"

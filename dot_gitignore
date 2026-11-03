@@ -1,0 +1,161 @@
+# ==============================================================================
+# AI CLI / IDE ドットファイル管理用 .gitignore（ホワイトリスト方式）
+# 対象: .codex / .claude / .gemini / .agy / .cursor
+#
+# 方針:
+# 1. 各ディレクトリ配下をいったんすべて除外（/*）し、設定・ルール・スキル・フック等の
+#    管理対象ファイルのみを `!` でホワイトリスト許可する。
+# 2. ファイル末尾の「共通の機密情報・キャッシュ強制除外ルール」により、許可された
+#    サブフォルダ（skills/ 等）の内部であっても .env や秘密鍵・node_modules 等を確実に除外する。
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. OpenAI Codex (.codex)
+# 除外される主な機密・実行データ:
+#   auth.json, cap_sid, installation_id, .sandbox-secrets/, *.sqlite*,
+#   sessions/, archived_sessions/, memories*, history.jsonl, log/, cache/, tmp/
+# ------------------------------------------------------------------------------
+/.codex/*
+
+!/.codex/AGENTS.md
+!/.codex/config.toml
+!/.codex/hooks.json
+!/.codex/herdr-agent-state.ps1
+!/.codex/rules/
+!/.codex/skills/
+# Codex内蔵システムスキルの自動生成キャッシュは除外
+/.codex/skills/.system/
+
+# ------------------------------------------------------------------------------
+# 2. Claude Code (.claude)
+# 除外される主な機密・実行データ:
+#   .credentials.json, .credentials.lock, daemon/*.key, sessions/, projects/,
+#   file-history/, paste-cache/, shell-snapshots/, history.jsonl, state/, cache/, backups/
+# ------------------------------------------------------------------------------
+/.claude/*
+
+!/.claude/CLAUDE.md
+!/.claude/settings.json
+!/.claude/package.json
+!/.claude/bun.lock
+!/.claude/hooks/
+!/.claude/skills/
+!/.claude/LIFEOS/
+# LIFEOS 内の実行時メモリ・観測ログは除外
+/.claude/LIFEOS/MEMORY/
+
+# プラグインはインストール一覧設定のみ追跡し、キャッシュ・実体ストアは除外
+!/.claude/plugins/
+/.claude/plugins/*
+!/.claude/plugins/installed_plugins.json
+!/.claude/plugins/known_marketplaces.json
+
+# ------------------------------------------------------------------------------
+# 3. Google Gemini CLI / Antigravity (.gemini)
+# 除外される主な機密・実行データ:
+#   oauth_creds.json, google_accounts.json, installation_id,
+#   antigravity-browser-profile/, antigravity*/brain/, antigravity*/conversations/,
+#   antigravity*/implicit/, antigravity*/knowledge/, *.pb, *.pbtxt, history.jsonl, cli.log
+# ------------------------------------------------------------------------------
+/.gemini/*
+
+!/.gemini/GEMINI.md
+!/.gemini/settings.json
+
+# グローバル設定 (~/.gemini/config)
+!/.gemini/config/
+/.gemini/config/.migrated
+/.gemini/config/projects/
+/.gemini/config/sidecars/
+
+# Antigravity CLI カスタマイズ設定・スキル (~/.gemini/antigravity-cli)
+!/.gemini/antigravity-cli/
+/.gemini/antigravity-cli/*
+!/.gemini/antigravity-cli/settings.json
+!/.gemini/antigravity-cli/keybindings.json
+!/.gemini/antigravity-cli/mcp_config.json
+!/.gemini/antigravity-cli/skills/
+
+# ------------------------------------------------------------------------------
+# 4. Antigravity (.agy)
+# ※現在実体は ~/.gemini/antigravity* および ~/.agents に配置されていますが、
+#   将来 ~/.agy が作成された場合も安全に管理できるよう定義しています。
+# ------------------------------------------------------------------------------
+/.agy/*
+
+!/.agy/GEMINI.md
+!/.agy/AGENTS.md
+!/.agy/settings.json
+!/.agy/keybindings.json
+!/.agy/mcp_config.json
+!/.agy/hooks.json
+!/.agy/config/
+!/.agy/skills/
+!/.agy/rules/
+!/.agy/hooks/
+
+# ------------------------------------------------------------------------------
+# 5. Cursor (.cursor)
+# 除外される主な機密・実行データ:
+#   cli-config.json (Google OAuth ID・メールアドレス等のauthInfoを含む),
+#   agent-cli-state.json, statsig-cache.json, chats/, ai-tracking/, projects/, plugins/cache/
+# ------------------------------------------------------------------------------
+/.cursor/*
+
+!/.cursor/hooks.json
+!/.cursor/herdr-agent-state.ps1
+!/.cursor/skills-cursor/
+# ※ cli-config.json も追跡したい場合は下のコメントアウトを外してください（authInfoにメールアドレス等が含まれます）
+# !/.cursor/cli-config.json
+
+# ==============================================================================
+# 共通の機密情報・APIキー・巨大データの強制除外（ホワイトリスト内のサブフォルダにも適用）
+# ※ .gitignore では末尾のルールが優先されるため、skills/ 等の中にあっても必ず除外されます
+# ==============================================================================
+
+# 環境変数・APIキー定義ファイル
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+!**/.env.template
+
+# 認証トークン・OAuth資格情報・アカウント情報
+**/auth.json
+**/.credentials.json
+**/.credentials.lock
+**/credentials.json
+**/oauth_creds.json
+**/google_accounts.json
+**/client_secret*.json
+**/.sandbox-secrets/
+**/cap_sid
+**/installation_id
+
+# 秘密鍵・証明書ファイル
+**/*.key
+**/*.pem
+**/*.pfx
+**/*.p12
+**/*.keychain
+**/id_rsa*
+**/id_ed25519*
+
+# 会話履歴・DB・ログ・一時ファイル・バックアップ
+**/history.jsonl
+**/session_index.jsonl*
+**/*.sqlite
+**/*.sqlite-*
+**/*.db
+**/*.db-*
+**/*.log
+**/*.bak
+**/*backup*
+**/.DS_Store
+**/Thumbs.db
+
+# サブフォルダ（skills/ や LIFEOS/ 等）内の依存パッケージ・キャッシュ
+**/node_modules/
+**/.venv/
+**/venv/
+**/__pycache__/

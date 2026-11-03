@@ -1,0 +1,15 @@
+{
+  "theme": "system",
+  "lang": "system",
+  "tray": "panel",
+  "currency": "usd",
+  "otel": {},
+  "updateEvery": 360,
+  "trayUsageEvery": 3,
+  "textSize": 110,
+  "window": [
+    660,
+    600
+  ],
+  "windowMaximised": true
+}

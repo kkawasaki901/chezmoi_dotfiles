@@ -1,0 +1,268 @@
+{
+  "NewFolder": {
+    "Key": 57,
+    "Modifiers": 6,
+    "Target": 0,
+    "Description": "新しいフォルダを作成する",
+    "Enabled": true
+  },
+  "NewFile": {
+    "Key": 57,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "テンプレートから新しいファイルを作成",
+    "Enabled": true
+  },
+  "NewNote": {
+    "Key": 57,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "現在のフォルダにメモを作成する",
+    "Enabled": true
+  },
+  "NewWindow": {
+    "Key": 57,
+    "Modifiers": 7,
+    "Target": 0,
+    "Description": "新規または保存したウィンドウを開く",
+    "Enabled": true
+  },
+  "CopyFiles": {
+    "Key": 46,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "クリップボードにコピー",
+    "Enabled": true
+  },
+  "CutFiles": {
+    "Key": 67,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "クリップボードに切り取り",
+    "Enabled": true
+  },
+  "PasteFiles": {
+    "Key": 65,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "クリップボードから貼り付け",
+    "Enabled": true
+  },
+  "CopyToOtherBrowser": {
+    "Key": 46,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "反対側のブラウザペインにコピーする",
+    "Enabled": true
+  },
+  "MoveToOtherBrowser": {
+    "Key": 56,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "反対側のブラウザペインに移動する",
+    "Enabled": true
+  },
+  "CopyPath": {
+    "Key": 46,
+    "Modifiers": 6,
+    "Target": 0,
+    "Description": "パスをクリップボードにコピー",
+    "Enabled": true
+  },
+  "CopyFolderPath": {
+    "Key": 46,
+    "Modifiers": 7,
+    "Target": 0,
+    "Description": "Copy full path of the currently opened folder to Windows Clipboard",
+    "Enabled": true
+  },
+  "Rename": {
+    "Key": 91,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "名前の変更",
+    "Enabled": true
+  },
+  "Duplicate": {
+    "Key": 47,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "Duplicate file",
+    "Enabled": true
+  },
+  "FileProperties": {
+    "Key": 52,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "Open Windows file info/properties dialog",
+    "Enabled": true
+  },
+  "DebugInfo": {
+    "Key": 52,
+    "Modifiers": 7,
+    "Target": 0,
+    "Description": "Dialog for debugging purposes",
+    "Enabled": true
+  },
+  "OpenContextMenu": {
+    "Key": 99,
+    "Modifiers": 4,
+    "Target": 0,
+    "Description": "Open shell context menu",
+    "Enabled": true
+  },
+  "Tag": {
+    "Key": 63,
+    "Modifiers": 3,
+    "Target": 0,
+    "Description": "Tag selected items",
+    "Enabled": true
+  },
+  "QuickTag": {
+    "Key": 84,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "Quick tag/untag selection",
+    "Enabled": true
+  },
+  "NewTab": {
+    "Key": 63,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "新しいタブを作成",
+    "Enabled": true
+  },
+  "NewTabFromClipboard": {
+    "Key": 63,
+    "Modifiers": 7,
+    "Target": 0,
+    "Description": "Create New Tab from a Clipboard path",
+    "Enabled": true
+  },
+  "CloseTab": {
+    "Key": 66,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "Close current tab",
+    "Enabled": true
+  },
+  "CloseOtherTabs": {
+    "Key": 66,
+    "Modifiers": 7,
+    "Target": 0,
+    "Description": "Close other tabs",
+    "Enabled": true
+  },
+  "UndoCloseTab": {
+    "Key": 63,
+    "Modifiers": 6,
+    "Target": 0,
+    "Description": "Reopen closed tab",
+    "Enabled": true
+  },
+  "EditPath": {
+    "Key": 47,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "パスの編集",
+    "Enabled": true
+  },
+  "ToggleColumns": {
+    "Key": 146,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "カラムのナビゲーションを切り替える",
+    "Enabled": true
+  },
+  "ToggleNotifications": {
+    "Key": 146,
+    "Modifiers": 4,
+    "Target": 0,
+    "Description": "Open/Close notifications panel. Usually Shift + key under Esc",
+    "Enabled": true
+  },
+  "ToggleSidebarPane": {
+    "Key": 62,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "Toggle visibility of sidebar pane",
+    "Enabled": true
+  },
+  "TogglePreviewPane": {
+    "Key": 59,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "Toggle visibility of preview pane (not preview window)",
+    "Enabled": true
+  },
+  "OpenParentDir": {
+    "Key": 2,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "1つ上のフォルダへ",
+    "Enabled": true
+  },
+  "Refresh": {
+    "Key": 94,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "内容の更新 (この種類のフォルダーは自動更新できません)",
+    "Enabled": true
+  },
+  "MoveWindowToCenter": {
+    "Key": 90,
+    "Modifiers": 4,
+    "Target": 0,
+    "Description": "Move window to center of screen",
+    "Enabled": true
+  },
+  "OpenCMD": {
+    "Key": 99,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "Open default command line shell",
+    "Enabled": true
+  },
+  "OpenCMDElevated": {
+    "Key": 99,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "Open default command line shell elevated",
+    "Enabled": true
+  },
+  "ToggleHidden": {
+    "Key": 51,
+    "Modifiers": 2,
+    "Target": 0,
+    "Description": "Toggle hidden files",
+    "Enabled": true
+  },
+  "Search": {
+    "Key": 92,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "Open search window",
+    "Enabled": true
+  },
+  "FocusOtherBrowser": {
+    "Key": 49,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "Switch focus between browsers",
+    "Enabled": true
+  },
+  "ToggleSecondBrowser": {
+    "Key": 50,
+    "Modifiers": 1,
+    "Target": 0,
+    "Description": "Toggle visibility of second browser pane",
+    "Enabled": true
+  },
+  "PreviewCommand": {
+    "Key": 95,
+    "Modifiers": 0,
+    "Target": 0,
+    "Description": "Preview file in a separate window",
+    "Enabled": true
+  }
+}

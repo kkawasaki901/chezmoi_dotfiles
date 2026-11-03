@@ -1,0 +1,39 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "65559fd"
+hash = "2ea53389fd01aa5ff48f34bceb5cedbc"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "b9598e6"
+hash = "67ebef7cfaaf677d746909c55bdf8554"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "c5d4b48"
+hash = "e6e98d12b1648d1894c2b560d85eeaa7"
+
+[[plugin.deps]]
+use = "boydaihungst/save-clipboard-to-file"
+rev = "084113f"
+hash = "eee76f9c3c2bf1d23c3d3b5e830527c7"
+
+[[plugin.deps]]
+use = "dedukun/bookmarks"
+rev = "9ef1254"
+hash = "92fbb5483657fa7976cdf4e0104e18e0"
+
+[[plugin.deps]]
+use = "terrakok/split-tabs"
+rev = "da25bc0"
+hash = "108ee3048ba3a0d1ba77df7c41bcb7fe"
+
+[[plugin.deps]]
+use = "boydaihungst/simple-tag"
+rev = "1ec0bc0"
+hash = "b04468b0f19afde80477cfe8f65b8f7b"
+
+[[flavor.deps]]
+use = "956MB/vscode-dark-modern"
+rev = "ab7190e"
+hash = "8769cd9dff67fa4d75e56d6bd8c6caff"

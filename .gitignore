@@ -1,0 +1,158 @@
+# ==============================================================================
+# chezmoi リポジトリ用 .gitignore
+# APIキー・認証トークン・秘密鍵・ログ・キャッシュ・DB・セッション履歴等を除外
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. APIキー・認証情報・トークン・秘密鍵（機密情報）
+# ------------------------------------------------------------------------------
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+!**/.env.template
+**/dot_env
+**/dot_env.*
+
+# 各種認証・OAuth・アカウント・プロバイダファイル
+**/auth.json
+**/mcp-auth.json
+**/providers.json
+**/*credentials*
+**/dot_credentials*
+**/oauth*
+**/google_accounts.json
+**/client_secret*
+**/secrets.enc
+**/logins.json*
+**/caller-keys.json*
+**/cap_sid
+**/installation_id
+**/dot_sandbox-secrets/
+**/.sandbox-secrets/
+
+# 個別ツールのトークン・認証設定
+dot_clasprc.json
+.clasprc.json
+dot_emulator_console_auth_token
+.emulator_console_auth_token
+dot_cursor/cli-config.json
+.cursor/cli-config.json
+dot_vimgolf/config.yaml
+.vimgolf/config.yaml
+dot_config/joplin-desktop/settings.json
+.config/joplin-desktop/settings.json
+dot_config/yasb/presets/
+.config/yasb/presets/
+dot_config/yasb/yasb-themes/
+.config/yasb/yasb-themes/
+AppData/Roaming/rclone/rclone.conf
+AppData/Roaming/GitHub CLI/hosts.yml
+AppData/Roaming/spotify-cli/config.toml
+AppData/Roaming/himalaya/*.dpapi
+AppData/Roaming/suno-cli/**/auth.json
+AppData/Local/gcalcli/**/oauth*
+**/*.dpapi
+
+# 秘密鍵・証明書
+**/*.key
+**/*.pem
+**/*.pfx
+**/*.p12
+**/*.keychain
+**/id_rsa*
+**/id_ed25519*
+**/PaceKeyChain
+
+# ------------------------------------------------------------------------------
+# 2. ログ・データベース・キャッシュ・一時ファイル・バックアップ
+# ------------------------------------------------------------------------------
+**/*.log
+**/*.log.*
+**/empty_*.log
+**/logs/
+**/log/
+
+# キャッシュディレクトリ・ブラウザ/Electronキャッシュ
+**/cache/
+**/Cache/
+**/caches/
+**/GPUCache/
+**/Code Cache/
+**/Dawn*Cache/
+**/blob_storage/
+**/Session Storage/
+**/Local Storage/
+**/WebStorage/
+**/IndexedDB/
+**/Crashpad/
+**/sentry/
+**/webview-cache/
+**/fastembed_cache/
+**/commit_cache/
+**/plugins/cache/
+**/statsig-cache.json
+**/*_usage_cache.json*
+**/version-cache.json
+**/version_cache.json
+**/models_cache.json
+
+# データベース・ローカルストア
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite-*
+**/*.db
+**/*.db-*
+**/*.boltdb
+**/*.Bolt
+**/store/
+**/ai-tracking/
+
+# セッション・チャット履歴・コマンド履歴
+**/sessions/
+**/archived_sessions/
+**/session-snapshots/
+**/session-state/
+**/session-env/
+**/chats/
+**/history.txt
+**/history.jsonl
+**/history.data
+**/prompt_history.json
+**/session_index.jsonl*
+**/clink_history*
+**/gnuplot_history
+**/dot_lesshst
+**/dot_node_repl_history
+**/dot_viminfo
+
+# 一時ファイル・ロックファイル・PID/ソケット・バックアップ
+**/*.tmp
+**/*.temp
+**/*.bak
+**/*.bak-*
+**/*.bak.*
+**/*.backup
+**/*backup*
+**/*.stackdump
+**/*.pid
+**/*.sid
+**/*.sock
+**/*.lock
+!**/lazy-lock.json
+!**/dot_skill-lock.json
+!**/.skill-lock.json
+
+# サブフォルダ内の依存パッケージ・ビルドキャッシュ・入れ子Gitリポジトリ
+**/node_modules/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/dot_git/
+**/.git/
+AutoHotkey/Win11-Virtual-Desktop-Switch/*.dll
+
+# OS生成ファイル
+**/.DS_Store
+**/Thumbs.db
+**/IconCache.db

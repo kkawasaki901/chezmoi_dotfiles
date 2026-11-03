@@ -1,0 +1,36 @@
+[user]
+	email = kkawasaki901@gmail.com
+	name = kkawasaki901
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[credential]
+	helper = manager-core
+[core]
+	autocrlf = false
+	editor = nvim
+	quotePath = false
+    pager = delta
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+[merge]
+	tool = vimdiff
+    conflictStyle = zdiff3
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+[fetch]
+	auto = true
+[push]
+	default = simple

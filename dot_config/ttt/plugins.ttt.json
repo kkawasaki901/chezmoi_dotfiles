@@ -1,0 +1,85 @@
+[
+  {
+    "name": "lsp-markdown",
+    "displayName": "Markdown Language Server",
+    "repo": "https://github.com/eugenioenko/ttt-plugins",
+    "path": "lsp-markdown",
+    "version": "0.1.0",
+    "enabled": true,
+    "permissions": {
+      "network.http": false,
+      "settings": true,
+      "settings_keys": [
+        "lsp.*"
+      ]
+    }
+  },
+  {
+    "name": "markdown-preview",
+    "displayName": "Markdown Preview",
+    "repo": "https://github.com/eugenioenko/ttt-plugins",
+    "path": "markdown-preview",
+    "version": "0.1.0",
+    "enabled": true,
+    "permissions": {
+      "panel.editor": true,
+      "commands": true,
+      "editor.read": true,
+      "network.http": false
+    }
+  },
+  {
+    "name": "cheat-sheet",
+    "displayName": "Cheat Sheet",
+    "repo": "https://github.com/eugenioenko/ttt-plugins",
+    "path": "cheat-sheet",
+    "version": "0.1.0",
+    "enabled": true,
+    "permissions": {
+      "panel.sidebar": true,
+      "panel.editor": true,
+      "commands": true,
+      "keybindings": true,
+      "network.http": true
+    }
+  },
+  {
+    "name": "notepad",
+    "displayName": "Notepad",
+    "repo": "https://github.com/eugenioenko/ttt-plugins",
+    "path": "notepad",
+    "version": "0.1.0",
+    "enabled": true,
+    "permissions": {
+      "panel.bottom": true,
+      "commands": true,
+      "fs.read": true,
+      "fs.write": true,
+      "system.exec": [
+        "date",
+        "pwd"
+      ],
+      "network.http": false
+    }
+  },
+  {
+    "name": "vim",
+    "displayName": "Vim Mode",
+    "repo": "https://github.com/eugenioenko/ttt-vim",
+    "version": "0.1.0",
+    "enabled": true,
+    "permissions": {
+      "commands": true,
+      "keybindings": true,
+      "editor.read": true,
+      "editor.write": true,
+      "fs.write": true,
+      "network.http": false,
+      "settings": true,
+      "settings_keys": [
+        "vim.enabled",
+        "vim.clipboard"
+      ]
+    }
+  }
+]

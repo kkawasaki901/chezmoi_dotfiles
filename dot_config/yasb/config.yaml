@@ -1,0 +1,336 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+
+bars:
+  primary-bar:
+    enabled: true
+    screens:
+      - "*"
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: true
+      duration: 300
+    blur_effect:
+      enabled: true
+      dark_mode: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "98%"
+      height: 76
+    padding:
+      top: 8
+      left: 12
+      bottom: 0
+      right: 12
+    widgets:
+      left:
+        - "launchpad"
+        - "todo"
+        - "clock"
+      center:
+        - "claude_usage"
+        - "codex_usage"
+        - "agy_usage"
+        - "opencode_go_usage"
+        - "cursor_usage"
+      right:
+        - "wallpapers"
+        - "wallpaper_tools"
+
+widgets:
+  # 2. アプリグリッドランチャー (GUIでアプリのピン留め・グループ管理が可能)
+  launchpad:
+    type: "yasb.launchpad.LaunchpadWidget"
+    options:
+      label: "<span>\udb85\udcde</span>"
+      search_placeholder: "登録アプリを検索 (Ctrl+N で新規追加)..."
+      app_icon_size: 48
+      group_apps: true
+      window:
+        fullscreen: false
+        width: 860
+        height: 560
+        overlay_block: true
+      window_animation:
+        fade_in_duration: 200
+        fade_out_duration: 150
+      window_style:
+        enable_blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+      shortcuts:
+        add_app: "Ctrl+N"
+        edit_app: "F2"
+        show_context_menu: "Shift+F10"
+        delete_app: "Delete"
+      callbacks:
+        on_left: "toggle_launchpad"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+
+  # 4. 日付と時刻 (2026-10-29 23:22 形式)
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\uf017</span> {%Y-%m-%d(%a)<br><big><big>%H:%M</big></big>}"
+      label_alt: "<span>\uf017</span> {%Y-%m-%d %H:%M:%S (%a)}"
+      update_interval: 1000
+      tooltip: true
+      locale: "Japanese_Japan.932"
+      timezones: []
+      calendar:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        country_code: "JP"
+        show_holidays: true
+        holiday_color: "#f38ba8"
+        show_week_numbers: true
+        show_years: true
+        extended: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "next_timezone"
+        on_right: "toggle_label"
+
+  # 5. Todo管理モジュール
+  todo:
+    type: "yasb.todo.TodoWidget"
+    options:
+      label: "<span>\uf4a0</span>"
+      label_alt: "<span>\uf4a0</span>"
+      data_path: "C:\\Users\\kawasaki\\.config\\yasb\\todo.json"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      icons:
+        add: "+ New Task"
+        edit: "Edit"
+        delete: "Delete"
+        date: "\ue641"
+        category: "\uf412"
+        checked: "\udb80\udd34"
+        unchecked: "\udb80\udd30"
+        sort: "\ueab4"
+        no_tasks: "\uf4a0"
+      categories:
+        default:
+          label: "General"
+        urgent:
+          label: "Urgent"
+        important:
+          label: "Important"
+        today:
+          label: "Today"
+        soon:
+          label: "Soon"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  # 6. Claude Usage 残量・使用率表示
+  claude_usage:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "claude-usage-widget"
+      label: "<span>\udb81\udea1</span> Claude\n5h: {data[five_remaining]}%   7d: {data[seven_remaining]}%"
+      label_placeholder: "<span>\udb81\udea1</span> Claude ..."
+      tooltip_label: "{data[tooltip]}"
+      label_alt: "<span>\udb81\udea1</span> Claude 5h:{data[five_remaining]}% ({data[five_reset]}) · 7d:{data[seven_remaining]}%"
+      tooltip: true
+      exec_options:
+        run_cmd: "powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\claude-usage.ps1"
+        run_once: false
+        run_interval: 300000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+      callbacks:
+        on_left: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\claude-quota-launch.vbs"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  # 7. Codex Usage 残量表示
+  codex_usage:
+    type: "yasb.codex_usage.CodexUsageWidget"
+    options:
+      label: "<span>\uf121</span> Codex\n5h: {primary_remaining}%   {secondary_window}: {secondary_remaining}%"
+      label_alt: "<span>\uf121</span> Codex 5h:{primary_remaining}% · {secondary_window}:{secondary_remaining}%"
+      codex_path: "C:\\Users\\kawasaki\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe"
+      update_interval: 180
+      cache_ttl: 120
+      timeout: 15.0
+      tooltip: true
+      show_token_usage: true
+      stale_icon: "⚠"
+      progress_bar:
+        enabled: true
+        progress_type: "circular"
+        size: 16
+        thickness: 2
+        color: "#a6e3a1"
+        background_color: "#313244"
+        position: "left"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_overview: true
+        show_models: true
+        show_activity: true
+        show_resets: true
+        show_details: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "refresh"
+        on_right: "toggle_label"
+
+  # 8. Google Antigravity (agy) Usage 残量表示
+  agy_usage:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "agy-usage-widget"
+      label: "<span>\udb82\udee0</span> {data[wide]}"
+      label_alt: "<span>\udb82\udee0</span> {data[alt]}"
+      label_placeholder: "<span>\udb82\udee0</span> AGY ..."
+      tooltip: true
+      tooltip_label: "{data[tooltip]}"
+      exec_options:
+        run_cmd: "powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\agy-usage.ps1"
+        run_once: false
+        run_interval: 300000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+      callbacks:
+        on_left: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\agy-quota-launch.vbs"
+        on_middle: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\agy-quota-launch.vbs"
+        on_right: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\agy-quota-launch.vbs"
+
+  opencode_go_usage:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "opencode-go-usage-widget"
+      label: "<span>\uf120</span> {data[text]}"
+      label_alt: "<span>\uf120</span> {data[alt]}"
+      label_placeholder: "<span>\uf120</span> Go ..."
+      tooltip: true
+      tooltip_label: "{data[tooltip]}"
+      exec_options:
+        run_cmd: "powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\opencode-go-usage.ps1"
+        run_once: false
+        run_interval: 300000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+      callbacks:
+        on_left: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\opencode-go-quota-launch.vbs"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  # Cursor Usage 残量表示
+  cursor_usage:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "cursor-usage-widget"
+      label: "{data[text]}"
+      label_alt: "{data[alt]}"
+      label_placeholder: "Cursor ..."
+      tooltip: true
+      tooltip_label: "{data[tooltip]}"
+      exec_options:
+        run_cmd: "powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\cursor-usage.ps1"
+        run_once: false
+        run_interval: 300000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+      callbacks:
+        on_left: "exec wscript.exe C:\\Users\\kawasaki\\.config\\yasb\\scripts\\cursor-quota-launch.vbs"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  # 9. 壁紙モジュール (定期自動変更 + ギャラリー手動選択 + 右クリック即時変更)
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb83\udc8d</span>"
+      image_path:
+        - "C:\\Users\\kawasaki\\Pictures\\Wallpapers"
+      change_automatically: true
+      update_interval: 1800
+      tooltip: true
+      engine:
+        enabled: true
+        animation: "circle"
+      gallery:
+        type: "default"
+        image_width: 240
+        orientation: "landscape"
+        image_corner_radius: 10
+        accent_color: "auto"
+      callbacks:
+        on_left: "toggle_gallery"
+        on_middle: "change_wallpaper"
+        on_right: "change_wallpaper"
+
+  # 9. オンライン壁紙取得 ＆ 壁紙フォルダ選択モジュール
+  # - 定期実行 (1時間ごと) に Bing UHD / Wallhaven / Unsplash から壁紙を自動補充
+  # - 左クリック: ネットから新しい壁紙を即時取得＆適用
+  # - 中クリック: 壁紙保存フォルダをエクスプローラーで開く
+  # - 右クリック: フォルダ選択ダイアログを開き、選択したフォルダを wallpapers モジュールに登録
+  wallpaper_tools:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "wallpaper-tools-widget"
+      label: "<span>\uf0ed</span>"
+      label_alt: "<span>\uf0ed</span>"
+      label_placeholder: "<span>\uf0ed</span>"
+      tooltip: true
+      tooltip_label: "{data[tooltip]}"
+      exec_options:
+        run_cmd: "powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\wallpaper-helper.ps1 -Action fetch"
+        run_once: false
+        run_interval: 3600000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+      callbacks:
+        on_left: "exec powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\wallpaper-helper.ps1 -Action apply-online"
+        on_middle: "exec explorer.exe C:\\Users\\kawasaki\\Pictures\\Wallpapers"
+        on_right: "exec powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.config\\yasb\\scripts\\wallpaper-helper.ps1 -Action select-folder"

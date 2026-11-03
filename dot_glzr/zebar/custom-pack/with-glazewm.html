@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Custom styles. -->
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+    <!-- Allows React to be run buildless via "text/babel" script below. -->
+    <script
+      src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"
+      integrity="sha256-aS0B0wnsaDByLfE16h4MDCP1fQFccysd1YWOcV+gbBo="
+      crossorigin="anonymous"
+    ></script>
+  <!-- zebar-theme-studio:start -->
+<link id="studio-base-theme" rel="stylesheet" href="./studio-theme.css">
+<style id="studio-live-theme"></style>
+<script>
+(() => {
+  let previous = null;
+  async function refreshTheme() {
+    try {
+      const response = await fetch('./studio-theme.css?t=' + Date.now(), {cache:'no-store'});
+      if (!response.ok) return;
+      const css = await response.text();
+      if (css !== previous) {
+        document.getElementById('studio-live-theme').textContent = css;
+        document.getElementById('studio-base-theme').disabled = true;
+        previous = css;
+      }
+    } catch (error) { console.debug('Theme refresh unavailable', error); }
+  }
+  refreshTheme(); setInterval(refreshTheme, 2000);
+})();
+</script>
+<!-- zebar-theme-studio:end -->
+</head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-type="module">
+      import React, {
+        useState,
+        useEffect,
+      } from 'https://esm.sh/react@18?dev';
+      import { createRoot } from 'https://esm.sh/react-dom@18/client?dev';
+      import * as zebar from 'https://esm.sh/zebar@3.0';
+      import { LogicalSize } from 'https://esm.sh/@tauri-apps/api@2/dpi';
+
+      const providers = zebar.createProviderGroup({
+        glazewm: { type: 'glazewm' },
+        date: { type: 'date', formatting: 'EEE d MMM t' },
+        weather: { type: 'weather' },
+      });
+
+      createRoot(document.getElementById('root')).render(<App />);
+
+      function formatDate(dateString) {
+        if (!dateString) return '';
+        const d = new Date();
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+        const day = weekdays[d.getDay()];
+        const hh = String(d.getHours()).padStart(2, '0');
+        const min = String(d.getMinutes()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd} ${day} ${hh}:${min}`;
+      }
+
+      function nerdFontClass(icon) {
+        const value = String(icon || '').trim();
+        return /^nf-[a-zA-Z0-9_-]+$/.test(value) ? value : 'nf-md-application';
+      }
+
+      function formatDateOnly() {
+        const d = new Date();
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+        return `${yyyy}-${mm}-${dd} ${weekdays[d.getDay()]}`;
+      }
+
+      function getCalendarDays() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth();
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+        const days = [];
+        for (let i = 0; i < firstDay; i++) {
+          days.push({ day: '', isCurrent: false });
+        }
+        for (let date = 1; date <= lastDate; date++) {
+          days.push({
+            day: date,
+            isCurrent: true,
+            isToday: date === now.getDate()
+          });
+        }
+        return days;
+      }
+
+      function App() {
+        const [output, setOutput] = useState(providers.outputMap);
+        const [timeStr, setTimeStr] = useState('');
+        const [showPopup, setShowPopup] = useState(false);
+        const [showWeatherPopup, setShowWeatherPopup] = useState(false);
+        const [showApps, setShowApps] = useState(false);
+        const [apps, setApps] = useState([]);
+
+        async function showTimePopup() {
+          if (showApps) return;
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 390));
+          await widgetWindow.setZOrder('top_most');
+          setShowPopup(true);
+        }
+
+        async function hideTimePopup() {
+          if (showApps) return;
+          setShowPopup(false);
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 54));
+          await widgetWindow.setZOrder('normal');
+        }
+
+        async function showWeatherDetails() {
+          if (showApps) return;
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 210));
+          await widgetWindow.setZOrder('top_most');
+          setShowWeatherPopup(true);
+        }
+
+        async function hideWeatherDetails() {
+          if (showApps) return;
+          setShowWeatherPopup(false);
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 54));
+          await widgetWindow.setZOrder('normal');
+        }
+
+        async function openAppsPopup() {
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 700));
+          await widgetWindow.setZOrder('top_most');
+          setShowApps(true);
+        }
+
+        async function closeAppsPopup() {
+          setShowApps(false);
+          const widgetWindow = zebar.currentWidget().window;
+          await widgetWindow.tauri.setSize(new LogicalSize(window.innerWidth, 54));
+          await widgetWindow.setZOrder('normal');
+        }
+
+        function launchApp(index) {
+          output.glazewm?.runCommand(
+            'shell-exec pwsh -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\Users\\kawasaki\\.glzr\\zebar\\custom-pack\\Launch-App.ps1 -Index ' + index,
+          );
+          closeAppsPopup();
+        }
+
+        useEffect(() => {
+          fetch('./apps.json', { cache: 'no-store' })
+            .then(res => res.json())
+            .then(data => setApps(data.map((app, index) => ({ ...app, index }))))
+            .catch(() => setApps([]));
+        }, []);
+
+        useEffect(() => {
+          if (!showApps) return;
+          const onKey = e => { if (e.key === 'Escape') closeAppsPopup(); };
+          window.addEventListener('keydown', onKey);
+          return () => window.removeEventListener('keydown', onKey);
+        }, [showApps]);
+
+        function getAppGroups() {
+          const groups = [];
+          const byName = new Map();
+          for (const app of apps) {
+            const groupName = (app.group || '').trim() || 'よく使う';
+            if (!byName.has(groupName)) {
+              const entry = { name: groupName, apps: [] };
+              byName.set(groupName, entry);
+              groups.push(entry);
+            }
+            byName.get(groupName).apps.push(app);
+          }
+          return groups;
+        }
+
+        useEffect(() => {
+          const updateTime = () => {
+            const d = new Date();
+            const hh = String(d.getHours()).padStart(2, '0');
+            const mm = String(d.getMinutes()).padStart(2, '0');
+            const ss = String(d.getSeconds()).padStart(2, '0');
+            setTimeStr(`${hh}:${mm}:${ss}`);
+          };
+          updateTime();
+          const timer = setInterval(updateTime, 1000);
+          return () => clearInterval(timer);
+        }, []);
+
+        useEffect(() => {
+          providers.onOutput(() => setOutput(providers.outputMap));
+        }, []);
+
+        // Get icon to show for current weather status.
+        function getWeatherIcon(weatherOutput) {
+          switch (weatherOutput.status) {
+            case 'clear_day':
+              return <i className="nf nf-weather-day_sunny"></i>;
+            case 'clear_night':
+              return <i className="nf nf-weather-night_clear"></i>;
+            case 'cloudy_day':
+              return <i className="nf nf-weather-day_cloudy"></i>;
+            case 'cloudy_night':
+              return <i className="nf nf-weather-night_alt_cloudy"></i>;
+            case 'light_rain_day':
+              return <i className="nf nf-weather-day_sprinkle"></i>;
+            case 'light_rain_night':
+              return <i className="nf nf-weather-night_alt_sprinkle"></i>;
+            case 'heavy_rain_day':
+              return <i className="nf nf-weather-day_rain"></i>;
+            case 'heavy_rain_night':
+              return <i className="nf nf-weather-night_alt_rain"></i>;
+            case 'snow_day':
+              return <i className="nf nf-weather-day_snow"></i>;
+            case 'snow_night':
+              return <i className="nf nf-weather-night_alt_snow"></i>;
+            case 'thunder_day':
+              return <i className="nf nf-weather-day_lightning"></i>;
+            case 'thunder_night':
+              return <i className="nf nf-weather-night_alt_lightning"></i>;
+          }
+        }
+
+        function getWeatherLabel(status) {
+          return ({
+            clear_day: '晴れ', clear_night: '快晴',
+            cloudy_day: 'くもり', cloudy_night: 'くもり',
+            light_rain_day: '小雨', light_rain_night: '小雨',
+            heavy_rain_day: '強い雨', heavy_rain_night: '強い雨',
+            snow_day: '雪', snow_night: '雪',
+            thunder_day: '雷雨', thunder_night: '雷雨',
+          })[status] ?? '天気情報';
+        }
+
+        return (
+          <div className="app">
+            <div className="left">
+              <div className="logo-wrap" style={{ position: 'relative' }}>
+                <button
+                  className="logo-button"
+                  title="よく使うアプリ"
+                  onClick={() => (showApps ? closeAppsPopup() : openAppsPopup())}
+                >
+                  <i className="logo nf nf-fa-windows"></i>
+                </button>
+                {showApps && (
+                  <>
+                    <div className="apps-backdrop" onClick={closeAppsPopup}></div>
+                    <div className="apps-popup">
+                      {getAppGroups().map(group => (
+                        <div className="apps-popup-group" key={group.name}>
+                          <div className="apps-popup-group-title">{group.name}</div>
+                          <div className="apps-popup-grid">
+                            {group.apps.map(app => (
+                              <button
+                                className="apps-popup-app"
+                                key={app.index}
+                                title={app.label}
+                                onClick={() => launchApp(app.index)}
+                              >
+                                <span className="apps-popup-icon-box">
+                                  {app.iconMode === 'nerdFont' ? (
+                                    <span className={`apps-popup-fallback nf ${nerdFontClass(app.icon)}`} style={{ display: 'inline-flex' }}></span>
+                                  ) : (
+                                    <>
+                                      <img
+                                        className="apps-popup-icon"
+                                        src={`./resources/app-icons/${app.index}.png`}
+                                        alt=""
+                                        draggable="false"
+                                        onError={e => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'inline-flex'; }}
+                                      />
+                                      <span className={`apps-popup-fallback nf ${nerdFontClass(app.icon)}`} style={{ display: 'none' }}></span>
+                                    </>
+                                  )}
+                                </span>
+                                <span className="apps-popup-label">{app.label}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                      {apps.length === 0 && (
+                        <div className="apps-popup-empty">apps.json を読み込めませんでした</div>
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+              {output.glazewm && (
+                <button
+                  className="cmdsel-button"
+                  onClick={() =>
+                    output.glazewm.runCommand(
+                      'shell-exec wt.exe -w new nt pwsh -NoProfile -Command cmdsel',
+                    )
+                  }
+                >
+                  <i className="nf nf-cod-terminal"></i> cmdsel
+                </button>
+              )}
+              {output.glazewm && (
+                <button
+                  className="obsidian-button"
+                  onClick={() =>
+                    output.glazewm.runCommand(
+                      "shell-exec C:\\Users\\kawasaki\\AppData\\Local\\Obsidian\\Obsidian.exe",
+                    )
+                  }
+                >
+                  <i className="nf"></i> Obsidian
+                </button>
+              )}
+              {output.glazewm && (
+                <div className="workspaces">
+                  {output.glazewm.currentWorkspaces.map(workspace => (
+                    <button
+                      className={`workspace ${workspace.hasFocus && 'focused'} ${workspace.isDisplayed && 'displayed'}`}
+                      onClick={() =>
+                        output.glazewm.runCommand(
+                          `focus --workspace ${workspace.name}`,
+                        )
+                      }
+                      key={workspace.name}
+                    >
+                      {workspace.displayName ?? workspace.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {output.glazewm?.focusedContainer?.title && (
+                <div
+                  className="focused-window-title"
+                  title={output.glazewm.focusedContainer.title}
+                >
+                  <i className="nf nf-md-application_brackets_outline"></i>
+                  <span>{output.glazewm.focusedContainer.title}</span>
+                </div>
+              )}
+            </div>
+
+            <div
+              className="center"
+              onMouseEnter={showTimePopup}
+              onMouseLeave={hideTimePopup}
+              style={{ position: 'relative' }}
+            >
+              <span className="main-clock">{timeStr.slice(0, 5)}</span>
+
+              {showPopup && (
+                <div className="time-popup">
+                  <div className="tty-clock">{timeStr}</div>
+                  <div className="calendar-container">
+                    <div className="calendar-header">
+                      {new Date().getFullYear()}年 {new Date().getMonth() + 1}月
+                    </div>
+                    <div className="calendar-weekdays">
+                      <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+                    </div>
+                    <div className="calendar-grid">
+                      {getCalendarDays().map((dayObj, index) => (
+                        <span
+                          key={index}
+                          className={`calendar-day ${dayObj.isToday ? 'today' : ''} ${!dayObj.isCurrent ? 'empty' : ''}`}
+                        >
+                          {dayObj.day}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="right">
+              {output.glazewm && (
+                <>
+                  {output.glazewm.isPaused && (
+                    <button
+                      className="paused-button"
+                      onClick={() =>
+                        output.glazewm.runCommand('wm-toggle-pause')
+                      }
+                    >
+                      PAUSED
+                    </button>
+                  )}
+                  {output.glazewm.bindingModes.map(bindingMode => (
+                    <button
+                      className="binding-mode"
+                      key={bindingMode.name}
+                      onClick={() =>
+                        output.glazewm.runCommand(
+                          `wm-disable-binding-mode --name ${bindingMode.name}`,
+                        )
+                      }
+                    >
+                      {bindingMode.displayName ?? bindingMode.name}
+                    </button>
+                  ))}
+
+                  <button
+                    className={`tiling-direction nf ${
+                      output.glazewm.tilingDirection === 'horizontal'
+                        ? 'nf-md-swap_horizontal'
+                        : 'nf-md-swap_vertical'
+                    }`}
+                    title="配置方向を切り替え"
+                    onClick={() =>
+                      output.glazewm.runCommand('toggle-tiling-direction')
+                    }
+                  ></button>
+                </>
+              )}
+
+              {output.weather && (
+                <div
+                  className="weather detailed-weather"
+                  onMouseEnter={showWeatherDetails}
+                  onMouseLeave={hideWeatherDetails}
+                >
+                  {getWeatherIcon(output.weather)}
+                  <span>
+                    <strong>{Math.round(output.weather.celsiusTemp)}°C</strong>
+                    <small>{getWeatherLabel(output.weather.status)} · 風 {Math.round(output.weather.windSpeed)}km/h</small>
+                  </span>
+                  {showWeatherPopup && (
+                    <div className="weather-popup">
+                      <div className="weather-popup-icon">{getWeatherIcon(output.weather)}</div>
+                      <div>
+                        <strong>{Math.round(output.weather.celsiusTemp)}°C</strong>
+                        <span>{getWeatherLabel(output.weather.status)}</span>
+                        <small>風速 {Math.round(output.weather.windSpeed)} km/h</small>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="bar-date">
+                <i className="nf nf-md-calendar_month"></i>
+                {formatDateOnly()}
+              </div>
+            </div>
+          </div>
+        );
+      }
+    </script>
+  </body>
+</html>

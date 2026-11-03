@@ -1,0 +1,47 @@
+%YAML 1.2
+---
+name: jrnl
+file_extensions:
+  - jrnl
+scope: text.jrnl
+
+contexts:
+  main:
+    # Entry timestamp. Everything after it on the same line is the title.
+    - match: '^(\[\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}\])'
+      captures:
+        1: storage.type
+      push: title
+
+    # Tags in the entry body.
+    - match: '@[\p{L}\p{N}_-]+'
+      scope: string
+
+    # Task states.
+    - match: '\bTODO\b'
+      scope: invalid.deprecated.todo.jrnl
+
+    - match: '\bDONE\b'
+      scope: string.other.done.jrnl
+
+    # URLs.
+    - match: 'https?://\S+'
+      scope: markup.underline.link.jrnl
+
+    # Markdown-style list markers.
+    - match: '^\s*[-*+]\s+'
+      scope: punctuation.definition.list.jrnl
+
+  title:
+    # A starred jrnl entry.
+    - match: '\*'
+      scope: keyword.other.star.jrnl
+
+    - match: '@[\p{L}\p{N}_-]+'
+      scope: string
+
+    - match: '[^@\r\n*]+'
+      scope: entity.name.function
+
+    - match: '$'
+      pop: true

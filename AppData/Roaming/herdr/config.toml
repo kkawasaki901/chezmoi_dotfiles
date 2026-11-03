@@ -1,0 +1,14 @@
+onboarding = false
+[update]
+channel = "preview"
+
+[ui]
+agent_panel_sort = "priority"
+
+[theme]
+name = "catppuccin-latte"
+auto_switch = false
+
+[terminal]
+default_shell = "pwsh.exe"
+shell_mode = "non_login"

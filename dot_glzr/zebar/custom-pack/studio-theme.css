@@ -1,0 +1,22 @@
+/* Zebar Theme Studio: Midnight | editable standalone overlay */
+:root { --studio-bg:#101c26; --studio-fg:#e5f5f2; --studio-accent:#7ee2c4; --studio-muted:#91aaa9; --icon-color-dark:#7ee2c4; }
+body { color:#e5f5f2; font-family:'Segoe UI','Yu Gothic UI',sans-serif; }
+.app { background:#101c26 !important; color:#e5f5f2; height:46px; margin:4px 10px; padding:5px 18px; border:1px solid #91aaa935; border-radius:14px; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); }
+.left,.right { min-width:0; }
+.center,.weather,.bar-date,.focused-window-title,.apps-popup-app,.calendar-container,.calendar-day,.weather-popup strong,.weather-popup span { color:#e5f5f2; }
+i,.logo,.launcher-mark,.icon,.apps-popup-group-title,.calendar-header,.focused-window-title i,.cmdsel-button i,.obsidian-button i { color:#7ee2c4; }
+.workspace { color:#91aaa9; border-radius:14px; padding:5px 10px; }
+.workspace.displayed { color:#e5f5f2; background:#7ee2c422; border-color:#7ee2c444; }
+.workspace.focused,.calendar-day.today { color:#101c26; background:#7ee2c4; border-color:#7ee2c4; }
+.workspace:hover,.app-button:hover,.apps-popup-app:hover,.center:hover { background:#7ee2c433; color:#e5f5f2; }
+.focused-window-title,.bar-date { border-color:#7ee2c455; }
+.main-clock { color:#e5f5f2; font-family:Consolas,monospace; font-size:18px; letter-spacing:2px; }
+.cmdsel-button,.obsidian-button,.binding-mode,.tiling-direction,.paused-button { color:#e5f5f2; background:#7ee2c416; border-color:#7ee2c444; border-radius:14px; }
+.apps-popup,.time-popup,.weather-popup,.launcher,.folder-popup { background:#101c26; color:#e5f5f2; border:1px solid #91aaa966; border-radius:14px; }
+.launcher { box-shadow:0 8px 24px #00000033; }
+.app-button { background:#7ee2c412; color:#e5f5f2; border-radius:14px; }
+.tty-clock { background:#7ee2c412; color:#7ee2c4; border-color:#7ee2c433; text-shadow:none; }
+.detailed-weather small,.weather-popup small,.calendar-weekdays,.apps-popup-empty { color:#91aaa9; }
+.folder-count { background:#7ee2c4; color:#101c26; }
+.folder-button .icon { color:#7ee2c4; }
+@media (max-width:1100px) { .focused-window-title { max-width:15vw; } .workspace { padding:5px 7px; margin-right:3px; } .weather { margin-right:4px; } .app { padding-left:10px;padding-right:10px; } }

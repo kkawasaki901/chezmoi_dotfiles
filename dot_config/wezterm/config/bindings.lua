@@ -176,11 +176,11 @@ local keys = {
         mods = mod.SUPER,
         action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
     },
---    {
---        key = [[\]],
---        mods = mod.SUPER_REV,
---        action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
---    },
+    {
+        key = [[\]],
+        mods = mod.SUPER_REV,
+        action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
+    },
 
     -- panes: zoom+close pane
     { key = 'Enter', mods = 'CTRL|SHIFT', action = act.TogglePaneZoomState },
@@ -225,13 +225,38 @@ local keys = {
             timemout_milliseconds = 1000,
         }),
     },
+    -- split pane (vertical/horizontal)
+    {
+        key = 's',
+        mods = 'LEADER',
+        action = act.ActivateKeyTable({
+            name = 'pane_split',
+            one_shot = true,
+            -- タイムアウトで自動キャンセルされると困るので実質無制限にする。
+            -- 中断したい場合はEscapeを押す（WezTermの仕様でEscape等どんなキー入力でも
+            -- key_tableが解除される）。
+            timeout_milliseconds = 86400000,
+        }),
+    },
 
 
     { key = '9', mods = 'ALT', action = ws_switcher() }, -- Alt+9 で workspace一覧
-    { key = '1', mods = 'ALT', action = act.SwitchToWorkspace({ name = 'ws1-single' }) },
-    { key = '2', mods = 'ALT', action = act.SwitchToWorkspace({ name = 'ws1-2pane' }) },
-    { key = '3', mods = 'ALT', action = act.SwitchToWorkspace({ name = 'ws2-ide' }) },
-    { key = '4', mods = 'ALT', action = act.SwitchToWorkspace({ name = 'ws3-dashboard' }) },
+
+    -- Alt+1〜8 で tab 切り替え (ActivateTab は 0 始まり)
+    { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
+    { key = '2', mods = 'ALT', action = act.ActivateTab(1) },
+    { key = '3', mods = 'ALT', action = act.ActivateTab(2) },
+    { key = '4', mods = 'ALT', action = act.ActivateTab(3) },
+    { key = '5', mods = 'ALT', action = act.ActivateTab(4) },
+    { key = '6', mods = 'ALT', action = act.ActivateTab(5) },
+    { key = '7', mods = 'ALT', action = act.ActivateTab(6) },
+    { key = '8', mods = 'ALT', action = act.ActivateTab(7) },
+
+    -- Ctrl+Alt+1〜4 で workspace 切り替え
+    { key = '1', mods = mod.SUPER_REV, action = act.SwitchToWorkspace({ name = 'ws1-single' }) },
+    { key = '2', mods = mod.SUPER_REV, action = act.SwitchToWorkspace({ name = 'ws1-2pane' }) },
+    { key = '3', mods = mod.SUPER_REV, action = act.SwitchToWorkspace({ name = 'ws2-ide' }) },
+    { key = '4', mods = mod.SUPER_REV, action = act.SwitchToWorkspace({ name = 'ws3-dashboard' }) },
 }
 
 -- stylua: ignore
@@ -251,6 +276,12 @@ local key_tables = {
         { key = 'Escape', action = 'PopKeyTable' },
         { key = 'q',      action = 'PopKeyTable' },
     },
+    pane_split = {
+        { key = 'v',      action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
+        { key = 'h',      action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
+        { key = 'Escape', action = 'PopKeyTable' },
+        { key = 'q',      action = 'PopKeyTable' },
+    },
 }
 
 local mouse_bindings = {
@@ -265,7 +296,10 @@ local mouse_bindings = {
 return {
    disable_default_key_bindings = true,
    -- disable_default_mouse_bindings = true,
---   leader = { key = 'Space', mods = mod.SUPER_REV },
+   -- タイムアウトで自動キャンセルされると困るので実質無制限にする（agy起動中など
+   -- 操作が遅れても吸われないように）。中断したい場合はEscapeを押せば即キャンセルされる
+   -- （WezTermの仕様でEscape等どんなキー入力でもLEADERが解除される）。
+   leader = { key = 'Space', mods = mod.SUPER_REV, timeout_milliseconds = 86400000 },
    keys = keys,
    key_tables = key_tables,
    mouse_bindings = mouse_bindings,

@@ -1,0 +1,19 @@
+
+[[language]]
+name = "python"
+scope = "source.python"
+file-types = ["py"]
+shebangs = ["python"]
+language-servers = [
+  { name = "pyright" }
+]
+formatter = { command = "black", args = ["-"] }
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hh", "hxx"]
+roots = ["compile_commands.json", ".git"]
+language-servers = [
+  { name = "clangd"}
+]

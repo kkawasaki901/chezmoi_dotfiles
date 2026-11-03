@@ -1,0 +1,4 @@
+# magpie's built-in plugins: which are on, and each one's config.
+# `magpie plugin dump` shows what they come to, and where each value is from.
+preset: all
+settled: 1

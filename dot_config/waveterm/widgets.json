@@ -1,0 +1,70 @@
+{
+    "defwidget@sysinfo": {
+        "display:order": -2,
+        "icon": "chart-line",
+        "label": "sysinfo",
+        "blockdef": {
+            "meta": {
+                "view": "sysinfo",
+                "sysinfo:type": "CPU + Mem",
+                "graph:numpoints": 180
+            }
+        }
+    },
+    "claude": {
+        "display:order": 1,
+        "icon": "robot",
+        "label": "claude",
+        "description": "Claude Code をすぐ起動",
+        "color": "#d97757",
+        "blockdef": {
+            "meta": {
+                "view": "term",
+                "controller": "cmd",
+                "cmd": "claude",
+                "cmd:runonstart": true
+            }
+        }
+    },
+    "lazygit": {
+        "display:order": 2,
+        "icon": "code-branch",
+        "label": "lazygit",
+        "description": "Git の状態をTUIで確認 (lazygit が必要)",
+        "color": "#f14e32",
+        "blockdef": {
+            "meta": {
+                "view": "term",
+                "controller": "cmd",
+                "cmd": "lazygit",
+                "cmd:runonstart": true
+            }
+        }
+    },
+    "github": {
+        "display:order": 3,
+        "icon": "brands@github",
+        "label": "github",
+        "description": "GitHub をブロックの中で開く",
+        "blockdef": {
+            "meta": {
+                "view": "web",
+                "url": "https://github.com",
+                "pinnedurl": "https://github.com"
+            }
+        }
+    },
+    "wave-docs": {
+        "display:order": 4,
+        "icon": "book",
+        "label": "wave-docs",
+        "description": "Wave Terminal の公式ドキュメント",
+        "blockdef": {
+            "meta": {
+                "view": "web",
+                "url": "https://docs.waveterm.dev",
+                "pinnedurl": "https://docs.waveterm.dev"
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+# Default shell (optional)
+# Windows: "cmd", "powershell", "pwsh", "wsl", or full path
+# macOS / Linux: command name or full path (default: $SHELL, then /bin/sh)
+shell = "pwsh.exe"
+
+# Codepage for encoding (optional, Windows only)
+codepage = 65001  # UTF-8
+# codepage = 932    # Shift-JIS
+
+# Prefix key (default: "C-b" for Ctrl+B)
+# prefix_key = "C-a"  # Change to Ctrl+A
+
+# Inject a prompt hook into cmd.exe / PowerShell to publish pane cwd changes.
+# Disabled by default to avoid interfering with custom prompts.
+# cwd_prompt_hook = false
+
+# Remove built-in bindings (tmux: unbind-key).
+# Being an array, this must appear before the [sections] below.
+# unbind = ["d", "P"]
+
+# Color scheme
+# Available: default, solarized-dark, solarized-light, monokai, nord, dracula, gruvbox-dark, tokyo-night
+color_scheme = "tokyo-night"
+
+# Legacy global keybindings (prefer [bind_root] below)
+[keybindings]
+# history_selector = "C-r"      # Also accepts "Ctrl+R"
+# scrollback_up = "S-PageUp"
+# scrollback_down = "S-PageDown"
+# scrollback_top = "S-Home"
+# scrollback_bottom = "S-End"
+# selection_left = "S-Left"
+# selection_right = "S-Right"
+# selection_up = "S-Up"
+# selection_down = "S-Down"
+# copy_selection = "C-S-c"      # Also accepts "Ctrl+Shift+C"
+
+# Bindings pressed after the prefix key (tmux: bind-key)
+[bind]
+# "M-4" = "select-layout main-vertical"
+# "M-5" = "select-layout tiled"
+# "C-o" = "swap-pane -D"
+# "z"   = ""                    # empty string unbinds
+
+# Bindings pressed without the prefix (tmux: bind-key -n) — the recommended
+# place for scrollback / selection / copy keys
+[bind_root]
+# "S-PageUp" = "scroll-up"
+# "C-S-c"    = "copy-selection"
+# "C-M-t"    = "select-layout tiled"
+# Tab bar settings
+[tab_bar]
+visible = true
+
+# Status bar settings
+[status_bar]
+visible = true
+show_time = true
+
+# Pane border settings
+[pane]
+border_style = "single"  # single, double, rounded, none
+
+# Cursor settings
+[cursor]
+shape = "block"          # block, underline, bar
+blink = true
+
+# Scrollback buffer
+[scrollback]
+lines = 10000
+
+# Agent state hooks (see "AI Agent Integration" below)
+[hooks]
+# on_agent_blocked = "powershell -NoProfile -Command \"...notify...\""
+# on_agent_done = ""
+

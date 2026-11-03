@@ -1,0 +1,15 @@
+[settings]
+NoSyncAICustomHeadersPerModelMigrationDone = true
+NoSyncClaudeCodeAutoRequestReviewBackfilled = true
+NoSyncClaudeCodeAutoSendClippingsBackfilled = true
+NoSyncClaudeCodeDiffModeBackfilled = true
+NoSyncClaudeCodeReviewSystemPromptCommandBackfilled = true
+NoSyncLastLaunchVersion = "0.0.1-beta6"
+NoSyncLaunchExperienceControllerRunCount = 1
+NoSyncNextAnnoyanceTime = 1793142410.994472
+NoSyncTipOfTheDayEligibilityBeganTime = 1792969610.994472
+NoSyncWorkgroupShortcutsBackfilled = true
+SUHasLaunchedBefore = true
+
+[settings.SavedWindowFrames]
+"7B423C48-334E-4D6C-A4D6-C0D0B630C047 0" = [577.0, 244.0, 1381.0, 932.0]

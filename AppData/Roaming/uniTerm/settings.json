@@ -1,0 +1,247 @@
+{
+  "theme": "dark",
+  "language": "system",
+  "uiFontSize": 12,
+  "terminal": {
+    "theme": "uniterm-dark",
+    "fontFamily": "Consolas",
+    "fontSize": 14,
+    "selectionAction": "none",
+    "rightClickAction": "menu",
+    "middleClickAction": "",
+    "maxHistoryLines": 5000,
+    "smartCompletion": null,
+    "aiTranscription": null,
+    "highlightEnabled": null,
+    "cursorBlink": true,
+    "ctrlWheelZoom": true,
+    "sessionLogFilename": "%S_%H_%M%D_%h%m.log",
+    "wordSeparator": "\\ :;~`!@#$%^\u0026*()=+|[]{}'\",\u003c\u003e?",
+    "fontWeight": 400,
+    "cursorStyle": "block",
+    "minimumContrast": 4.5,
+    "showLineNumbers": false,
+    "showTimestamps": false,
+    "timestampFormat": "HH:mm:ss"
+  },
+  "ai": {
+    "maxTurns": 20,
+    "models": [
+      {
+        "id": "model-default",
+        "name": "Default",
+        "apiKey": "",
+        "baseURL": "https://api.openai.com/v1",
+        "model": "gpt-4o",
+        "protocol": "anthropic"
+      }
+    ]
+  },
+  "keyboard": {
+    "closePanel": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "q"
+    },
+    "copy": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "c"
+    },
+    "duplicateSession": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "d"
+    },
+    "focusAI": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "k"
+    },
+    "focusTerminal": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "j"
+    },
+    "lockAI": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "l"
+    },
+    "maximizePanel": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "enter"
+    },
+    "navigateNext": {
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "alt": true,
+      "key": "arrowright"
+    },
+    "navigatePrev": {
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "alt": true,
+      "key": "arrowleft"
+    },
+    "newConnection": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "n"
+    },
+    "nextTab": {
+      "ctrl": true,
+      "meta": false,
+      "shift": false,
+      "alt": false,
+      "key": "tab"
+    },
+    "openQuickCommands": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "m"
+    },
+    "openSettings": {
+      "ctrl": true,
+      "meta": false,
+      "shift": false,
+      "alt": false,
+      "key": ","
+    },
+    "paste": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "v"
+    },
+    "prevTab": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "tab"
+    },
+    "terminalSearch": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "f"
+    },
+    "toggleFilePanel": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "b"
+    },
+    "toggleLineNumbers": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "g"
+    },
+    "toggleMonitor": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "i"
+    },
+    "toggleSidebar": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "h"
+    },
+    "toggleTimestamps": {
+      "ctrl": true,
+      "meta": false,
+      "shift": true,
+      "alt": false,
+      "key": "t"
+    },
+    "trayShowHide": {
+      "ctrl": true,
+      "meta": false,
+      "shift": false,
+      "alt": false,
+      "key": "m"
+    },
+    "zoomFontIn": {
+      "ctrl": true,
+      "meta": false,
+      "shift": false,
+      "alt": false,
+      "key": "="
+    },
+    "zoomFontOut": {
+      "ctrl": true,
+      "meta": false,
+      "shift": false,
+      "alt": false,
+      "key": "-"
+    }
+  },
+  "autoCheckUpdate": true,
+  "updateSource": "auto",
+  "closeTabPrompt": true,
+  "closeAppPrompt": true,
+  "restoreTabsPrompt": true,
+  "sftpBookmarks": {
+    "localPaths": [],
+    "remotePaths": []
+  },
+  "sftpTransferPanelVisible": false,
+  "customTerminalThemes": [],
+  "defaultLocalShell": "",
+  "tabCloseButton": "left",
+  "showTabShortcutHints": true,
+  "hostListMenuStyle": "button",
+  "newTabAction": "startPage",
+  "sidebarTabs": {
+    "connections": true,
+    "files": true,
+    "history": true,
+    "monitor": true,
+    "personalization": true,
+    "quickCommands": true,
+    "tunnels": true
+  },
+  "startPage": {
+    "visible": {
+      "favorites": true,
+      "groups": true,
+      "recent": true
+    },
+    "order": [
+      "favorites",
+      "recent",
+      "groups"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.bar.json",
+  "font_family": "JetBrainsMono NF Regular",
+  "font_size": 15,
+  "height": 70,
+  "icon_scale": 1.15,
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha",
+    "accent": "Blue"
+  },
+  "transparency_alpha": 225,
+  "widget_spacing": 8,
+  "max_label_width": 42,
+  "monitor": 0,
+  "left_widgets": [
+    {
+      "Applications": {
+        "enable": true,
+        "display": "IconAndText",
+        "show_command_on_hover": true,
+        "items": [
+          {
+            "name": "Obsidian",
+            "command": "C:\\Users\\kawasaki\\AppData\\Local\\Obsidian\\Obsidian.exe",
+            "icon": ""
+          },
+          {
+            "name": "Launcher",
+            "command": "wt.exe -w new nt --title Launcher -d C:\\tools\\go_command_selector C:\\tools\\go_command_selector\\cmdsel.exe -f C:\\tools\\go_command_selector\\commands.json",
+            "icon": "󰍉"
+          }
+        ]
+      }
+    },
+
+    {
+      "Komorebi": {
+        "workspaces": {
+          "enable": true,
+          "hide_empty_workspaces": false
+        },
+        "layout": {
+          "enable": true
+        },
+        "focused_container": {
+          "enable": true,
+          "display": "IconAndText"
+        }
+      }
+    }
+  ],
+  "right_widgets": [
+    {
+      "Media": {
+        "enable": false,
+        "display": "Text",
+        "show_command_on_hover": true,
+        "data_refresh_interval": 5
+      }
+    },
+    {
+      "Cpu": {
+        "enable": false,
+        "data_refresh_interval": 5,
+        "auto_select_over": 80
+      }
+    },
+    {
+      "Memory": {
+        "enable": false,
+        "data_refresh_interval": 5,
+        "auto_select_over": 80
+      }
+    },
+    {
+      "Systray": {
+        "enable": false,
+        "overflow_toggle_position": "Right",
+        "stale_icons_check_interval": 60
+      }
+    },
+    {
+      "Date": {
+        "enable": true,
+        "format": "YearMonthDate"
+      }
+    },
+    {
+      "Time": {
+        "enable": true,
+        "format": "TwentyFourHour",
+        "changing_icon": true
+      }
+    }
+  ]
+}

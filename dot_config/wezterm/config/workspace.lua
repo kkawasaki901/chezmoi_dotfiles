@@ -4,37 +4,11 @@ local M = {}
 
 function M.setup()
    wezterm.on('gui-startup', function()
-      -- default
-      do
-         local tab, pane, window = mux.spawn_window({
-            workspace = 'ws1-single',
+      -- 各 workspace は分割せず、単一ペインの窓として起動する
+      for _, name in ipairs({ 'ws1-single', 'ws1-2pane', 'ws2-ide', 'ws3-dashboard' }) do
+         mux.spawn_window({
+            workspace = name,
          })
-      end
-      -- 2分割
-      do
-         local tab, pane, window = mux.spawn_window({
-            workspace = 'ws1-2pane',
-         })
-         pane:split({ direction = 'Right', size = 0.5 })
-      end
-
-      -- IDE風3分割
-      do
-         local tab, pane, window = mux.spawn_window({
-            workspace = 'ws2-ide',
-         })
-         local right = pane:split({ direction = 'Right', size = 0.3 })
-         pane:split({ direction = 'Bottom', size = 0.3 })
-      end
-
-      -- 4分割
-      do
-         local tab, pane, window = mux.spawn_window({
-            workspace = 'ws3-dashboard',
-         })
-         local right = pane:split({ direction = 'Right', size = 0.5 })
-         pane:split({ direction = 'Bottom', size = 0.5 })
-         right:split({ direction = 'Bottom', size = 0.5 })
       end
 
       mux.set_active_workspace('ws1-single')

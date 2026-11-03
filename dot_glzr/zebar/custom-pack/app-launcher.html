@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./app-launcher.css" />
+  <!-- zebar-theme-studio:start -->
+<link id="studio-base-theme" rel="stylesheet" href="./studio-theme.css">
+<style id="studio-live-theme"></style>
+<script>
+(() => {
+  let previous = null;
+  async function refreshTheme() {
+    try {
+      const response = await fetch('./studio-theme.css?t=' + Date.now(), {cache:'no-store'});
+      if (!response.ok) return;
+      const css = await response.text();
+      if (css !== previous) {
+        document.getElementById('studio-live-theme').textContent = css;
+        document.getElementById('studio-base-theme').disabled = true;
+        previous = css;
+      }
+    } catch (error) { console.debug('Theme refresh unavailable', error); }
+  }
+  refreshTheme(); setInterval(refreshTheme, 2000);
+})();
+</script>
+<!-- zebar-theme-studio:end -->
+</head>
+  <body>
+    <main class="launcher" aria-label="アプリランチャー">
+      <div class="launcher-mark">◆</div>
+      <section id="apps" class="apps"></section>
+      <div class="separator"></div>
+      <button id="edit-button" class="app-button edit-button" aria-label="ランチャーを編集" title="ランチャーを編集">
+        <span class="icon nf nf-md-pencil"></span>
+      </button>
+    </main>
+    <section id="folder-popup" class="folder-popup" aria-label="フォルダー内容" hidden>
+      <header class="popup-header">
+        <div>
+          <span class="popup-kicker">APP COLLECTION</span>
+          <h1 id="popup-title"></h1>
+          <p id="popup-count"></p>
+        </div>
+        <div class="popup-header-actions">
+          <div class="view-toggle" role="group" aria-label="アプリの表示方法">
+            <button class="view-option" data-view="icons" aria-pressed="false">アイコン＋名前</button>
+            <button class="view-option" data-view="names" aria-pressed="false">名前のみ</button>
+          </div>
+          <button id="popup-close" class="popup-close" aria-label="閉じる" title="閉じる">×</button>
+        </div>
+      </header>
+      <div id="popup-grid" class="popup-grid"></div>
+    </section>
+
+    <script type="module">
+      import * as zebar from 'https://esm.sh/zebar@3.0';
+      import { LogicalPosition, LogicalSize } from 'https://esm.sh/@tauri-apps/api@2/dpi';
+
+      const appsContainer = document.getElementById('apps');
+      const folderPopup = document.getElementById('folder-popup');
+      const popupGrid = document.getElementById('popup-grid');
+      const apps = await fetch('./apps.json', { cache: 'no-store' }).then(response => response.json());
+      const groupIcons = await fetch('./groups.json', { cache: 'no-store' })
+        .then(response => (response.ok ? response.json() : {}))
+        .catch(() => ({}));
+      let compactGeometry = null;
+      const viewStorageKey = 'folder-display-mode';
+      let displayMode = 'icons';
+      try {
+        displayMode = localStorage.getItem(viewStorageKey) === 'names' ? 'names' : 'icons';
+      } catch {}
+
+      function setDisplayMode(mode) {
+        displayMode = mode === 'names' ? 'names' : 'icons';
+        popupGrid.classList.toggle('name-only', displayMode === 'names');
+        for (const button of document.querySelectorAll('[data-view]')) {
+          const active = button.dataset.view === displayMode;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        }
+        try {
+          localStorage.setItem(viewStorageKey, displayMode);
+        } catch {}
+      }
+
+      function iconMarkup(app, index) {
+        const iconClass = /^nf-[a-zA-Z0-9_-]+$/.test(String(app.icon || '').trim())
+          ? String(app.icon).trim()
+          : 'nf-md-application';
+        if (app.iconMode === 'nerdFont') {
+          return `<span class="icon fallback-icon nf ${iconClass}"></span>`;
+        }
+        return `<img class="app-image" src="./resources/app-icons/${index}.png" alt="" draggable="false" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="icon fallback-icon nf ${iconClass}" hidden></span>`;
+      }
+
+      function createAppButton(app, index, child = false) {
+        const button = document.createElement('button');
+        button.className = `app-button${child ? ' child-app' : ''}`;
+        button.dataset.index = String(index);
+        button.dataset.label = app.label;
+        button.title = app.label;
+        button.setAttribute('aria-label', app.label);
+        button.innerHTML = iconMarkup(app, index);
+        return button;
+      }
+
+      async function expandWindow() {
+        if (compactGeometry) return;
+        const widgetWindow = zebar.currentWidget().window;
+        const scale = await widgetWindow.tauri.scaleFactor();
+        const position = (await widgetWindow.tauri.outerPosition()).toLogical(scale);
+        const size = (await widgetWindow.tauri.outerSize()).toLogical(scale);
+        compactGeometry = { position, size };
+        const width = 700;
+        const height = 620;
+        await widgetWindow.tauri.setPosition(new LogicalPosition(
+          Math.max(0, position.x - (width - size.width)),
+          Math.max(0, position.y - Math.max(0, (height - size.height) / 2)),
+        ));
+        await widgetWindow.tauri.setSize(new LogicalSize(width, height));
+        await widgetWindow.setZOrder('top_most');
+      }
+
+      async function fitLauncherLayout() {
+        const twoColumn = appsContainer.children.length > 5;
+        document.body.classList.toggle('two-column', twoColumn);
+        const targetWidth = twoColumn ? 136 : 76;
+        const widgetWindow = zebar.currentWidget().window;
+        const scale = await widgetWindow.tauri.scaleFactor();
+        const position = (await widgetWindow.tauri.outerPosition()).toLogical(scale);
+        const size = (await widgetWindow.tauri.outerSize()).toLogical(scale);
+        if (Math.abs(size.width - targetWidth) < 1) return;
+        await widgetWindow.tauri.setPosition(new LogicalPosition(
+          Math.max(0, position.x - (targetWidth - size.width)),
+          position.y,
+        ));
+        await widgetWindow.tauri.setSize(new LogicalSize(targetWidth, size.height));
+      }
+
+      async function closeFolderPopup() {
+        if (!compactGeometry) return;
+        folderPopup.hidden = true;
+        const widgetWindow = zebar.currentWidget().window;
+        const { position, size } = compactGeometry;
+        await widgetWindow.tauri.setSize(new LogicalSize(size.width, size.height));
+        await widgetWindow.tauri.setPosition(new LogicalPosition(position.x, position.y));
+        await widgetWindow.setZOrder('top_most');
+        compactGeometry = null;
+      }
+
+      async function openFolderPopup(groupName, entries) {
+        document.getElementById('popup-title').textContent = groupName;
+        document.getElementById('popup-count').textContent = `${entries.length} applications`;
+        popupGrid.replaceChildren();
+        for (const { app, index } of entries) {
+          const button = document.createElement('button');
+          button.className = 'popup-app';
+          button.dataset.index = String(index);
+          button.dataset.label = app.label;
+          button.title = app.label;
+          button.innerHTML = `<span class="popup-icon">${iconMarkup(app, index)}</span><span class="popup-label"></span>`;
+          button.querySelector('.popup-label').textContent = app.label;
+          button.addEventListener('click', () => launchApp(button, true));
+          popupGrid.appendChild(button);
+        }
+        await expandWindow();
+        folderPopup.hidden = false;
+      }
+
+      async function launchApp(button, closeAfter = false) {
+        if (button.classList.contains('launching')) return;
+        button.classList.add('launching');
+        try {
+          await zebar.shellSpawn('pwsh.exe', [
+            '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass',
+            '-File', 'C:\\Users\\kawasaki\\.glzr\\zebar\\custom-pack\\Launch-App.ps1',
+            '-Index', button.dataset.index,
+          ]);
+          if (closeAfter) await closeFolderPopup();
+        } catch (error) {
+          console.error(`Failed to launch ${button.dataset.label}:`, error);
+          button.classList.add('failed');
+          setTimeout(() => button.classList.remove('failed'), 1200);
+        } finally {
+          setTimeout(() => button.classList.remove('launching'), 350);
+        }
+      }
+
+      const groupedApps = new Map();
+      apps.forEach((app, index) => {
+        const group = (app.group || '').trim();
+        if (!group) {
+          appsContainer.appendChild(createAppButton(app, index));
+          return;
+        }
+        if (!groupedApps.has(group)) groupedApps.set(group, []);
+        groupedApps.get(group).push({ app, index });
+      });
+
+      for (const [groupName, entries] of groupedApps) {
+        const folder = document.createElement('div');
+        folder.className = 'launcher-folder';
+        const folderButton = document.createElement('button');
+        folderButton.className = 'app-button folder-button';
+        folderButton.title = groupName;
+        folderButton.setAttribute('aria-label', `${groupName} フォルダー`);
+        const folderIcon = (groupIcons[groupName] || '').trim().replace(/[^a-zA-Z0-9_-]/g, '') || 'nf-fa-folder';
+        folderButton.innerHTML = `<span class="icon nf ${folderIcon}"></span><span class="folder-count"></span>`;
+        folderButton.querySelector('.folder-count').textContent = entries.length;
+        folderButton.addEventListener('click', () => openFolderPopup(groupName, entries));
+        folder.append(folderButton);
+        appsContainer.appendChild(folder);
+      }
+
+      await fitLauncherLayout();
+
+      for (const button of document.querySelectorAll('#apps .app-button:not(.folder-button)')) {
+        button.addEventListener('click', () => launchApp(button));
+      }
+
+      document.getElementById('popup-close').addEventListener('click', closeFolderPopup);
+      for (const button of document.querySelectorAll('[data-view]')) {
+        button.addEventListener('click', () => setDisplayMode(button.dataset.view));
+      }
+      setDisplayMode(displayMode);
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !folderPopup.hidden) closeFolderPopup();
+      });
+
+      document.getElementById('edit-button').addEventListener('click', () => {
+        zebar.shellSpawn(
+          'C:\\Users\\kawasaki\\AppData\\Local\\Zebar Launcher Editor\\zebar-launcher-editor.exe',
+          [],
+        );
+      });
+    </script>
+  </body>
+</html>

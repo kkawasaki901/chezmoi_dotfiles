@@ -1,0 +1,14 @@
+{
+    "bg@wave-night-aurora": {
+        "display:name": "Wave Night Aurora",
+        "display:order": 3.1,
+        "bg": "linear-gradient(135deg, rgba(13, 17, 23, 1) 0%, rgba(22, 60, 80, 0.9) 45%, rgba(40, 30, 80, 0.85) 100%)",
+        "bg:opacity": 0.5
+    },
+    "bg@wave-night-ember": {
+        "display:name": "Wave Night Ember",
+        "display:order": 3.2,
+        "bg": "linear-gradient(160deg, rgba(13, 17, 23, 1) 0%, rgba(80, 30, 20, 0.85) 60%, rgba(120, 60, 20, 0.7) 100%)",
+        "bg:opacity": 0.45
+    }
+}

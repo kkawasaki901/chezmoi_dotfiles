@@ -1,0 +1,12 @@
+[
+  {
+    "bindings": {
+      "alt-q": "outline_panel::ExpandAllEntries"
+    }
+  },
+  {
+    "bindings": {
+      "alt-a": "outline_panel::CollapseAllEntries"
+    }
+  }
+]

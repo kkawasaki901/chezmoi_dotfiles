@@ -1,0 +1,14 @@
+{
+    "basename": true,
+    "scrollbar": true,
+	"mkparents": true,
+	"matchbracestyle": "highlight",
+	"diffgutter": true,
+	"keepautoindent": true,
+    "reload": "auto",
+    "savecursor": true,
+    "softwrap": true,
+    "tabhighlight": true,
+    "tabtosapaces" : true
+    
+}

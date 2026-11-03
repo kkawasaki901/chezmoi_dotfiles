@@ -1,0 +1,70 @@
+[env]
+TERM = "xterm-256color"
+
+[general]
+working_directory = "C:\\Users\\kawasaki"
+live_config_reload = false
+
+[terminal]
+# shell = { program = "C:\\Users\\kawasaki\\AppData\\Local\\Microsoft\\WinGet\\Packages\\marlocarlo.psmux_Microsoft.Winget.Source_8wekyb3d8bbwe\\psmux.exe" }
+shell = {program = "pwsh.exe"}
+
+[window]
+opacity = 0.88
+blur = true
+
+[font]
+normal = { family = "0xProto Nerd Font", style = "Regular" }
+size = 13
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+bindings = [
+  { mouse = "WheelUp", action = "ScrollLineUp" },
+  { mouse = "WheelDown", action = "ScrollLineDown" },
+]
+
+[[keyboard.bindings]]
+# Windows版micro向け: Alt+gをF8へ変換し、ToggleKeyMenuを起動する。
+key = "G"
+mods = "Alt"
+chars = "\u001b[19~"
+
+# Tokyo Night Theme
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.cursor]
+text = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ff9e64"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#db4b4b"

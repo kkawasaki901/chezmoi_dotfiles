@@ -1,0 +1,386 @@
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: visible;
+  background: transparent;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.launcher {
+  width: 60px;
+  padding: 10px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: #ffffff;
+  background: rgba(8, 8, 10, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: 44px;
+  gap: 16px;
+  max-height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+body.two-column .launcher {
+  width: 120px;
+}
+
+body.two-column .apps {
+  grid-template-columns: repeat(2, 44px);
+}
+
+.apps::-webkit-scrollbar {
+  display: none;
+}
+
+.launcher-folder {
+  display: grid;
+  place-items: center;
+}
+
+.folder-button {
+  border-color: rgba(249, 226, 175, 0.28);
+}
+
+.folder-button .icon {
+  color: #f9e2af;
+}
+
+.folder-count {
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  color: #11111b;
+  background: #f9e2af;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 15px;
+}
+
+.launcher-mark {
+  color: #89b4fa;
+  font-size: 13px;
+  line-height: 1;
+  margin: 2px 0 4px;
+  text-shadow: 0 0 10px rgba(137, 180, 250, 0.6);
+}
+
+.app-button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.app-button:hover {
+  transform: scale(1.06);
+  background: rgba(137, 180, 250, 0.18);
+  border-color: rgba(137, 180, 250, 0.7);
+}
+
+.app-button:active,
+.app-button.launching {
+  transform: scale(0.94);
+}
+
+.app-button.failed {
+  background: rgba(243, 139, 168, 0.28);
+  border-color: #f38ba8;
+}
+
+.icon {
+  margin: 0;
+  color: #ffffff;
+  font-size: 23px;
+  pointer-events: none;
+}
+
+.app-image {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: auto;
+}
+
+.fallback-icon {
+  display: grid;
+  place-items: center;
+}
+
+.app-image[hidden],
+.fallback-icon[hidden] {
+  display: none !important;
+}
+
+.obsidian-icon {
+  color: #cba6f7;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.separator {
+  width: 30px;
+  height: 1px;
+  margin: 1px 0;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.edit-button {
+  color: #a6adc8;
+}
+
+.folder-popup {
+  position: absolute;
+  top: 50%;
+  right: 82px;
+  width: 590px;
+  max-height: 570px;
+  overflow: hidden;
+  color: #f4f6fb;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(137, 180, 250, 0.16), transparent 34%),
+    rgba(12, 14, 19, 0.985);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.72);
+  transform: translateY(-50%);
+  animation: popup-in 170ms ease-out;
+}
+
+.folder-popup[hidden] {
+  display: none;
+}
+
+.popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.popup-header-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11px;
+}
+
+.view-option {
+  height: 27px;
+  padding: 0 10px;
+  color: #8993a3;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.view-option:hover {
+  color: #e7ebf2;
+}
+
+.view-option.active {
+  color: #101319;
+  background: #89b4fa;
+}
+
+.popup-kicker {
+  color: #89b4fa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.popup-header h1 {
+  margin: 4px 0 0;
+  font-family: "Segoe UI Variable", "Yu Gothic UI", sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.popup-header p {
+  margin: 4px 0 0;
+  color: #737d8d;
+  font-size: 11px;
+}
+
+.popup-close {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: #8f99a8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  color: #ffffff;
+  background: rgba(243, 139, 168, 0.17);
+  border-color: rgba(243, 139, 168, 0.5);
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  max-height: 455px;
+  padding: 17px 18px 22px;
+  overflow-y: auto;
+  scrollbar-color: rgba(137, 180, 250, 0.45) transparent;
+  scrollbar-width: thin;
+}
+
+.popup-app {
+  min-width: 0;
+  min-height: 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 8px 9px;
+  color: #dfe4ed;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.popup-grid.name-only {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+.popup-grid.name-only .popup-app {
+  min-height: 58px;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 12px 16px;
+}
+
+.popup-grid.name-only .popup-icon {
+  display: none;
+}
+
+.popup-grid.name-only .popup-label {
+  display: block;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 13px;
+  -webkit-line-clamp: unset;
+}
+
+.popup-app:hover {
+  transform: translateY(-3px);
+  color: #ffffff;
+  background: rgba(137, 180, 250, 0.13);
+  border-color: rgba(137, 180, 250, 0.55);
+}
+
+.popup-app:active,
+.popup-app.launching {
+  transform: scale(0.96);
+}
+
+.popup-app.failed {
+  background: rgba(243, 139, 168, 0.2);
+  border-color: #f38ba8;
+}
+
+.popup-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.popup-icon .app-image {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.38));
+}
+
+.popup-icon .fallback-icon {
+  font-size: 36px;
+}
+
+.popup-label {
+  width: 100%;
+  display: -webkit-box;
+  overflow: hidden;
+  font-family: "Segoe UI Variable", "Yu Gothic UI", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translate(14px, -50%) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}

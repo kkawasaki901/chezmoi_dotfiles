@@ -12,7 +12,8 @@ permalink: wezterm/tooling-commands
 # Tooling Commands
 
 ## Common commands
-- [command] Validate config and display resolved keys: `wezterm --config-file wezterm.lua show-keys --lua`
+- [command] Validate config loads: `wezterm --config-file wezterm.lua show-keys --lua`（※このコマンドは既定キーのみ表示し、本設定のカスタムキーは出ないため、キー割り当ての検証には使えない）
+- [command] Lua 構文チェック: `"/c/Program Files (x86)/Lua/5.1/luac" -p config/bindings.lua`
 ## Environment
 - [env] OS: Windows
 - [env] Shell: PowerShell

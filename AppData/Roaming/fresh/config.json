@@ -1,0 +1,18 @@
+{
+  "theme": "builtin://terminal",
+  "active_keybinding_map": "default",
+  "version": 2,
+  "plugins": {
+    "vi_mode": {
+      "enabled": true,
+      "settings": {
+        "autoStart": false,
+        "arrowKeys": true,
+        "searchWordUnderCursor": true
+      }
+    }
+  },
+  "editor": {
+    "show_horizontal_scrollbar": true
+  }
+}

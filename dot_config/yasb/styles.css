@@ -1,0 +1,679 @@
+/* ==========================================================================
+   YASB Wide Top Status Bar Stylesheet (Catppuccin Mocha / Modern Dark)
+   ========================================================================== */
+
+:root {
+    --bg-bar: rgba(24, 24, 37, 0.78);
+    --bg-widget: rgba(30, 30, 46, 0.92);
+    --bg-widget-hover: rgba(49, 50, 68, 0.95);
+    --bg-popup: rgba(30, 30, 46, 0.96);
+    --bg-surface: #313244;
+    --bg-surface-hover: #45475a;
+    --border-color: rgba(137, 180, 250, 0.28);
+    --border-strong: rgba(137, 180, 250, 0.55);
+
+    --text-main: #cdd6f4;
+    --text-sub: #a6adc8;
+    --text-muted: #6c7086;
+
+    --accent-blue: #89b4fa;
+    --accent-lavender: #b4befe;
+    --accent-mauve: #cba6f7;
+    --accent-peach: #fab387;
+    --accent-green: #a6e3a1;
+    --accent-yellow: #f9e2af;
+    --accent-red: #f38ba8;
+    --accent-teal: #94e2d5;
+
+    --font-main: "Segoe UI Variable", "Yu Gothic UI", "Meiryo UI", "Segoe UI", sans-serif;
+    --font-mono: "0xProto Nerd Font", "JetBrainsMono NFP", "JetBrainsMono Nerd Font", "Consolas", monospace;
+    --font-icon: "0xProto Nerd Font", "JetBrainsMono NFP", "Segoe Fluent Icons";
+}
+
+* {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-main);
+    font-family: var(--font-main);
+}
+
+/* ==========================================================================
+   Bar & Common Widget Containers
+   ========================================================================== */
+.yasb-bar {
+    background-color: var(--bg-bar);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 0 8px;
+    margin: 0;
+}
+
+.widget {
+    padding: 0 2px;
+    margin: 2px 2px;
+}
+
+.widget .widget-container {
+    background-color: var(--bg-widget);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2px 8px;
+}
+
+.widget .widget-container:hover {
+    background-color: var(--bg-widget-hover);
+    border-color: var(--border-strong);
+}
+
+.widget .label {
+    padding: 0 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.widget .icon {
+    font-family: var(--font-icon);
+    font-size: 13px;
+    padding-right: 4px;
+    color: var(--accent-blue);
+}
+
+/* Tooltip */
+.tooltip {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    color: var(--text-main);
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: var(--font-main);
+}
+
+/* Common Context Menu */
+.context-menu {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 6px 0;
+    color: var(--text-main);
+}
+.context-menu::item {
+    background-color: transparent;
+    padding: 6px 16px;
+    margin: 2px 6px;
+    border-radius: 6px;
+}
+.context-menu::item:selected {
+    background-color: var(--bg-surface-hover);
+    color: var(--accent-blue);
+}
+.context-menu::separator {
+    height: 1px;
+    background-color: var(--bg-surface);
+    margin: 4px 8px;
+}
+
+/* ==========================================================================
+   1. Applications (WezTerm / Firefox / Obsidian クイック起動ボタン)
+   ========================================================================== */
+.apps-widget .widget-container {
+    padding: 1px 6px;
+}
+.apps-widget .label {
+    padding: 2px 6px;
+    margin: 0 1px;
+    border-radius: 6px;
+}
+.apps-widget .label:hover {
+    background-color: var(--bg-surface-hover);
+}
+
+/* ==========================================================================
+   2. Launchpad (アプリグリッドランチャー)
+   ========================================================================== */
+.launchpad-widget .icon {
+    color: var(--accent-mauve);
+}
+.launchpad .launchpad-container {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+}
+.launchpad .search-container {
+    border-bottom: 1px solid var(--bg-surface);
+    background-color: rgba(0, 0, 0, 0.15);
+    min-height: 52px;
+    margin: 0;
+    padding: 8px 16px;
+}
+.launchpad .search-input {
+    max-width: 460px;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+}
+.launchpad .search-input:focus {
+    border: 1px solid var(--accent-mauve);
+}
+.launchpad .launchpad-scroll-area {
+    background-color: transparent;
+    border: none;
+}
+.launchpad .app-icon {
+    background-color: rgba(49, 50, 68, 0.45);
+    border-radius: 12px;
+    border: 1px solid transparent;
+    padding-top: 12px;
+    margin: 8px;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px;
+}
+.launchpad .app-icon:hover,
+.launchpad .app-icon:focus {
+    border: 1px solid var(--accent-mauve);
+    background-color: var(--bg-surface-hover);
+}
+.launchpad .app-icon .title {
+    color: var(--text-main);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+.launchpad .app-dialog {
+    background-color: var(--bg-popup);
+}
+.launchpad .app-dialog .title-field,
+.launchpad .app-dialog .path-field,
+.launchpad .app-dialog .icon-field,
+.launchpad .app-dialog .group-field {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: var(--text-main);
+}
+.launchpad .app-dialog .button {
+    background-color: var(--bg-surface);
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: var(--text-main);
+}
+.launchpad .app-dialog .button.add,
+.launchpad .app-dialog .button.save {
+    background-color: var(--accent-mauve);
+    color: #11111b;
+}
+
+/* ==========================================================================
+   3. Home (フォルダ・ファイルランチャーメニュー)
+   ========================================================================== */
+.home-widget .icon {
+    color: var(--accent-yellow);
+}
+.home-menu {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 6px 0;
+}
+.home-menu .menu-item {
+    color: var(--text-main);
+    padding: 8px 36px 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin: 2px 6px;
+}
+.home-menu .menu-item:hover {
+    background-color: var(--bg-surface-hover);
+    color: var(--accent-yellow);
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: var(--bg-surface);
+    margin: 4px 10px;
+}
+
+/* ==========================================================================
+   4. Clock & Calendar (2026-10-29 23:22 表示)
+   ========================================================================== */
+.clock-widget .widget-container {
+    border-color: rgba(180, 190, 254, 0.4);
+}
+.clock-widget .icon {
+    color: var(--accent-lavender);
+}
+.clock-widget .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.calendar,
+.clock-popup.calendar {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    min-width: 440px;
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item,
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.calendar .calendar-table::item:selected,
+.clock-popup.calendar .calendar-table::item:selected {
+    color: #11111b;
+    font-weight: 700;
+    background-color: var(--accent-lavender);
+    border-radius: 8px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label,
+.clock-popup.calendar .date-label {
+    font-size: 16px;
+    color: var(--text-main);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .date-label,
+.clock-popup.calendar .date-label {
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--accent-lavender);
+    margin-top: -16px;
+}
+
+/* ==========================================================================
+   5. Todo Widget & Popup
+   ========================================================================== */
+.todo-widget .icon {
+    color: var(--accent-teal);
+}
+.todo-menu {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    min-width: 420px;
+    max-width: 440px;
+    min-height: 460px;
+}
+.todo-menu .header {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--bg-surface);
+}
+.todo-menu .header .add-task-button {
+    background-color: var(--accent-teal);
+    color: #11111b;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+}
+.todo-menu .header .add-task-button:hover {
+    background-color: var(--accent-green);
+}
+.todo-menu .header .tab-buttons {
+    background-color: transparent;
+    color: var(--text-sub);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+}
+.todo-menu .header .tab-buttons:checked,
+.todo-menu .header .tab-buttons:hover {
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+}
+.todo-menu .task-item {
+    background-color: var(--bg-surface);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin: 6px 12px;
+    padding: 8px 10px;
+}
+.todo-menu .task-item:hover,
+.todo-menu .task-item.expanded {
+    border-color: var(--accent-teal);
+}
+.todo-menu .task-item.completed {
+    background-color: rgba(49, 50, 68, 0.4);
+}
+.todo-menu .task-item .title {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+}
+.todo-menu .task-item .description {
+    color: var(--text-sub);
+    font-size: 12px;
+}
+.todo-menu .task-checkbox {
+    background: transparent;
+    border: none;
+    color: var(--accent-teal);
+    font-family: var(--font-icon);
+    font-size: 16px;
+}
+.todo-menu .edit-task-button,
+.todo-menu .delete-task-button {
+    background-color: var(--bg-surface-hover);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 12px;
+    border: none;
+}
+.todo-menu .delete-task-button:hover {
+    background-color: var(--accent-red);
+    color: #11111b;
+}
+.todo-menu .no-tasks {
+    color: var(--text-sub);
+    font-size: 14px;
+    padding: 24px;
+}
+.todo-menu .no-tasks-icon {
+    color: var(--accent-teal);
+    font-family: var(--font-icon);
+    font-size: 48px;
+    padding-top: 36px;
+}
+.app-dialog {
+    background-color: var(--bg-popup);
+    color: var(--text-main);
+}
+.app-dialog .title-field,
+.app-dialog .desc-field {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: var(--text-main);
+}
+.app-dialog .category-button {
+    background-color: var(--bg-surface);
+    border-radius: 6px;
+    padding: 5px 10px;
+    border: none;
+}
+.app-dialog .category-button:checked {
+    background-color: var(--accent-teal);
+    color: #11111b;
+}
+.app-dialog .button {
+    background-color: var(--bg-surface);
+    border-radius: 6px;
+    padding: 6px 14px;
+    border: none;
+}
+.app-dialog .button.add {
+    background-color: var(--accent-teal);
+    color: #11111b;
+}
+
+/* ==========================================================================
+   6. Claude Usage Widget & Menu
+   ========================================================================== */
+.claude-usage .icon {
+    color: var(--accent-peach);
+}
+.claude-usage .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+.claude-usage-menu {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    min-width: 360px;
+    padding: 12px;
+}
+.claude-usage-menu .header {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--bg-surface);
+}
+.claude-usage-menu .header .text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-peach);
+}
+.claude-usage-menu .header .refresh,
+.claude-usage-menu .header .pin-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    font-family: var(--font-icon);
+    font-size: 15px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.claude-usage-menu .header .refresh:hover,
+.claude-usage-menu .header .pin-btn:hover {
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+}
+.claude-usage-menu .section {
+    background-color: rgba(49, 50, 68, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 8px;
+}
+.claude-usage-menu .section .title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.claude-usage-menu .section .percent {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-peach);
+}
+.claude-usage-menu .section .reset,
+.claude-usage-menu .section .date {
+    font-size: 11px;
+    color: var(--text-sub);
+}
+.claude-usage-menu .progress {
+    background-color: var(--bg-surface);
+    border-radius: 5px;
+    min-height: 8px;
+    max-height: 8px;
+}
+.claude-usage-menu .progress .fill {
+    background-color: var(--accent-peach);
+    border-radius: 5px;
+}
+.claude-usage-menu .progress.high .fill {
+    background-color: var(--accent-red);
+}
+.claude-usage-menu .period-btn {
+    background-color: var(--bg-surface);
+    color: var(--text-sub);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 11px;
+}
+.claude-usage-menu .period-btn.active {
+    background-color: var(--accent-peach);
+    color: #11111b;
+}
+.claude-usage-menu .token-total {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-peach);
+}
+.claude-usage-menu .token-graph {
+    color: var(--accent-peach);
+    min-height: 64px;
+}
+
+/* ==========================================================================
+   7. Codex Usage Widget & Menu
+   ========================================================================== */
+.codex-usage .icon {
+    color: var(--accent-green);
+}
+.codex-usage .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+.codex-usage-menu {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    min-width: 380px;
+    padding: 12px;
+}
+.codex-usage-menu .header {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--bg-surface);
+}
+.codex-usage-menu .header .text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+.codex-usage-menu .header .refresh {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.codex-usage-menu .header .refresh:hover {
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+}
+.codex-usage-menu .section {
+    background-color: rgba(49, 50, 68, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 8px;
+}
+.codex-usage-menu .section .title {
+    font-size: 13px;
+    font-weight: 700;
+}
+.codex-usage-menu .section .remaining {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+.codex-usage-menu .section .used,
+.codex-usage-menu .section .reset,
+.codex-usage-menu .section .date {
+    font-size: 11px;
+    color: var(--text-sub);
+}
+.codex-usage-menu .progress,
+.codex-usage-menu .model-bar {
+    background-color: var(--bg-surface);
+    border-radius: 5px;
+    min-height: 8px;
+    max-height: 8px;
+}
+.codex-usage-menu .progress .fill,
+.codex-usage-menu .model-bar .fill {
+    background-color: var(--accent-green);
+    border-radius: 5px;
+}
+.codex-usage-menu .progress.critical .fill {
+    background-color: var(--accent-red);
+}
+.codex-usage-menu .progress.low .fill {
+    background-color: var(--accent-yellow);
+}
+.codex-usage-menu .pager {
+    background-color: rgba(49, 50, 68, 0.35);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 8px;
+}
+.codex-usage-menu .page-button {
+    background-color: var(--bg-surface);
+    border: none;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-family: var(--font-icon);
+}
+.codex-usage-menu .page-button:hover {
+    background-color: var(--bg-surface-hover);
+}
+.codex-usage-menu .period-value,
+.codex-usage-menu .model-value {
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+}
+
+/* ==========================================================================
+   7.5. Cursor Usage Widget
+   ========================================================================== */
+.cursor-usage-widget .icon {
+    color: var(--accent-teal);
+}
+.cursor-usage-widget .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+
+/* ==========================================================================
+   8 & 9. Wallpapers & Online Wallpaper Tools
+   ========================================================================== */
+.wallpapers-widget .icon {
+    color: var(--accent-mauve);
+}
+.wallpaper-tools-widget .icon {
+    color: var(--accent-blue);
+}
+.wallpapers-gallery-window {
+    background-color: var(--bg-popup);
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+}
+.wallpapers-gallery-buttons {
+    font-size: 13px;
+    font-family: var(--font-main);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 4px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color: var(--accent-mauve);
+    color: #11111b;
+}
+.wallpapers-gallery-image {
+    border: 3px solid transparent;
+    border-radius: 10px;
+}
+.wallpapers-gallery-image:hover {
+    border: 3px solid var(--border-strong);
+}
+.wallpapers-gallery-image.focused {
+    border: 3px solid var(--accent-mauve);
+}

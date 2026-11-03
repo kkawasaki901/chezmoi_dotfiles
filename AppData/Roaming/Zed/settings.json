@@ -1,0 +1,133 @@
+// Zed settings
+
+//
+
+// For information on how to configure Zed, see the Zed
+
+// documentation: https://zed.dev/docs/configuring-zed
+
+//
+
+// To see all of Zed's default settings without changing your
+
+// custom settings, run the `open default settings` command
+
+// from the command palette or from `Zed` application menu.
+
+{
+  "language_models": {
+    "openai_compatible": {}
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": true
+  },
+  "languages": {
+    "Markdown-Inline": {
+      "always_treat_brackets_as_autoclosed": true,
+      "format_on_save": "on",
+      "soft_wrap": "editor_width"
+    }
+  },
+  "disable_ai": true,
+  "proxy": "",
+  "cli_default_open_behavior": "existing_window",
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": true
+    },
+    "shell": {
+      "program": "pwsh.exe"
+    },
+    "font_family": "0xProto Nerd Font",
+  },
+  "status_bar": {
+    "active_encoding_button": "enabled"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "enable_thinking": true,
+      "effort": "low"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "scrollbar": {
+    "cursors": true
+  },
+  "relative_line_numbers": "disabled",
+  "which_key": {
+    "enabled": true
+  },
+  "helix_mode": false,
+  "icon_theme": "Material Icon Theme",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "base_keymap": "VSCode",
+  "vim_mode": false,
+  "ui_font_size": 16,
+
+  "buffer_font_size": 16,
+
+  "theme": {
+    "mode": "dark",
+
+    "light": "One Light",
+
+    "dark": "VSCode Dark Modern",
+
+    "show_hidden_files": true
+  },
+
+  // Markdownのシンタックスハイライト色を上書き。
+  // 注意: Zed本体のMarkdown文法(crates/grammars/src/markdown/highlights.scm)は
+  // H1〜H6をすべて単一の"title"スコープにまとめており、レベル別の色分けはcaptureが
+  // 存在しないため不可能(要望: zed-industries/zed#14115)。チェックリストの
+  // 完了/未完了も同様にcaptureが無くハイライト不可。ここでは可能な範囲(見出し統一色/
+  // リストマーカー/引用・テーブル罫線/強調/コード/リンク)のみ設定している。
+  "theme_overrides": {
+    "VSCode Dark Modern": {
+      "syntax": {
+        "title": { "color": "#e5c07b", "font_weight": 700 },
+        "punctuation.list_marker": { "color": "#61afef", "font_weight": 700 },
+        "punctuation.markup": { "color": "#56b6c2" },
+        "emphasis": { "color": "#c678dd", "font_style": "italic" },
+        "emphasis.strong": { "color": "#e06c75", "font_weight": 700 },
+        "text.literal": { "color": "#98c379" },
+        "link_text": { "color": "#61afef", "font_style": "italic" },
+        "link_uri": { "color": "#56b6c2" }
+      }
+    },
+    "One Light": {
+      "syntax": {
+        "title": { "color": "#c18401", "font_weight": 700 },
+        "punctuation.list_marker": { "color": "#4078f2", "font_weight": 700 },
+        "punctuation.markup": { "color": "#0184bc" },
+        "emphasis": { "color": "#a626a4", "font_style": "italic" },
+        "emphasis.strong": { "color": "#e45649", "font_weight": 700 },
+        "text.literal": { "color": "#50a14f" },
+        "link_text": { "color": "#4078f2", "font_style": "italic" },
+        "link_uri": { "color": "#0184bc" }
+      }
+    }
+  }
+}

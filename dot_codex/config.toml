@@ -1,0 +1,525 @@
+personality = "pragmatic"
+model = "gpt-6-astra"
+sandbox_mode = "danger-full-access"
+
+# permissions full-access 相当
+approval_policy = "never"
+# model_reasoning_effort = "low"
+
+# 無難なちょっと安全なやつ
+# sandbox_mode = "workspace-write"
+# approval_policy = "on-request"
+# 
+# [sandbox_workspace_write]
+# network_access = true
+
+approvals_reviewer = "user"
+service_tier = "default"
+model_reasoning_effort = "low"
+notify = [ "C:\\Users\\kawasaki\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\5c41f77a7900391c\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+[projects.'\\?\C:\Users\kawasaki\Desktop\vibe']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\kawasaki\AppData\Local\nvim\todo_init_lua']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\kawasaki\dotfiles']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop\twitter']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\document\chrome_extensions\twitter']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop\obsidian-emacs']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop\emacs-electron']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\.obsidian\plugins\anki-original']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\.obsidian\plugins\org-mode-viewer']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260523_tweet_get']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\document\android\260528_quick-obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\document\android\260528_inbox-obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\document\android\260528_tauri_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260529_english_watch']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260530_muscle_training']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260602_handwrite_app']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260602_handwrite_app_2']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260602_android_handwrite_app']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260602_emacs_tauri_in_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260602_launcher']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\youtube_summary']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\youtube_summary\done']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop\summary']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_vscode_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_webview_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\youtube_summary']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_nb_cli']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\codex\2026-06-18\260618-tauri-obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_vscode_auto_date']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_obsidian_tui']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_x-screenshot-organizer']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\local\google\chrome\user data\default\extensions\cnjifjpddelmedmihgijeibhnjfabmlf\1.7.0_0']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\desktop\gas']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260622_rss_raindrop']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260624_x_organixzer_ver2']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\powershell_scripts']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260624_transformer\chap6']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260624_transformer']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260630_dotfiles']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260701_obsidian_quick']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\claude\260629_agents_explorler']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260701_simple_markdown']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260701_launcher_tui']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260701_neorg-manuals']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\dotfiles\yasb']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260701_uninstall']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agy\260701_emacs_rev2']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\roaming\yazi\config']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260702_draft_app']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260703_usage']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.config\goneovim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\dotfiles\nvim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260708_normal_launcher']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260709_many-nvim-plugins']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agy\260703_twitter_user']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260712_lua_ai_plugins']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260715_obsidian_css']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260715_todo']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agy\260715_subscript-manager']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\claude\260715_komorebi-sub']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260716_zebar_launcher_right']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260718_flow_lancher_fav_plugins']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260716_wm_control_center']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260718_terminal_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\work-notes']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\nb-obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260720_session_maker_agents']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260722_others']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\local\mvim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\dotfiles\wezterm']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\dotfiles\obvim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260724_nt-cli']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260724_my_calendar']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260726_ntelescope']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260726_jrnl-tui']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\.obsidian\plugins\my-journal']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260730_taskwarrior']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260730_timewarrior']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260730_nb-cli-go']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\obsidian\2026_master\.obsidian\plugins\nb_cli']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.config\zellij']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260730_obsidian_dashboard']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\nb']
+trust_level = "trusted"
+
+[projects.'c:\tools']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\roaming\tabby\plugins\node_modules']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\neovim_plugin_list']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\local\nvim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260819_git_practice']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260618_tauri_obsidian']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260824_picture_organize']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260827_vaydeer']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260901_qmk']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\autohotkey']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\codex\2026-09-16\new-chat']
+trust_level = "trusted"
+
+[projects.'g:\マイドライブ\x_screenshot']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\appdata\local\orgvim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.emacs.d']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260920_habit-tracker']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260920_viewer_summary']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260920_emacs_clock']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260927_ocr_test']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\flow-launcher']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\260928_quick_memo']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\autohotkey']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\hermes']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\yazi']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\contour']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\rio']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\documents\document\chrome_extensions\youtube-dl']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261008_my_zaim']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261012_spotify']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\zellij']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\yt-dlp']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\wtmux']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\agents\global\windows_terminal']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261019_imozuru']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\library\簿記']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.hermes']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\library-tools']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.hermes\skills']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261024_ui_gallery']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261025_zebar']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261026_yazelix']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\codex\261026_filer']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\.config\yasb']
+trust_level = "trusted"
+
+[projects.'c:\users\kawasaki\everything']
+trust_level = "trusted"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = '\\?\C:\Users\kawasaki\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\kawasaki\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."canva@openai-curated"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[windows]
+sandbox = "elevated"
+
+[desktop]
+ambient-suggestions-enabled = true
+conversationDetailMode = "STEPS_PROSE"
+followUpQueueMode = "queue"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "persistent", "minimal", "max"]
+
+[features]
+hooks = true
+memories = true
+js_repl = false
+
+[tui]
+session_picker_view = "comfortable"
+status_line = ["model-with-reasoning", "current-dir", "project-name", "five-hour-limit", "weekly-limit"]
+status_line_use_colors = true
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
+gpt-6-astra = 4
+"gpt-6.1-sol" = 4
+
+[notice]
+hide_full_access_warning = true
+
+[mcp_servers.basic-memory]
+command = "C:\\Users\\kawasaki\\.local\\bin\\basic-memory.exe"
+args = ["mcp"]
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\kawasaki\AppData\Local\OpenAI\Codex\runtimes\cua_node\5c41f77a7900391c\bin\node_repl.exe'
+env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY", "CODEX_WINDOWS_REGISTERED_CORE"]
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\kawasaki\AppData\Local\OpenAI\Codex\runtimes\cua_node\5c41f77a7900391c\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\kawasaki\AppData\Local\OpenAI\Codex\runtimes\cua_node\5c41f77a7900391c\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\kawasaki\.codex;C:\Users\kawasaki\AppData\Local\OpenAI\Codex\runtimes\cua_node\5c41f77a7900391c\bin\node_modules'
+CODEX_HOME = 'C:\Users\kawasaki\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1027.30824"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/kawasaki/.codex/plugins/cache/openai-bundled/browser/26.1027.30824/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-bf7a1d67-70aa-46d8-8215-334b594b0790'
+CODEX_CLI_PATH = 'C:\Users\kawasaki\AppData\Local\OpenAI\Codex\bin\22cfb1d302613eae\codex.exe'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+
+[hooks.state]
+
+[hooks.state.'C:\Users\kawasaki\.codex\hooks.json:session_start:0:0']
+trusted_hash = "sha256:1c39afa3a05575677907f0617219bc4e8a568834a7a7035aa2a0160d60385531"
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2793c6809f8a4c90923435aa3a6d1e6f8cabb145212f06328b860b076b899525,7ed52dae165c3bc22b6d24f282e2c1fbc87f6949fbbe037767a7418d8f517f01"
+
+[model_providers.magpie]
+name = "magpie"
+base_url = "http://127.0.0.1:3425/v1"
+wire_api = "responses"
+experimental_bearer_token = "magpie"
+http_headers = { "x-openai-actor-authorization" = "magpie" }

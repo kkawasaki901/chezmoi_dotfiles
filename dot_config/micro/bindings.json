@@ -1,0 +1,15 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F8": "ToggleKeyMenu",
+    "CtrlRightSq": "NextTab",
+    "CtrlLeftSq": "PreviousTab",
+    "Alt-a": "CursorStart",
+    "Alt-e": "CursorEnd",
+    "Ctrl-m": "HSplit",
+    "Ctrl-n": "VSplit",
+    "Ctrl-o": "InsertNewline",
+    "Ctrl-y": "CopyLine",
+    "Alt-l": "NextSplit",
+    "Alt-k": "PreviousSplit"
+}

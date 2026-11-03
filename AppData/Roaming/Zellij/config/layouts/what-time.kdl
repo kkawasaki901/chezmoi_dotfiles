@@ -1,0 +1,18 @@
+layout {
+    pane size=2 split_direction="vertical" {
+        pane size="75%" borderless=true {
+            plugin location="tab-bar"
+        }
+        pane size="25%" borderless=true {
+            plugin location="what-time" {
+                date_format "%Y-%m-%d %u"
+                time_format "%H:%M"
+                separator " "
+            }
+        }
+    }
+    pane
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\kawasaki\\.codex\\herdr-agent-state.ps1\" session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}

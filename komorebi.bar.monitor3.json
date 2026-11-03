@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.bar.json",
+  "font_family": "JetBrainsMono NF Regular",
+  "font_size": 13,
+  "height": 50,
+  "icon_scale": 1.15,
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha",
+    "accent": "Blue"
+  },
+  "transparency_alpha": 225,
+  "widget_spacing": 8,
+  "max_label_width": 42,
+  "monitor": 3,
+  "left_widgets": [
+    {
+      "Komorebi": {
+        "workspaces": {
+          "enable": true,
+          "hide_empty_workspaces": false
+        },
+        "layout": {
+          "enable": true
+        }
+      }
+    }
+  ],
+  "right_widgets": [
+    {
+      "Cpu": {
+        "enable": true,
+        "data_refresh_interval": 5,
+        "auto_select_over": 80
+      }
+    },
+    {
+      "Memory": {
+        "enable": true,
+        "data_refresh_interval": 5,
+        "auto_select_over": 80
+      }
+    },
+    {
+      "Time": {
+        "enable": true,
+        "format": "TwentyFourHour",
+        "changing_icon": true
+      }
+    }
+  ]
+}

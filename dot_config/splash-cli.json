@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "access_token": "",
+    "refresh_token": ""
+  },
+  "auto_like_photos": false,
+  "collection_aliases": {
+    "editorial": ""
+  },
+  "download_dir": "~/Pictures/splash_photos",
+  "photo_of_the_day": {
+    "id": "",
+    "last_update": 0,
+    "refresh_interval": 21600000000000
+  }
+}

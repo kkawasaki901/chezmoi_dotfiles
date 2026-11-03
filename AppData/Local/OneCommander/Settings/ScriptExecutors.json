@@ -1,0 +1,32 @@
+[
+  {
+    "Executable": "powershell.exe",
+    "HeaderTags": "#PS",
+    "Extensions": "ps1",
+    "Arguments": "-NoExit -NoProfile -File \"SCRIPT_PATH\""
+  },
+  {
+    "Executable": "pwsh.exe",
+    "HeaderTags": "#PS7,#PWSH",
+    "Extensions": null,
+    "Arguments": "-NoExit -NoProfile -File \"SCRIPT_PATH\""
+  },
+  {
+    "Executable": "wt.exe",
+    "HeaderTags": "#WT",
+    "Extensions": null,
+    "Arguments": "powershell -NoExit -File \"SCRIPT_PATH\""
+  },
+  {
+    "Executable": "python.exe",
+    "HeaderTags": "#PY,#PYTHON",
+    "Extensions": "py",
+    "Arguments": "\"SCRIPT_PATH\""
+  },
+  {
+    "Executable": "cmd.exe",
+    "HeaderTags": "#CMD",
+    "Extensions": "bat",
+    "Arguments": "/K \"SCRIPT_PATH\""
+  }
+]

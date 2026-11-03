@@ -1,0 +1,23 @@
+{
+    "autoupdate:channel": "latest",
+    "app:defaultnewblock": "term",
+    "app:tabbar": "top",
+    "tab:preset": "bg@aqua-horizon",
+    "term:theme": "wave-night",
+    "term:cursor": "bar",
+    "term:cursorblink": true,
+    "term:copyonselect": true,
+    "term:osc52": "always",
+    "term:durable": true,
+    "term:bellindicator": true,
+    "term:trimtrailingwhitespace": true,
+    "window:tilegapsize": 4,
+    "window:nativetitlebar": true,
+    "window:savelastwindow": true,
+    "window:magnifiedblockopacity": 0.6,
+    "editor:minimapenabled": true,
+    "preview:defaultsort": "name",
+    "conn:wshenabled": true,
+    "telemetry:enabled": false,
+    "waveai:defaultmode": "opencode-go-glm52"
+}

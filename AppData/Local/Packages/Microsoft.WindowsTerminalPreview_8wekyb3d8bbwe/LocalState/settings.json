@@ -1,0 +1,415 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema-preview",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command":
+            {
+                "action": "quakeMode"
+            },
+            "id": "User.quakeMode"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+    "firstWindowPreference": "defaultProfile",
+    "keybindings":
+    [
+        {
+            "id": "User.quakeMode",
+            "keys": "ctrl+alt+shift+p"
+        },
+        {
+            "id": "Terminal.SwitchToTab0",
+            "keys": "alt+1"
+        },
+        {
+            "id": "Terminal.SwitchToTab2",
+            "keys": "alt+3"
+        },
+        {
+            "id": "Terminal.SwitchToTab1",
+            "keys": "alt+2"
+        },
+        {
+            "id": "Terminal.SwitchToTab3",
+            "keys": "alt+4"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": null,
+            "keys": "alt+enter"
+        }
+    ],
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults":
+        {
+            "colorScheme": "Solarized Dark",
+            "font":
+            {
+                "face": "0xProto Nerd Font"
+            }
+        },
+        "list":
+        [
+            {
+                "colorScheme": "One Half Dark",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "elevate": false,
+                "font":
+                {
+                    "face": "0xProto Nerd Font"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "font":
+                {
+                    "face": "BIZ UDGothic"
+                },
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "icon": null,
+                "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
+            },
+            {
+                "backgroundImage": null,
+                "colorScheme": "Forest Glass",
+                "experimental.retroTerminalEffect": false,
+                "font":
+                {
+                    "colorGlyphs": true,
+                    "face": "0xProto Nerd Font",
+                    "features": {},
+                    "weight": "medium"
+                },
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "opacity": 80,
+                "source": "Windows.Terminal.PowershellCore",
+                "useAcrylic": true
+            },
+            {
+                "colorScheme": "Solarized Dark",
+                "font":
+                {
+                    "face": "0xProto Nerd Font"
+                },
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "colorScheme": "One Half Dark",
+                "experimental.retroTerminalEffect": false,
+                "font":
+                {
+                    "face": "0xProto Nerd Font"
+                },
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "opacity": 100,
+                "rightClickContextMenu": false,
+                "source": "Windows.Terminal.Wsl",
+                "useAcrylic": false
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{b0f17b8b-a471-554f-8a66-391eb4ed1552}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{5eb1c6be-7a3b-5298-9c11-6a9aa704d24d}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{3a61d191-c0fd-5857-8cc3-b4d3ba024582}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2019 (2)",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{5245bea3-7bbe-526d-a61a-5b584b8cc49c}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2019 (2)",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{81daeb51-95b1-5026-ad97-54bfb8c63de2}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{b1c1db17-39ae-59d0-b84c-13db77274de4}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "colorScheme": "One Half Dark",
+                "font":
+                {
+                    "face": "JetBrainsMono Nerd Font"
+                },
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "commandline": "C:\\msys64\\msys2_shell.cmd -mingw64 -defterm -no-start",
+                "guid": "{9aa3ad97-4ac9-46e0-8003-34af080b5874}",
+                "hidden": false,
+                "name": "MinGW64/MSYS32"
+            },
+            {
+                "colorScheme": "One Half Dark",
+                "commandline": "powershell.exe -NoLogo -NoExit -Command \"docker start ubuntu-dev | Out-Null; docker exec -it --user dev ubuntu-dev zsh\"",
+                "elevate": true,
+                "font":
+                {
+                    "face": "JetBrainsMono Nerd Font"
+                },
+                "guid": "{48c112ca-14b7-4227-a574-fad775982d14}",
+                "hidden": false,
+                "icon": null,
+                "name": "Docker-ubuntu"
+            },
+            {
+                "guid": "{95d02ad7-b36b-575d-8dc4-0fc5e000df74}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{8a6b58c4-eeba-5fd9-8913-89c9ea62c618}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "font":
+                {
+                    "face": "CaskaydiaCove Nerd Font"
+                },
+                "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+                "hidden": false,
+                "name": "Nushell",
+                "source": "nu"
+            },
+            {
+                "guid": "{addbe3cb-bd56-55c4-ae4d-99bb1cc6b8ee}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{e07e85f4-fb65-5eef-84ef-7145cf74c4e6}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "One Half Dark",
+                "font":
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
+                "guid": "{12bc3952-ff6b-5ace-8c41-e6ebd77e7273}",
+                "hidden": false,
+                "name": "Ubuntu-24.04",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{59177827-3fc8-5589-87f6-e07a3229b7d8}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{0262012a-b489-50c2-83ea-f7e5b4571082}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{66a3e8b9-8928-5bd0-9271-1acda18ab2e7}",
+                "hidden": false,
+                "name": "Debian",
+                "source": "Microsoft.WSL"
+            }
+        ]
+    },
+    "safeUriSchemes":
+    [
+        "nuopen"
+    ],
+    "schemes":
+    [
+        {
+            "background": "#1E1E2E",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
+        {
+            "background": "#0E2118",
+            "black": "#163024",
+            "blue": "#61AFEF",
+            "brightBlack": "#6B8F7A",
+            "brightBlue": "#8CC8FF",
+            "brightCyan": "#7EDDD5",
+            "brightGreen": "#A6E8B4",
+            "brightPurple": "#DDB0F5",
+            "brightRed": "#F08A93",
+            "brightWhite": "#EEF6F0",
+            "brightYellow": "#F2D58E",
+            "cursorColor": "#A7F3C4",
+            "cyan": "#56C8C0",
+            "foreground": "#D4E7DA",
+            "green": "#7FD28E",
+            "name": "Forest Glass",
+            "purple": "#C792EA",
+            "red": "#E06C75",
+            "selectionBackground": "#2F5A44",
+            "white": "#C5D6CA",
+            "yellow": "#E5C07B"
+        },
+        {
+            "background": "#181616",
+            "black": "#0D0C0C",
+            "blue": "#8BA4B0",
+            "brightBlack": "#625E5A",
+            "brightBlue": "#7FB4CA",
+            "brightCyan": "#7AA89F",
+            "brightGreen": "#87A987",
+            "brightPurple": "#938AA9",
+            "brightRed": "#E46876",
+            "brightWhite": "#C5C9C5",
+            "brightYellow": "#E6C384",
+            "cursorColor": "#C8C093",
+            "cyan": "#8EA4A2",
+            "foreground": "#C5C9C5",
+            "green": "#8A9A7B",
+            "name": "Kanagawa Dragon",
+            "purple": "#A292A3",
+            "red": "#C4746E",
+            "selectionBackground": "#2D4F67",
+            "white": "#C8C093",
+            "yellow": "#C4B28A"
+        },
+        {
+            "background": "#24283B",
+            "black": "#1D202F",
+            "blue": "#7AA2F7",
+            "brightBlack": "#414868",
+            "brightBlue": "#7AA2F7",
+            "brightCyan": "#7DCFFF",
+            "brightGreen": "#9ECE6A",
+            "brightPurple": "#BB9AF7",
+            "brightRed": "#F7768E",
+            "brightWhite": "#C0CAF5",
+            "brightYellow": "#E0AF68",
+            "cursorColor": "#C0CAF5",
+            "cyan": "#7DCFFF",
+            "foreground": "#C0CAF5",
+            "green": "#9ECE6A",
+            "name": "Tokyo Night Storm",
+            "purple": "#BB9AF7",
+            "red": "#F7768E",
+            "selectionBackground": "#364A82",
+            "white": "#A9B1D6",
+            "yellow": "#E0AF68"
+        }
+    ],
+    "themes": [],
+    "windowingBehavior": "useAnyExisting"
+}

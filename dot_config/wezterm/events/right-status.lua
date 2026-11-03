@@ -2,6 +2,7 @@ local wezterm = require('wezterm')
 local umath = require('utils.math')
 local Cells = require('utils.cells')
 local OptsValidator = require('utils.opts-validator')
+local keytable_hints = require('utils.keytable-hints')
 
 ---@alias Event.RightStatusOptions { date_format?: string }
 
@@ -58,17 +59,27 @@ local charging_icons = {
 local colors = {
    date      = { fg = '#fab387', bg = 'rgba(0, 0, 0, 0.4)' },
    battery   = { fg = '#f9e2af', bg = 'rgba(0, 0, 0, 0.4)' },
-   separator = { fg = '#74c7ec', bg = 'rgba(0, 0, 0, 0.4)' }
+   separator = { fg = '#74c7ec', bg = 'rgba(0, 0, 0, 0.4)' },
+   keytable  = { fg = '#a6e3a1', bg = 'rgba(0, 0, 0, 0.4)' },
+   leader    = { fg = '#89b4fa', bg = 'rgba(0, 0, 0, 0.4)' },
 }
+
+-- 忘れやすいLEADERキー自体とLEADER+sの覚書。常時表示（which-keyヒントとは別で、
+-- key_table起動中かどうかに関わらず出す）。
+local LEADER_HINT = 'Ctrl+Alt+Space →s:分割'
 
 local cells = Cells:new()
 
 cells
+   :add_segment('leader_icon', '⌨ ', colors.leader, attr(attr.intensity('Bold')))
+   :add_segment('leader_text', LEADER_HINT .. '  ', colors.leader, attr(attr.intensity('Bold')))
    :add_segment('date_icon', ICON_DATE .. '  ', colors.date, attr(attr.intensity('Bold')))
    :add_segment('date_text', '', colors.date, attr(attr.intensity('Bold')))
    :add_segment('separator', ' ' .. ICON_SEPARATOR .. '  ', colors.separator)
    :add_segment('battery_icon', '', colors.battery)
    :add_segment('battery_text', '', colors.battery, attr(attr.intensity('Bold')))
+   :add_segment('keytable_icon', '⌨ ', colors.keytable, attr(attr.intensity('Bold')))
+   :add_segment('keytable_text', '', colors.keytable, attr(attr.intensity('Bold')))
 
 ---@return string, string
 local function battery_info()
@@ -116,11 +127,21 @@ M.setup = function(opts)
          :update_segment_text('battery_icon', battery_icon)
          :update_segment_text('battery_text', battery_text)
 
-      window:set_right_status(
-         wezterm.format(
-            cells:render({ 'date_icon', 'date_text', 'separator', 'battery_icon', 'battery_text' })
-         )
-      )
+      local render_ids = {}
+      local active_key_table = window:active_key_table()
+      if active_key_table then
+         local hint = keytable_hints[active_key_table] or ''
+         cells:update_segment_text('keytable_text', active_key_table .. '  ' .. hint)
+         table.insert(render_ids, 'keytable_icon')
+         table.insert(render_ids, 'keytable_text')
+         table.insert(render_ids, 'separator')
+      end
+
+      for _, id in ipairs({ 'leader_icon', 'leader_text', 'date_icon', 'date_text', 'separator', 'battery_icon', 'battery_text' }) do
+         table.insert(render_ids, id)
+      end
+
+      window:set_right_status(wezterm.format(cells:render(render_ids)))
    end)
 end
 

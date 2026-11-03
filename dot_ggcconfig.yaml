@@ -1,0 +1,24 @@
+meta:
+    version: dev
+    commit: unknown
+    created-at: ""
+    config-version: "1.0"
+default:
+    branch: main
+    editor: vim
+    merge-tool: vimdiff
+ui:
+    color: true
+    pager: true
+behavior:
+    auto-push: false
+    confirm-destructive: simple
+    auto-fetch: true
+    stash-before-switch: true
+aliases: {}
+integration:
+    github:
+        token: ""
+        default-remote: origin
+    gitlab:
+        token: ""

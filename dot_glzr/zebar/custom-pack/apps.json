@@ -1,0 +1,354 @@
+[
+  {
+    "label": "Explorer",
+    "program": "C:\\Windows\\explorer.exe",
+    "args": "",
+    "icon": "nf-fa-folder_open",
+    "iconMode": "nerdFont",
+    "group": ""
+  },
+  {
+    "label": "Terminal",
+    "program": "C:\\Users\\kawasaki\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+    "args": "",
+    "icon": "nf-cod-terminal",
+    "iconMode": "nerdFont",
+    "group": ""
+  },
+  {
+    "label": "Obsidian",
+    "program": "C:\\Users\\kawasaki\\AppData\\Local\\Obsidian\\Obsidian.exe",
+    "args": "",
+    "icon": "nf-md-crystal_ball",
+    "iconMode": "image",
+    "group": ""
+  },
+  {
+    "label": "設定",
+    "program": "C:\\Windows\\explorer.exe",
+    "args": "ms-settings:",
+    "icon": "nf-md-cog",
+    "iconMode": "image",
+    "group": "System"
+  },
+  {
+    "label": "WM Control Center",
+    "program": "C:\\Users\\kawasaki\\AppData\\Local\\WM Control Center\\wm-control-center.exe",
+    "args": "",
+    "icon": "nf-md-view_dashboard_edit",
+    "iconMode": "image",
+    "group": "System"
+  },
+  {
+    "label": "GRYPHLINK",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\GRYPHLINK.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "HoYoPlay",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\HoYoPlay.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "Netmarble Launcher",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\Netmarble Launcher.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "Neverness To Everness",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\Neverness To Everness.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "アークナイツ：エンドフィールド",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\アークナイツ：エンドフィールド.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "ゼンレスゾーンゼロ",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\ゼンレスゾーンゼロ.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "モンギル：STAR DIVE",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\モンギル：STAR DIVE.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "原神",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\原神.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "崩壊：スターレイル",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\崩壊：スターレイル.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "鳴潮",
+    "program": "C:\\Users\\kawasaki\\Desktop\\game\\鳴潮.lnk",
+    "args": "",
+    "icon": "nf-md-gamepad_variant",
+    "iconMode": "image",
+    "group": "game"
+  },
+  {
+    "label": "AgentsExplorer",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\AgentsExplorer.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Dotlink",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Dotlink.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "GenshinRadialLauncher",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\GenshinRadialLauncher.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Guitar Fretboard Anki",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Guitar Fretboard Anki.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Markdown Cards",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Markdown Cards.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Normal Launcher",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Normal Launcher.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Obsidian Quick Note",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Obsidian Quick Note.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Org MD Daily",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Org MD Daily.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Prompt Drafts",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Prompt Drafts.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Quota Glance",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Quota Glance.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Qutemark Manager",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Qutemark Manager.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Raindrop Summary",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Raindrop Summary.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Tauri Search Launcher",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Tauri Search Launcher.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Tauri Uninstaller",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Tauri Uninstaller.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Toggl Track",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Toggl Track.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "TTY-Clock",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\TTY-Clock.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "twitter-user",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\twitter-user.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "WM Control Center",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\WM Control Center.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "X Screenshot Organizer",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\X Screenshot Organizer.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "YASB Preset Studio",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\YASB Preset Studio.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "Zebar Launcher Editor",
+    "program": "C:\\Users\\kawasaki\\Desktop\\AI-made\\Zebar Launcher Editor.lnk",
+    "args": "",
+    "icon": "nf-md-robot_outline",
+    "iconMode": "image",
+    "group": "AI-made"
+  },
+  {
+    "label": "GitHub Desktop",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\GitHub Desktop.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "LAN DISK CONNECT",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\LAN DISK CONNECT.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "Legacy Kindle",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\Legacy Kindle.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "optimizerDuck-Windows-x64-2.24.2",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\optimizerDuck-Windows-x64-2.24.2.exe",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "PowerToys (Preview)",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\PowerToys (Preview).lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "Studio Pro 8",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\Studio Pro 8.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "VLC media player",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\VLC media player.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  },
+  {
+    "label": "VMware Workstation Pro",
+    "program": "C:\\Users\\kawasaki\\Desktop\\tools\\VMware Workstation Pro.lnk",
+    "args": "",
+    "icon": "nf-md-tools",
+    "iconMode": "image",
+    "group": "tools"
+  }
+]
